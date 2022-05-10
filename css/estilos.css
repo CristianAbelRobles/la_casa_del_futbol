@@ -152,6 +152,11 @@ main {
 .imgStilos {
     padding: 1rem;
     margin-bottom: 1rem;
+    transform: scale(1);
+}
+
+.imgStilos:hover {
+    transform: scale(1.2);
 }
 
 .img1 {
