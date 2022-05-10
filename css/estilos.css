@@ -1,44 +1,46 @@
 * { 
     margin: 0px; 
     padding: 0px;
-    font-family: 'Teko', sans-serif;
+    font-family: 'DM Sans', sans-serif;
 }
 
-@font-face {
-    font-family: 'Teko', sans-serif;
+@import url('http://fonts.cdnfonts.com/css/dcc-ash');
 
+h1{
+    color: #0a9916;
+    margin-bottom: 2rem;
+    font-family: 'DCC - Ash', sans-serif;
+    font-weight: 200;
+    font-size: 6rem;
 }
 
 .grid__container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-areas: "header header header header"
-                        "top top top top"
-                        "main main main main"
-                        "main main main main"
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "main__section__presentacion main__section__presentacion main__presentacion__img main__presentacion__img"
+                        "servicios servicios actividades actividades"
                         "img1 img2 img3 img4"
-                        "mapa mapa mapa mapa"
-                        "footer footer footer footer";
+                        "dondeEstamos dondeEstamos mapa mapa";
+    padding: 0rem 2rem;
+    
 }
 
 header {
-    grid-area: header;
-    background-color: rgb(0, 0, 0);
     display: flex;
+    background-color: rgb(0, 0, 0);
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
-    width: 100%;
     height: 100px;
+    padding: 0 4rem;
 }
 
 .logo {
-    margin-left: 4rem;
-    flex-grow: 1;
+
 }
 
-.logo img{
-    width: 70px;
+.logo img {
+    width: 80px; 
 }
 
 .ul__nav {
@@ -46,8 +48,8 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding-left: 2rem;
     list-style-type: none;
-    padding-right: 4rem;
 }
 
 .ul__nav li{
@@ -64,43 +66,46 @@ header {
     color: #ccff33;
 }
 
-.imgHome {
+.top__img {
 
 }
 
-.imgHome img{
+.top__img img{
     width: 100%;
 }
 
 main {
-    grid-area: main;
+    /*
     background-image: url(../recursos/pasto.jpg);
+    */
     background-repeat: repeat;
-    padding: 0 4rem;
 }
 
 .main__section__presentacion {
     display: flex;
-}
-
-.main__presentacion__texto {
+    flex-direction: column;
+    grid-area: main__section__presentacion;
     padding: 1rem;
-    border: 2px solid #1e1e1e;
-    width: 50%;
-    background-color: #f8f8f8;
+    justify-content: center;
+    text-align: center;
 }
 
-.main__presentacion__texto__h1{
-    font-size: 3rem;
-    color: #ccff33;
-    margin-bottom: 3rem;
+.main__section__presentacion h1{
+    color: #0a9916;
+    margin-bottom: 2rem;
+    font-family: 'DCC - Ash', sans-serif;
+    font-weight: 200;
+    font-size: 6rem;
+}
+
+.main__section__presentacion p{
+    font-size: 1.5rem;
 }
 
 .main__presentacion__img {
-    border: 2px solid rgb(189, 137, 60);
-    width: 50%;
+    grid-area: main__presentacion__img;
     padding: 1rem;
-    background-color: #f8f8f8;
+    align-self: center;
 }
 
 .main__presentacion__img img{
@@ -108,57 +113,53 @@ main {
 }
 
 .main__section__servicios {
-    display: flex;
-}
-
-.main__servicios {
+    grid-area: servicios;
     padding: 1rem;
-    border: 2px solid rgb(11, 136, 185);
-    width: 50%;
-    background-color: #f8f8f8;
 }
 
-.main__servicios ul {
+.main__section__servicios h2{
+    color: #0a9916;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.main__section__servicios ul {
     list-style-type: none;
 }
 
-.main__servicios ul li{
-    margin: 1rem o;
-}
-
 .main__actividades {
+    grid-area: actividades;
     padding: 1rem;
-    border: 2px solid rgb(139, 13, 97);
-    width: 50%;
-    background-color: #f8f8f8;
 }
 
-.main__actividades__ul {
+.main__actividades h2{
+    color: #0a9916;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.main__actividades ul {
     list-style-type: none;
 }
 
 .main__section__galeria {
     display: flex;
     padding: 1rem;
-    background-color: #1e1e1e;
-    justify-content: space-between;
-    margin: 2rem 0;
+    margin: 0 1rem;
+    justify-content: space-evenly;
 }
 
 .imgStilos {
-    border: 4px solid #ccff33;
-    margin: 1rem;
     padding: 1rem;
+    margin-bottom: 1rem;
 }
 
 .img1 {
     grid-area: img1;
-    align-items: center;
 }
 
 .img1 img{
     width: 100%;
-
 }
 
 .img2 {
@@ -186,31 +187,43 @@ main {
 }
 
 .dondeEstamos {
-    grid-area: mapa;
-    align-items: center;
-    justify-items: center;
-    padding: 2rem 0 0 0;
-    border: 2px solid gold;
-    background-color: #f8f8f8;
+    grid-area: dondeEstamos;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #0a9916;
     text-align: center;
 }
 
 .dondeEstamos h2{
-    font-size: 3rem;
-}
-
-.dondeEstamos p{
+    font-size: 1.8rem;
+    color: #f8f8f8;
     margin-bottom: 2rem;
 }
 
+.dondeEstamos p{
+    color: #f8f8f8;
+}
+
+.dondeEstamos span{
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.mapa {
+    grid-area: mapa;
+    margin: 0;
+    padding: 0;
+}
+
 footer {
-    grid-area: footer;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(32, 81, 214);
+    background-color: black;
     height: 100px;
+    background-color: #ccff33;
 }
 
 .redes {
@@ -218,184 +231,569 @@ footer {
     padding: 1rem;
 }
 
-@media  screen and (max-width: 768px) {
-    .grid__container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-areas: "header header"
-                            "top top"
-                            "main main"
-                            "main main"
-                            "img1 img2"
-                            "img3 img4"
-                            "mapa mapa"
-                            "footer footer";
-    }
+/*/////////////     ESCUELA FUTBOL   /////////////*/
 
-    .ul__nav {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
+.mainEscuela {
+    padding: 0rem 2rem;
 }
 
-@media  screen and (max-width: 600px) {
-    .grid__container {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-areas: "header"
-                            "top"
-                            "main"
-                            "main"
-                            "img1"
-                            "img2"
-                            "img3"
-                            "img4"
-                            "mapa"
-                            "footer";
-    }
-
-    .ul__nav {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .main__section__presentacion {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-
-    }
-
-    .main__presentacion__texto {
-        width: 91%;
-    }
-    
-    .main__presentacion__img {
-        width: 91%;
-        padding: 1rem;
-    }
-
-    .main__section__servicios {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .main__servicios {
-        padding: 1rem;
-        width: 91%;
-    }
-    
-    .main__actividades {
-        padding: 1rem;
-        width: 91%;
-    }
-
-    .main__section__galeria {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 1rem;
-    }
-
+.escuelaFutbol {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
-/*//////////////     CONTACTO Y RESERVAS     /////////////*/
-
-.MainContacto {
-    background-image: url(../recursos/pasto.jpg);
-    background-repeat: repeat;
-    padding: 2%;
+.escuelaFutbol__presentacion {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: 45%;
 }
 
-.MainContacto section{
-    margin: 5% 5%;
-    background-color: whitesmoke;
-    padding: 3%;
-    border-radius: 10px;
+.escuelaFutbol__imagen {
+    padding: 1rem;
 }
 
-.MainContacto__h1 {
-    margin: 3% 0%;
-}
-
-.MainContacto__formulario div{
-    margin-bottom: 1%;
-    
-}
-
-.MainContacto__formulario__TextArea {
+.escuelaFutbol__imagen img{
     width: 100%;
-    height: 150px;
-    padding: 12px 20px;
-    box-sizing: border-box;
-    border: 2px solid green;
-    border-radius: 4px;
-    background-color: #f8f8f8;
-    font-size: 16px;
-    resize: none;
-}
-
-/*/////////////     ESCUELA    /////////////*/
-
-.escuela {
-    padding: 2%;
-}
-
-.escuela div{
-    display: inline-block;
-    width: 40%;
 }
 
 .escuela_calendario {
+    display: flex;
+    flex-direction: column;
     padding: 2%;
+    width: 96%;
+    text-align: center;
 }
 
-.escuela_calendario__1 p {
+.escuela_calendario__1 span {
     display: inline-block;
-    margin: 0%;
-    margin-bottom: 1%;
     padding: 2%;
     background-color: aqua;
+    width: 28%;
+    text-align: center;
 }
 
-.escuela_calendario__2 p {
+.escuela_calendario__2 span {
     display: inline-block;
-    margin: 0%;
-    margin-bottom: 1%;
     padding: 2%;
     background-color: green;
+    width: 28%;
+    text-align: center;
 }
 
-.escuela_calendario__3 p {
+.escuela_calendario__3 span {
     display: inline-block;
-    margin: 0%;
-    margin-bottom: 1%;
     padding: 2%;
     background-color: yellow;
+    width: 28%;
+    text-align: center;
 }
 
-.escuela_calendario__4 p {
+.escuela_calendario__4 span {
     display: inline-block;
-    margin: 0%;
-    margin-bottom: 1%;
     padding: 2%;
     background-color: orange;
+    width: 28%;
+    text-align: center;
 }
 
-.escuela_calendario__5 p {
+.escuela_calendario__5 span {
     display: inline-block;
-    margin: 0%;
-    margin-bottom: 1%;
     padding: 2%;
     background-color: red;
+    width: 28%;
+    text-align: center;
 }
 
 /*/////////////     BUFFET     /////////////*/
 
-.buffet {
+.mainBuffet {
     padding: 2% 4%;
-    background-color: #ccff33;
+}
+
+.mainBuffet h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.mainBuffet h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.mainBuffet h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.mainBuffet p {
+    text-align: center;
+}
+
+.section__buffet__comidas {
+    background-color: aqua;
+    padding: 2rem 1rem 2rem 1rem;
+    margin: 2rem 0rem 2rem 0rem;
+}
+
+.section__buffet__comidas__caja {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.section__buffet__comidas__caja img {
+    width: 20%;
+    border: 4px solid whitesmoke;
+}
+
+.section__buffet__bebidas {
+    background-color: aquamarine;
+    padding: 2rem 1rem 2rem 1rem;
+    margin: 2rem 0rem 2rem 0rem;
+}
+
+.section__buffet__bebidas__caja {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.section__buffet__bebidas__caja img {
+    width: 20%;
+    border: 4px solid whitesmoke;
+}
+
+
+
+/*/////////////     TORNEOS     /////////////*/
+
+.mainTorneos__h1 {
+    text-align: center;
+    padding: 2rem 0rem 2rem 0rem;
+}
+
+.mainTorneos {
+    display: grid;
+    grid-template-rows: 1fr 0.1fr auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "mainTorneos__section__amateurs mainTorneos__section__amateurs mainTorneos__section__tuTorneo mainTorneos__section__tuTorneo"
+                        "mainTorneos__section__mensaje mainTorneos__section__mensaje mainTorneos__section__mensaje mainTorneos__section__mensaje"
+                        "mainTorneos__section__comodidades mainTorneos__section__comodidades mainTorneos__section__comodidades mainTorneos__section__comodidades";
+}
+
+.mainTorneos__section {}
+
+.mainTorneos__section__amateurs {
+    grid-area: mainTorneos__section__amateurs;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    margin: 1rem;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    background-color: #a8a8a8;
+    border: 4px solid #0a9916;
+    border-radius: 15px;
+}
+
+.mainTorneos__section__amateurs__h2 {
+    margin-bottom: 2rem;
+}
+
+.mainTorneos__section__amateurs img{
+    border-radius: 15px;
+    width: 40%;
+    margin: 1rem 0rem;
+}
+
+.mainTorneos__section__tuTorneo {
+    grid-area: mainTorneos__section__tuTorneo;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    margin: 1rem;
+    text-align: center;
+    align-items: center;
+    align-content: space-between;
+    background-color: #a1a1a1;
+    border: 4px solid #0a9916;
+    border-radius: 15px;
+}
+
+.mainTorneos__section__tuTorneo img{
+    border-radius: 15px;
+    width: 40%;
+    margin: 1rem 0rem;
+}
+
+.mainTorneos__section__mensaje {
+    grid-area: mainTorneos__section__mensaje;
+}
+
+.mainTorneos__h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 2rem 0rem 2rem 0rem;
+}
+
+.mainTorneos__section__comodidades {
+    grid-area: mainTorneos__section__comodidades;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: black;
+    color: #ccff33;
+    text-align: center;
+}
+
+.mainTorneos__section__comodidades__div {
+    width: 200px;
+    padding: 1rem;
+}
+
+.mainTorneos__section__comodidades img{
+    width: 80px;
+}
+
+/*//////////////     CONTACTO Y RESERVAS     /////////////*/
+
+.mainContacto {
+    background-image: url(../recursos/pasto.jpg);
+    background-repeat: repeat;
+    padding: 1rem 2rem;
+}
+
+.mainContacto h1{
+    text-align: center;
+}
+
+.mainContacto section{
+    padding: 1rem 2rem;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.mainContacto .imgHome img{
+    width: 100%;
+}
+
+.mainContacto__formulario {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-around;
+}
+
+.mainContacto__h1 {
+    padding: 2rem;
+    font-size: 2rem;
+}
+
+.mainContacto__formulario__nombre {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: none;
+    border-bottom: 2px solid #0a9e60;
+    width: 42%;
+    height: 1.5rem;
+    background-color: rgb(230, 255, 234);
+}
+
+.mainContacto__formulario__nombre:focus {
+    border: none;
+    background-color: rgb(179, 245, 190);
+}
+
+.mainContacto__formulario__apellido {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: none;
+    border-bottom: 2px solid #0a9e60;
+    width: 42%;
+    height: 1.5rem;
+    background-color: rgb(230, 255, 234);
+}
+
+.mainContacto__formulario__apellido:focus {
+    border: none;
+    background-color: rgb(179, 245, 190);
+}
+
+.mainContacto__formulario__telefono {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: none;
+    border-bottom: 2px solid #0a9e60;
+    width: 100%;
+    height: 1.5rem;
+    background-color: rgb(230, 255, 234);
+}
+
+.mainContacto__formulario__telefono:focus {
+    border: none;
+    background-color: rgb(179, 245, 190);
+}
+
+.mainContacto__formulario__correo {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: none;
+    border-bottom: 2px solid #0a9e60;
+    width: 100%;
+    height: 1.5rem;
+    background-color: rgb(230, 255, 234);
+}
+
+.mainContacto__formulario__correo:focus {
+    border: none;
+    background-color: rgb(179, 245, 190);
+}
+
+.mainContacto__formulario__dia {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: none;
+    border-bottom: 2px solid #0a9e60;
+    width: 42%;
+    height: 1.5rem;
+    background-color: rgb(230, 255, 234);
+}
+
+.mainContacto__formulario__dia:focus {
+    border: none;
+    background-color: rgb(179, 245, 190);
+}
+
+.mainContacto__formulario__horario {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: none;
+    border-bottom: 2px solid #0a9e60;
+    width: 42%;
+    height: 1.5rem;
+    background-color: rgb(230, 255, 234);
+}
+
+.mainContacto__formulario__horario:focus {
+    border: none;
+    background-color: rgb(179, 245, 190);
+}
+
+.mainContacto__formulario__textArea {
+    width: 100%;
+    height: 150px;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid #0a9e60;
+    border-radius: 4px;
+    resize: none;
+    background-color: rgb(230, 255, 234);
+}
+
+.mainContacto__formulario__textArea:focus {
+    border: none;
+    background-color: rgb(179, 245, 190);
+}
+
+.mainContacto__formulario__enviarConsulta {
+    font-size: 1.2rem;
+    border: none;
+    margin-bottom: 1rem;
+    width: 100%;
+    height: 2rem;
+    background: #a8ff78;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #78ffd6, #0a9e60);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #78ffd6, #0a9e60); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+
+/*///////////////////////////////////////////////*/
+/*/////////////     RESPONSIVE     /////////////*/
+/*/////////////////////////////////////////////*/
+
+@media (min-width: 541px) and (max-width: 720px) {
+    .grid__container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "main__section__presentacion main__section__presentacion"
+                            "main__presentacion__img main__presentacion__img"
+                            "servicios actividades"
+                            "img1 img2"
+                            "img3 img4"
+                            "dondeEstamos dondeEstamos"
+                            "mapa mapa";
+    }
+
+    .ul__nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .dondeEstamos h2{
+        margin: 2rem;
+    }
+
+        /*/////////////     ESCUELA FUTBOL   /////////////*/
+
+        .escuelaFutbol {
+            flex-direction: column;
+        }
+
+        .escuelaFutbol__presentacion {
+            width: 90%;
+        }
+
+        .dondeEstamos p{
+            margin-bottom: 2rem;
+        }
+    
+}
+
+@media (max-width: 540px) {
+    .grid__container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: "main__section__presentacion"
+                            "main__presentacion__img"
+                            "servicios"
+                            "actividades"
+                            "img1"
+                            "img2"
+                            "img3"
+                            "img4"
+                            "dondeEstamos"
+                            "mapa";
+    }
+
+    header {
+        display: flex;
+        background-color: rgb(0, 0, 0);
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        align-content: center;
+        height: 35vh;
+    }
+
+    .ul__nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    .dondeEstamos h2{
+        margin: 2rem;
+    }
+
+    .dondeEstamos p{
+        margin-bottom: 2rem;
+    }
+
+    /*/////////////     TORNEOS     /////////////*/
+
+    .mainTorneos {
+        display: grid;
+        grid-template-rows: 0.8fr 0.8fr 0.1fr;
+        grid-template-columns: auto;
+        grid-template-areas: "mainTorneos__section__amateurs" 
+                            "mainTorneos__section__tuTorneo"
+                            "mainTorneos__section__mensaje"
+                            "mainTorneos__section__comodidades";
+    }
+
+    .mainTorneos__section__amateurs img{
+        width: 65%;
+    }
+
+    .mainTorneos__section__tuTorneo img{
+        width: 65%;
+    }
+
+    .mainTorneos__section__comodidades {
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .mainTorneos__section__comodidades__div {
+
+        padding: 1rem;
+    }
+
+    .mainTorneos__section__comodidades img{
+        width: 60px;
+    }
+
+    /*/////////////     ESCUELA FUTBOL   /////////////*/
+
+    .escuelaFutbol {
+        flex-direction: column;
+    }
+
+    .escuelaFutbol__presentacion {
+        width: 90%;
+    }
+
+    .escuela_calendario__1 span {
+        width: 90%;
+    }
+    
+    .escuela_calendario__2 span {
+        width: 90%;
+    }
+    
+    .escuela_calendario__3 span {
+        width: 90%;
+    }
+    
+    .escuela_calendario__4 span {
+        width: 90%;
+    }
+    
+    .escuela_calendario__5 span {
+        width: 90%;
+    }
+
+    /*/////////////    BUFFET   /////////////*/
+
+    .section__buffet__comidas__caja {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .section__buffet__comidas__caja img {
+        width: 80%;
+    }
+    
+    .section__buffet__bebidas__caja {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .section__buffet__bebidas__caja img {
+        width: 80%;
+    }
+
+    /*/////////////    CONTACTO   /////////////*/
+
+    .mainContacto__formulario__nombre, .mainContacto__formulario__apellido, .mainContacto__formulario__dia, .mainContacto__formulario__horario  {
+        width: 100%;
+    }
+
+
+
 }

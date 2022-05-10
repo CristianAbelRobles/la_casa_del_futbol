@@ -25,50 +25,30 @@
             </ul>
         </nav>
     </header>
-    <main class="MainContacto">
-        <div class="imgHome">
-            <img src="../recursos/top_home2.jpg" alt="Imagen del campo de juego"/>
-        </div>
+    <div class="top__img">
+        <img src="../recursos/top_home2.jpg" alt="Imagen del campo de juego"/>
+    </div>
+    <main class="mainContacto">
         <section>
-            <h1 class="MainContacto__h1">¡ENVIANOS TU CONSULTA!</h1>
-            <form class="MainContacto__formulario" method="post">
-                <div>
-                    <label for="nombre">Nombre</label>
-                    <input name="nombre" placeholder="nombre"/>
-                </div>
-                <div>
-                    <label for="apellido">Apellido</label>
-                    <input name="apellido" placeholder="apellido"/>
-                </div>
-                <div>
-                    <label for="telefono">Telefono</label>
-                    <input name="telefono" placeholder="telefono"/>
-                </div>
-                <div>
-                    <label for="email">Tu email</label>
-                    <input name="email" placeholder="email"/>
-                </div>
-                <div>
-                    <label for="asunto">Asunto</label>
-                    <input name="asunto" placeholder="Asunto"/>
-                </div>
-                <div>
-                    <label for="mensaje">Mensaje</label>
-                </div>
-                <div>
-                    <textarea class="MainContacto__formulario__TextArea" name="mensaje"></textarea>           
-                </div>
-                <div>
-                    <input type="submit" value="Enviar Consulta"/>
-                </div>
-            </textarea>
+            <h1 class="mainContacto__h1">¡HACE TU RESERVA O ENVIANOS TU CONSULTA!</h1>
+            <form class="mainContacto__formulario" method="post">
+                    <input class="mainContacto__formulario__nombre" name="nombre" placeholder="Su nombre"/>
+                    <input class="mainContacto__formulario__apellido" name="apellido" placeholder="Su apellido"/>
+                    <input class="mainContacto__formulario__telefono" name="telefono" placeholder="Su telefono"/>
+                    <input class="mainContacto__formulario__correo" name="email" placeholder="Su email"/>
+                    <input class="mainContacto__formulario__dia" name="dia" placeholder="Día de reserva"/>
+                    <input class="mainContacto__formulario__horario" name="horario" placeholder="Horario reserva"/>
+                    <textarea class="mainContacto__formulario__textArea" placeholder="Escriba aqui su mensaje." name="mensaje"></textarea>           
+                    <input class="mainContacto__formulario__enviarConsulta" type="submit" value="Enviar Consulta"/>
             </form>
         </section>
     </main>
     <footer class="footer">
-        <a href="https://www.facebook.com/LaCasaDelFutbol5"><img class="redes" src="../recursos/facebook.svg" alt="icono facebook"/></a>
-        <a href="https://www.instagram.com/la.casa_del.futbol/"><img class="redes" src="../recursos/instagram.svg" alt="icono instagram"/></a>
-        <a href="https://api.whatsapp.com/send?phone=+5401165804413"><img class="redes" src="../recursos/whatsapp.svg" alt="whatsapp"/></a>
+        <div>
+            <a href="https://www.facebook.com/LaCasaDelFutbol5"><img class="redes" src="../recursos/facebook.svg" alt="icono facebook"/></a>
+            <a href="https://www.instagram.com/la.casa_del.futbol/"><img class="redes" src="../recursos/instagram.svg" alt="icono instagram"/></a>
+            <a href="https://api.whatsapp.com/send?phone=+5401165804413"><img class="redes" src="../recursos/whatsapp.svg" alt="whatsapp"/></a>
+        </div>
         <p>
             Todos los Derechos Reservados
         </p>

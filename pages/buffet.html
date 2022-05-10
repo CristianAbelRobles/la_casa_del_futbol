@@ -1,68 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+    <head>
+        <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../recursos/favicon.png"/>
     <link rel="stylesheet" href="../css/estilos.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One:ital@0;1&family=Roboto:wght@500&display=swap" rel="stylesheet">
-    <title>La Casa del Futbol</title>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
+        <div class="logo">
+            <img src="../recursos/logo_fav.png" alt="logo la casa del futbol"/>
+        </div>
         <nav>
-            <ul class="nave__menu">
-                <li><a href="../index.html"><img class="nave__menu__img" src="../recursos/logo_fav.png" alt="escudo la casa del futbol"/></a></li>
+            <ul class="ul__nav">
                 <li><a href="../index.html">Inicio</a></li>
-                <li><a href="buffet.html">Buffet</a></li>
-                <li><a href="escuela_futbol.html">Escuela de Futbol</a></li>
-                <li><a href="torneos.html">Torneos</a></li>
-                <li><a href="contacto.html">Contacto y Reservas</a></li>
+                <li><a href="../pages/buffet.html">Buffet</a></li>
+                <li><a href="../pages/escuela_futbol.html">Escuela de Futbol</a></li>
+                <li><a href="../pages/torneos.html">Torneos</a></li>
+                <li><a href="../pages/contacto.html">Contacto</a></li>
             </ul>
-            <div class="nave__img">
-                <img src="../recursos/top_home_bn_gradient.jpg" alt="Imagen del campo de juego"/>
-            </div>
         </nav>
     </header>
-    <main class="buffet">
+    <div class="top__img">
+        <img src="../recursos/top_home2.jpg" alt="Imagen del campo de juego"/>
+    </div>
+<main class="mainBuffet">
         <h1>BUFFET</h1>
         <h2>¡Quedate al tercer tiempo!</h2>
-        <section class="buffet__galerias">
+        <p>
+            ¡El bar está abierto a todo el público! Probá nuestras riquísimas pizzas y empanadas, con bebidas de primera línea. Consultános por eventos privados y seguínos para conocer nuestras novedades.
+        </p>
+        <section class="section__buffet__comidas">
             <h3>Comidas</h3>
-            <div>
-                <img src="../recursos/buffet_comida_1.jpg" alt="parrilla"/>
-                <img src="../recursos/buffet_comida_2.jpg" alt="papas fritas"/>
-                <img src="../recursos/buffet_comida_3.jpg" alt="pancho"/>
-                <img src="../recursos/buffet_comida_4.jpg" alt="choripan"/>
-                <img src="../recursos/buffet_comida_5.jpg" alt="hamburguesa"/>
-                <img src="../recursos/buffet_comida_6.jpg" alt="sandwich de milanesa"/>
-                <img src="../recursos/buffet_comida_7.jpg" alt="sandwich"/>
+            <div class="section__buffet__comidas__caja">
+                <img src="../recursos/buffet/buffet_comida_1.jpg" alt="parrilla"/>
+                <img src="../recursos/buffet/buffet_comida_2.jpg" alt="papas fritas"/>
+                <img src="../recursos/buffet/buffet_comida_3.jpg" alt="pancho"/>
+                <img src="../recursos/buffet/buffet_comida_4.jpg" alt="choripan"/>
+                <!--
+                <img src="../recursos/buffet/buffet_comida_5.jpg" alt="hamburguesa"/>
+                <img src="../recursos/buffet/buffet_comida_6.jpg" alt="sandwich de milanesa"/>
+                <img src="../recursos/buffet/buffet_comida_7.jpg" alt="sandwich"/>
+                -->
             </div>
+        </section>
+        <section class="section__buffet__bebidas">
             <h3>Bebidas</h3>
-            <div>
-                <img src="../recursos/buffet_bebidas_1.jpg" alt="agua saborisada"/>
-                <img src="../recursos/buffet_bebidas_2.jpg" alt="agua saborisada grande"/>
-                <img src="../recursos/buffet_bebidas_3.jpg" alt="bebida energizante"/>
-                <img src="../recursos/buffet_bebidas_4.jpg" alt="agua mineral"/>
-                <img src="../recursos/buffet_bebidas_5.jpg" alt="vinos"/>
-                <img src="../recursos/buffet_bebidas_6.jpg" alt="fernet y coca cola"/>
-                <img src="../recursos/buffet_bebidas_7.jpg" alt="latas de gaseosa"/>
-                <img src="../recursos/buffet_bebidas_8.jpg" alt="gaseosas grandes"/>
-                <img src="../recursos/buffet_bebidas_9.jpg" alt="gaseosas pequeñas"/>
-                <img src="../recursos/buffet_bebidas_10.jpg" alt="cerveza"/>
+            <div class="section__buffet__bebidas__caja">
+                <!--
+                <img src="../recursos/buffet/buffet_bebidas_1.jpg" alt="agua saborisada"/>
+                <img src="../recursos/buffet/buffet_bebidas_2.jpg" alt="agua saborisada grande"/>
+                <img src="../recursos/buffet/buffet_bebidas_3.jpg" alt="bebida energizante"/>
+                <img src="../recursos/buffet/buffet_bebidas_4.jpg" alt="agua mineral"/>
+                <img src="../recursos/buffet/buffet_bebidas_5.jpg" alt="vinos"/>
+                <img src="../recursos/buffet/buffet_bebidas_6.jpg" alt="fernet y coca cola"/>
+                -->
+                <img src="../recursos/buffet/buffet_bebidas_7.jpg" alt="latas de gaseosa"/>
+                <img src="../recursos/buffet/buffet_bebidas_8.jpg" alt="gaseosas grandes"/>
+                <img src="../recursos/buffet/buffet_bebidas_9.jpg" alt="gaseosas pequeñas"/>
+                <img src="../recursos/buffet/buffet_bebidas_10.jpg" alt="cerveza"/>
+                
             </div>
         </section>
     </main>
     <footer class="footer">
-        <p>
-            Nuestras redes.
-        </p>
-        <a href="https://www.facebook.com/LaCasaDelFutbol5"><img src="../recursos/facebook.svg" alt="icono facebook"/></a>
-        <a href="https://www.instagram.com/la.casa_del.futbol/"><img src="../recursos/instagram.svg" alt="icono instagram"/></a>
-        <a href="https://api.whatsapp.com/send?phone=+5401165804413"><img src="../recursos/whatsapp.svg" alt="whatsapp"/></a>
+        <div>
+            <a href="https://www.facebook.com/LaCasaDelFutbol5"><img class="redes" src="../recursos/facebook.svg" alt="icono facebook"/></a>
+            <a href="https://www.instagram.com/la.casa_del.futbol/"><img class="redes" src="../recursos/instagram.svg" alt="icono instagram"/></a>
+            <a href="https://api.whatsapp.com/send?phone=+5401165804413"><img class="redes" src="../recursos/whatsapp.svg" alt="whatsapp"/></a>
+        </div>
         <p>
             Todos los Derechos Reservados
         </p>
