@@ -156,10 +156,14 @@ main {
 }
 
 .imgStilos:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 .img1 {
+    grid-area: img1;
+}
+
+.img1:hover {
     grid-area: img1;
 }
 
@@ -351,6 +355,11 @@ footer {
 .section__buffet__comidas__caja img {
     width: 20%;
     border: 4px solid whitesmoke;
+    transform: scale(1);
+}
+
+.section__buffet__comidas__caja img:hover {
+    transform: scale(1.1);
 }
 
 .section__buffet__bebidas {
