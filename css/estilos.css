@@ -5,6 +5,9 @@
 }
 
 @import url('http://fonts.cdnfonts.com/css/dcc-ash');
+body {
+    background-color: black;
+}
 
 h1{
     color: #0a9916;
@@ -63,10 +66,6 @@ header {
     color: #ccff33;
 }
 
-.top__img {
-
-}
-
 .top__img img{
     width: 100%;
 }
@@ -83,7 +82,7 @@ main {
     flex-direction: column;
     grid-area: main__section__presentacion;
     padding: 1rem;
-    justify-content: center;
+
     text-align: center;
 }
 
@@ -92,11 +91,20 @@ main {
     margin-bottom: 2rem;
     font-family: 'DCC - Ash', sans-serif;
     font-weight: 400;
-    font-size: 4rem;
+    font-size: 6rem;
+}
+
+.main__section__presentacion h2{
+    color: whitesmoke;
+    margin-bottom: 2rem;
+    font-family: 'DCC - Ash', sans-serif;
+    font-weight: 400;
+    font-size: 3rem;
 }
 
 .main__section__presentacion p{
     font-size: 1.5rem;
+    color: whitesmoke;
 }
 
 .main__presentacion__img {
@@ -111,32 +119,62 @@ main {
 
 .main__section__servicios {
     grid-area: servicios;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(../recursos/caja-watercolor-deg.jpg);
+    background-size: cover;
     padding: 1rem;
+    margin: 1rem;
 }
 
 .main__section__servicios h2{
     color: #0a9916;
-    font-size: 1.5rem;
     margin-bottom: 2rem;
+    font-family: 'DCC - Ash', sans-serif;
+    font-weight: 400;
+    font-size: 3rem;
 }
 
 .main__section__servicios ul {
     list-style-type: none;
+    color: whitesmoke;
+}
+
+.main__section__servicios li {
+    font-size: 1.5rem;
+    color: whitesmoke;
+    margin-bottom: 1rem;
 }
 
 .main__actividades {
     grid-area: actividades;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(../recursos/caja-dark-concrete-deg.jpg);
+    background-size: cover;
     padding: 1rem;
+    margin: 1rem;
 }
 
 .main__actividades h2{
     color: #0a9916;
-    font-size: 1.5rem;
     margin-bottom: 2rem;
+    font-family: 'DCC - Ash', sans-serif;
+    font-weight: 400;
+    font-size: 3rem;
 }
 
 .main__actividades ul {
     list-style-type: none;
+    color: whitesmoke;
+}
+
+.main__actividades li {
+    font-size: 1.5rem;
+    color: whitesmoke;
+    margin-bottom: 1rem;
 }
 
 .main__section__galeria {
@@ -234,15 +272,14 @@ footer {
 
 .redes {
     width: 2rem;
-    padding: 1rem;
 }
 
 /*/////////////     ESCUELA FUTBOL   /////////////*/
-
+/*
 .mainEscuela {
     padding: 0rem 2rem;
 }
-
+*/
 .escuelaFutbol {
     display: flex;
     justify-content: space-around;
@@ -256,8 +293,13 @@ footer {
     width: 45%;
 }
 
+.escuelaFutbol__presentacion p{
+    color: whitesmoke;
+}
+
 .escuelaFutbol__imagen {
     padding: 1rem;
+    width: 45%;
 }
 
 .escuelaFutbol__imagen img{
@@ -267,9 +309,11 @@ footer {
 .escuela_calendario {
     display: flex;
     flex-direction: column;
-    padding: 2%;
-    width: 96%;
+    background-image: url(../recursos/section-separador.jpg);
+    background-repeat: no-repeat;
     text-align: center;
+    padding-top: 8rem;
+    padding-bottom: 2rem;
 }
 
 .escuela_calendario__1 span {
@@ -635,7 +679,8 @@ footer {
         grid-template-columns: 1fr 1fr;
         grid-template-areas: "main__section__presentacion main__section__presentacion"
                             "main__presentacion__img main__presentacion__img"
-                            "servicios actividades"
+                            "servicios servicios"
+                            "actividades actividades"
                             "img1 img2"
                             "img3 img4"
                             "dondeEstamos dondeEstamos"
@@ -646,6 +691,10 @@ footer {
         display: flex;
         flex-direction: row;
         justify-content: center;
+    }
+
+    .main__section__presentacion h1{
+        font-size: 4rem;
     }
 
     .dondeEstamos h2{
@@ -660,6 +709,11 @@ footer {
 
         .escuelaFutbol__presentacion {
             width: 90%;
+        }
+    
+        .escuelaFutbol__imagen {
+            padding: 1rem;
+            width: 100%;
         }
 
         .dondeEstamos p{
@@ -774,6 +828,11 @@ footer {
         width: 90%;
     }
 
+    .escuelaFutbol__imagen {
+        padding: 1rem;
+        width: 100%;
+    }
+
     .escuela_calendario__1 span {
         width: 90%;
     }
@@ -823,7 +882,5 @@ footer {
     .mainContacto__formulario__nombre, .mainContacto__formulario__apellido, .mainContacto__formulario__dia, .mainContacto__formulario__horario  {
         width: 100%;
     }
-
-
-
+    
 }
