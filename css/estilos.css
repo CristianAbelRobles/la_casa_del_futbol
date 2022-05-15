@@ -9,12 +9,20 @@ body {
     background-color: black;
 }
 
-h1{
+h1 {
     color: #0a9916;
     margin-bottom: 2rem;
     font-family: 'DCC - Ash', sans-serif;
     font-weight: 200;
     font-size: 4rem;
+}
+
+h2 {
+    color: #0a9916;
+    margin-bottom: 2rem;
+    font-family: 'DCC - Ash', sans-serif;
+    font-weight: 400;
+    font-size: 3rem;
 }
 
 .grid__container {
@@ -359,7 +367,52 @@ footer {
 /*/////////////     BUFFET     /////////////*/
 
 .mainBuffet {
-    padding: 2% 4%;
+    padding: 0rem 1rem;
+}
+
+.mainBuffet__comida__carrousel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url(../recursos/caja-dark-concrete-deg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 2rem;
+}
+
+.mainBuffet__comida__carrousel__texto {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: 45%;
+}
+
+.mainBuffet__comida__carrousel__imagenes {
+    width: 45%;
+    padding: 1rem;
+}
+
+.mainBuffet__bebidas__carrousel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url(../recursos/caja-dark-concrete-deg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.mainBuffet__bebidas__carrousel__texto {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: 45%;
+}
+
+.mainBuffet__bebidas__carrousel__imagenes {
+    width: 45%;
+    padding: 1rem;
 }
 
 .mainBuffet h1 {
@@ -379,6 +432,8 @@ footer {
 
 .mainBuffet p {
     text-align: center;
+    color: whitesmoke;
+    font-size: 1.5rem;
 }
 
 .section__buffet__comidas {
@@ -719,6 +774,44 @@ footer {
         .dondeEstamos p{
             margin-bottom: 2rem;
         }
+
+        /*/////////////     BUFFET   /////////////*/
+
+        .mainBuffet__comida__carrousel {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: url(../recursos/caja-dark-concrete-deg.jpg);
+        }
+
+        .mainBuffet__comida__carrousel__texto {
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+            width: 90%;
+        }
+        
+        .mainBuffet__comida__carrousel__imagenes {
+            width: 80%;
+            padding: 1rem;
+        }
+
+        .mainBuffet__bebidas__carrousel {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: url(../recursos/caja-dark-concrete-deg.jpg);
+        }
+
+        .mainBuffet__bebidas__carrousel__texto {
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+        }
+        
+        .mainBuffet__bebidas__carrousel__imagenes {
+            width: 80%;
+        }
     
 }
 
@@ -853,25 +946,43 @@ footer {
         width: 90%;
     }
 
-    /*/////////////    BUFFET   /////////////*/
+        /*/////////////     BUFFET   /////////////*/
 
-    .section__buffet__comidas__caja {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
+        .mainBuffet__comida__carrousel {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: url(../recursos/caja-dark-concrete-deg.jpg);
+        }
 
-    .section__buffet__comidas__caja img {
-        width: 80%;
-    }
-    
-    .section__buffet__bebidas__caja {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
+        .mainBuffet__comida__carrousel__texto {
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+            width: 90%;
+        }
+        
+        .mainBuffet__comida__carrousel__imagenes {
+            width: 80%;
+            padding: 1rem;
+        }
+
+        .mainBuffet__bebidas__carrousel {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: url(../recursos/caja-dark-concrete-deg.jpg);
+        }
+
+        .mainBuffet__bebidas__carrousel__texto {
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+        }
+        
+        .mainBuffet__bebidas__carrousel__imagenes {
+            width: 80%;
+        }
     
     .section__buffet__bebidas__caja img {
         width: 80%;
