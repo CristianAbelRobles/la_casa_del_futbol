@@ -475,15 +475,42 @@ footer {
     border: 4px solid whitesmoke;
 }
 
-
-
 /*/////////////     TORNEOS     /////////////*/
 
 .mainTorneos__h1 {
     text-align: center;
-    padding: 2rem 0rem 2rem 0rem;
+    padding: 0rem 0rem 1rem 0rem;
 }
 
+.mainTorneosBootstrap {
+
+}
+
+.mainTorneoBootstrap__section {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2rem;
+}
+
+.mainTorneoBootstrap__section__tarjeta {
+    width: 45%;
+    background-image: url(../recursos/caja-dark-concrete-deg.jpg);
+    background-size: cover;
+}
+
+.mainTorneoBootstrap__section__tarjeta p{
+    color:whitesmoke;
+}
+
+.mainTorneoBootstrap__section__tarjeta h5{
+    font-family: 'DCC - Ash', sans-serif;
+    color:whitesmoke;
+    margin: 1rem 0rem;
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+/*
 .mainTorneos {
     display: grid;
     grid-template-rows: 1fr 0.1fr auto;
@@ -492,7 +519,7 @@ footer {
                         "mainTorneos__section__mensaje mainTorneos__section__mensaje mainTorneos__section__mensaje mainTorneos__section__mensaje"
                         "mainTorneos__section__comodidades mainTorneos__section__comodidades mainTorneos__section__comodidades mainTorneos__section__comodidades";
 }
-
+*/
 .mainTorneos__section {}
 
 .mainTorneos__section__amateurs {
@@ -726,8 +753,6 @@ footer {
 
 }
 
-
-
 /*///////////////////////////////////////////////*/
 /*/////////////     RESPONSIVE     /////////////*/
 /*/////////////////////////////////////////////*/
@@ -760,62 +785,74 @@ footer {
         margin: 2rem;
     }
 
-        /*/////////////     ESCUELA FUTBOL   /////////////*/
+    /*/////////////     ESCUELA FUTBOL   /////////////*/
 
-        .escuelaFutbol {
-            flex-direction: column;
-        }
+    .escuelaFutbol {
+        flex-direction: column;
+    }
 
-        .escuelaFutbol__presentacion {
-            width: 90%;
-        }
+    .escuelaFutbol__presentacion {
+        width: 90%;
+    }
+
+    .escuelaFutbol__imagen {
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .dondeEstamos p{
+        margin-bottom: 2rem;
+    }
+
+    /*/////////////     BUFFET   /////////////*/
+
+    .mainBuffet__comida__carrousel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-image: url(../recursos/caja-dark-concrete-deg.jpg);
+    }
+
+    .mainBuffet__comida__carrousel__texto {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        width: 90%;
+    }
     
-        .escuelaFutbol__imagen {
-            padding: 1rem;
-            width: 100%;
-        }
+    .mainBuffet__comida__carrousel__imagenes {
+        width: 80%;
+        padding: 1rem;
+    }
 
-        .dondeEstamos p{
-            margin-bottom: 2rem;
-        }
+    .mainBuffet__bebidas__carrousel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-image: url(../recursos/caja-dark-concrete-deg.jpg);
+    }
 
-        /*/////////////     BUFFET   /////////////*/
+    .mainBuffet__bebidas__carrousel__texto {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+    
+    .mainBuffet__bebidas__carrousel__imagenes {
+        width: 80%;
+    }
 
-        .mainBuffet__comida__carrousel {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-image: url(../recursos/caja-dark-concrete-deg.jpg);
-        }
+    /*/////////////////  TORNEO   /////////////////*/
 
-        .mainBuffet__comida__carrousel__texto {
-            display: flex;
-            flex-direction: column;
-            padding: 1rem;
-            width: 90%;
-        }
-        
-        .mainBuffet__comida__carrousel__imagenes {
-            width: 80%;
-            padding: 1rem;
-        }
-
-        .mainBuffet__bebidas__carrousel {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-image: url(../recursos/caja-dark-concrete-deg.jpg);
-        }
-
-        .mainBuffet__bebidas__carrousel__texto {
-            display: flex;
-            flex-direction: column;
-            width: 90%;
-        }
-        
-        .mainBuffet__bebidas__carrousel__imagenes {
-            width: 80%;
-        }
+    .mainTorneoBootstrap__section {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .mainTorneoBootstrap__section__tarjeta {
+        width: 90%;
+        margin-bottom: 2rem;
+    }
     
 }
 
@@ -881,6 +918,16 @@ footer {
     }
 
     /*/////////////     TORNEOS     /////////////*/
+
+    .mainTorneoBootstrap__section {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .mainTorneoBootstrap__section__tarjeta {
+        width: 90%;
+        margin-bottom: 2rem;
+    }
 
     .mainTorneos {
         display: grid;
@@ -950,43 +997,43 @@ footer {
         width: 90%;
     }
 
-        /*/////////////     BUFFET   /////////////*/
+    /*/////////////     BUFFET   /////////////*/
 
-        .mainBuffet__comida__carrousel {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-image: url(../recursos/caja-dark-concrete-deg.jpg);
-        }
+    .mainBuffet__comida__carrousel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-image: url(../recursos/caja-dark-concrete-deg.jpg);
+    }
 
-        .mainBuffet__comida__carrousel__texto {
-            display: flex;
-            flex-direction: column;
-            padding: 1rem;
-            width: 90%;
-        }
-        
-        .mainBuffet__comida__carrousel__imagenes {
-            width: 80%;
-            padding: 1rem;
-        }
+    .mainBuffet__comida__carrousel__texto {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        width: 90%;
+    }
+    
+    .mainBuffet__comida__carrousel__imagenes {
+        width: 80%;
+        padding: 1rem;
+    }
 
-        .mainBuffet__bebidas__carrousel {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-image: url(../recursos/caja-dark-concrete-deg.jpg);
-        }
+    .mainBuffet__bebidas__carrousel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-image: url(../recursos/caja-dark-concrete-deg.jpg);
+    }
 
-        .mainBuffet__bebidas__carrousel__texto {
-            display: flex;
-            flex-direction: column;
-            width: 90%;
-        }
-        
-        .mainBuffet__bebidas__carrousel__imagenes {
-            width: 80%;
-        }
+    .mainBuffet__bebidas__carrousel__texto {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+    
+    .mainBuffet__bebidas__carrousel__imagenes {
+        width: 80%;
+    }
     
     .section__buffet__bebidas__caja img {
         width: 80%;
