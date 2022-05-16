@@ -48,18 +48,44 @@
         <img src="../recursos/top_home2.png" alt="Imagen del campo de juego"/>
     </div>
     <main class="mainContacto">
-        <section>
-            <h1 class="mainContacto__h1">¡HACE TU RESERVA O ENVIANOS TU CONSULTA!</h1>
-            <form class="mainContacto__formulario" method="post">
-                    <input class="mainContacto__formulario__nombre" name="nombre" placeholder="Su nombre"/>
-                    <input class="mainContacto__formulario__apellido" name="apellido" placeholder="Su apellido"/>
-                    <input class="mainContacto__formulario__telefono" name="telefono" placeholder="Su telefono"/>
-                    <input class="mainContacto__formulario__correo" name="email" placeholder="Su email"/>
-                    <input class="mainContacto__formulario__dia" name="dia" placeholder="Día de reserva"/>
-                    <input class="mainContacto__formulario__horario" name="horario" placeholder="Horario reserva"/>
-                    <textarea class="mainContacto__formulario__textArea" placeholder="Escriba aqui su mensaje." name="mensaje"></textarea>           
-                    <input class="mainContacto__formulario__enviarConsulta" type="submit" value="Enviar Consulta"/>
-            </form>
+        <section class="mainContacto__form">
+            <h1 class="mainContacto__h1">HACE TU RESERVA O ENVIANOS TU CONSULTA.</h1>
+            <form class="row g-3" method="post">
+                <div class="col-md-6">
+                    <label for="inputNombre" class="form-label text-white">Nombre</label>
+                    <input type="text" class="form-control" id="inputNombre">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputApellido" class="form-label text-white">Apellido</label>
+                    <input type="text" class="form-control" id="inputApellido">
+                </div>
+                <div class="col-12">
+                    <label for="inputTelefono" class="form-label text-white">Telefono</label>
+                    <input type="text" class="form-control" id="inputTelefono">
+                </div>
+                <div class="col-12">
+                    <label for="inputEmail" class="form-label text-white">Email</label>
+                    <input type="email" class="form-control" id="inputEmail">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputDia" class="form-label text-white">Día de Reserva</label>
+                    <input type="text" class="form-control" id="inputDia">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputHora" class="form-label text-white">Hora de Reserva</label>
+                    <input type="text" class="form-control" id="inputHora">
+                </div>
+                <div class="col-12">
+                    <label for="mainContacto__formulario__textArea" class="form-label text-white">Mensaje</label>
+                    <textarea class="form-control" rows="3"></textarea>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn mainContacto__formulario__enviarConsulta">Enviar Consulta</button>
+                </div>
+                </form>
+
+
+
         </section>
     </main>
     <footer class="footer">
@@ -72,5 +98,6 @@
             Todos los Derechos Reservados
         </p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
