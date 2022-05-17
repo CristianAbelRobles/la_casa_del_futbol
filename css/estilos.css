@@ -5,9 +5,6 @@
 }
 
 @import url('http://fonts.cdnfonts.com/css/dcc-ash');
-body {
-    background-color: black;
-}
 
 h1 {
     color: #0a9916;
@@ -23,6 +20,10 @@ h2 {
     font-family: 'DCC - Ash', sans-serif;
     font-weight: 400;
     font-size: 3rem;
+}
+
+.fBlack {
+    background-color: black;
 }
 
 .grid__container {
@@ -273,7 +274,6 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: black;
     height: 100px;
     background-color: #ccff33;
 }
@@ -283,11 +283,7 @@ footer {
 }
 
 /*/////////////     ESCUELA FUTBOL   /////////////*/
-/*
-.mainEscuela {
-    padding: 0rem 2rem;
-}
-*/
+
 .escuelaFutbol {
     display: flex;
     justify-content: space-around;
@@ -299,6 +295,7 @@ footer {
     flex-direction: column;
     padding: 1rem;
     width: 45%;
+    text-align: center;
 }
 
 .escuelaFutbol__presentacion p{
@@ -318,9 +315,10 @@ footer {
     display: flex;
     flex-direction: column;
     background-image: url(../recursos/section-separador.jpg);
+    background-size: cover;
     background-repeat: no-repeat;
     text-align: center;
-    padding-top: 8rem;
+    padding-top: 7rem;
     padding-bottom: 2rem;
 }
 
@@ -797,7 +795,7 @@ footer {
 
     .escuelaFutbol__imagen {
         padding: 1rem;
-        width: 100%;
+        width: 80%;
     }
 
     .dondeEstamos p{
@@ -974,7 +972,7 @@ footer {
 
     .escuelaFutbol__imagen {
         padding: 1rem;
-        width: 100%;
+        width: 70%;
     }
 
     .escuela_calendario__1 span {
