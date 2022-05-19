@@ -1,57 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../recursos/favicon.png"/>
-    <link rel="stylesheet" href="../css/estilos.css"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;600&display=swap" rel="stylesheet">
-</head>
-<body>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="recursos/favicon.png"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="../css/estilos.css"/>
+        <link href="http://fonts.cdnfonts.com/css/dcc-ash" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One:ital@0;1&family=Roboto:wght@500&display=swap" rel="stylesheet">
+        <title>La Casa del Futbol Prueba</title>
+    </head>
+<body class="fBlack">
     <header>
-        <div class="logo">
-            <img src="../recursos/logo_fav.png" alt="logo la casa del futbol"/>
-        </div>
-        <nav>
-            <ul class="ul__nav">
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="../pages/buffet.html">Buffet</a></li>
-                <li><a href="../pages/escuela_futbol.html">Escuela de Futbol</a></li>
-                <li><a href="../pages/torneos.html">Torneos</a></li>
-                <li><a href="../pages/contacto.html">Contacto</a></li>
-            </ul>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../recursos/logo_fav.png" alt="" width="80" class="d-inline-block align-text-center">La Casa del Futbol</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="buffet.html">Buffet</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="escuela_futbol.html">Escuela de Futbol</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="torneos.html">Torneos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.html">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
     <div class="top__img">
-        <img src="../recursos/top_home2.jpg" alt="Imagen del campo de juego"/>
+        <img src="../recursos/top_home2.png" alt="Imagen del campo de juego"/>
     </div>
     <main class="mainContacto">
-        <section>
-            <h1 class="mainContacto__h1">¡HACE TU RESERVA O ENVIANOS TU CONSULTA!</h1>
-            <form class="mainContacto__formulario" method="post">
-                    <input class="mainContacto__formulario__nombre" name="nombre" placeholder="Su nombre"/>
-                    <input class="mainContacto__formulario__apellido" name="apellido" placeholder="Su apellido"/>
-                    <input class="mainContacto__formulario__telefono" name="telefono" placeholder="Su telefono"/>
-                    <input class="mainContacto__formulario__correo" name="email" placeholder="Su email"/>
-                    <input class="mainContacto__formulario__dia" name="dia" placeholder="Día de reserva"/>
-                    <input class="mainContacto__formulario__horario" name="horario" placeholder="Horario reserva"/>
-                    <textarea class="mainContacto__formulario__textArea" placeholder="Escriba aqui su mensaje." name="mensaje"></textarea>           
-                    <input class="mainContacto__formulario__enviarConsulta" type="submit" value="Enviar Consulta"/>
+        <section class="mainContacto__form">
+            <h1 class="mainContacto__h1">HACE TU RESERVA O ENVIANOS UNA CONSULTA.</h1>
+            <form class="row g-3" method="post">
+                <div class="col-md-6">
+                    <label for="inputNombre" class="form-label text-white">Nombre</label>
+                    <input type="text" class="form-control" id="inputNombre">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputApellido" class="form-label text-white">Apellido</label>
+                    <input type="text" class="form-control" id="inputApellido">
+                </div>
+                <div class="col-12">
+                    <label for="inputTelefono" class="form-label text-white">Telefono</label>
+                    <input type="text" class="form-control" id="inputTelefono">
+                </div>
+                <div class="col-12">
+                    <label for="inputEmail" class="form-label text-white">Email</label>
+                    <input type="email" class="form-control" id="inputEmail">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputDia" class="form-label text-white">Día de Reserva</label>
+                    <input type="text" class="form-control" id="inputDia">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputHora" class="form-label text-white">Hora de Reserva</label>
+                    <input type="text" class="form-control" id="inputHora">
+                </div>
+                <div class="col-12">
+                    <label for="mainContacto__formulario__textArea" class="form-label text-white">Mensaje</label>
+                    <textarea class="form-control" rows="3"></textarea>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn mainContacto__formulario__enviarConsulta">Enviar Consulta</button>
+                </div>
             </form>
         </section>
     </main>
     <footer class="footer">
         <div>
-            <a href="https://www.facebook.com/LaCasaDelFutbol5"><img class="redes" src="../recursos/facebook.svg" alt="icono facebook"/></a>
-            <a href="https://www.instagram.com/la.casa_del.futbol/"><img class="redes" src="../recursos/instagram.svg" alt="icono instagram"/></a>
-            <a href="https://api.whatsapp.com/send?phone=+5401165804413"><img class="redes" src="../recursos/whatsapp.svg" alt="whatsapp"/></a>
+            <a href="https://www.facebook.com/LaCasaDelFutbol5" alt="icono de facebook" target="_blank"><img class="redes" src="../recursos/facebook.svg" alt="icono facebook"/></a>
+            <a href="https://www.instagram.com/la.casa_del.futbol/" alt="icono de instagram" target="_blank"><img class="redes" src="../recursos/instagram.svg" alt="icono instagram"/></a>
+            <a href="https://api.whatsapp.com/send?phone=+5401165804413" alt="icono de whatsapp" target="_blank"><img class="redes" src="../recursos/whatsapp.svg" alt="whatsapp"/></a>
         </div>
         <p>
             Todos los Derechos Reservados
         </p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
