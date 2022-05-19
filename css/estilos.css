@@ -4,6 +4,18 @@
     font-family: 'DM Sans', sans-serif;
 }
 
+.navLink {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #8cbb00;
+    text-decoration: none;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+}
+
+.navLink:hover {
+    color: #ccff33;
+}
+
 @import url('http://fonts.cdnfonts.com/css/dcc-ash');
 
 h1 {
