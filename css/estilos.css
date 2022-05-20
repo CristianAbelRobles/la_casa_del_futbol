@@ -4,18 +4,6 @@
     font-family: 'DM Sans', sans-serif;
 }
 
-.navLink {
-    display: block;
-    padding: 0.5rem 1rem;
-    color: #8cbb00;
-    text-decoration: none;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
-}
-
-.navLink:hover {
-    color: #ccff33;
-}
-
 @import url('http://fonts.cdnfonts.com/css/dcc-ash');
 
 h1 {
@@ -34,8 +22,28 @@ h2 {
     font-size: 3rem;
 }
 
+.navbar-brand img{
+    width: 5rem;
+}
+
+.navLink {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #8cbb00;
+    text-decoration: none;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+}
+
+.navLink:hover {
+    color: #ccff33;
+}
+
 .fBlack {
     background-color: black;
+}
+
+.top__img img{
+    width: 100%;
 }
 
 .grid__container {
@@ -48,62 +56,12 @@ h2 {
     padding: 0rem 2rem;
     
 }
-/* 
-header {
-    display: flex;
-    background-color: rgb(0, 0, 0);
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 100px;
-    padding: 0 4rem;
-}
-*/
-
-.logo img {
-    width: 80px; 
-}
-
-.ul__nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 2rem;
-    list-style-type: none;
-}
-
-.ul__nav li{
-    margin: 0 1rem;
-}
-
-.ul__nav li a{
-    text-decoration: none;
-    color: #f8f8f8;
-}
-
-.ul__nav li a:hover{
-    text-decoration: none;
-    color: #ccff33;
-}
-
-.top__img img{
-    width: 100%;
-}
-
-main {
-    /*
-    background-image: url(../recursos/pasto.jpg);
-    */
-    background-repeat: repeat;
-}
 
 .main__section__presentacion {
     display: flex;
     flex-direction: column;
     grid-area: main__section__presentacion;
     padding: 1rem;
-
     text-align: center;
 }
 
@@ -198,13 +156,6 @@ main {
     margin-bottom: 1rem;
 }
 
-.main__section__galeria {
-    display: flex;
-    padding: 1rem;
-    margin: 0 1rem;
-    justify-content: space-evenly;
-}
-
 .imgStilos {
     padding: 1rem;
     margin-bottom: 1rem;
@@ -266,13 +217,8 @@ main {
     margin-bottom: 2rem;
 }
 
-.dondeEstamos p{
+.dondeEstamos p {
     color: #f8f8f8;
-}
-
-.dondeEstamos span{
-    display: block;
-    margin-bottom: 0.3rem;
 }
 
 .mapa {
@@ -781,12 +727,6 @@ footer {
                             "mapa mapa";
     }
 
-    .ul__nav {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
-
     .main__section__presentacion h1{
         font-size: 4rem;
     }
@@ -808,10 +748,6 @@ footer {
     .escuelaFutbol__imagen {
         padding: 1rem;
         width: 80%;
-    }
-
-    .dondeEstamos p{
-        margin-bottom: 2rem;
     }
 
     /*/////////////     BUFFET   /////////////*/
@@ -880,29 +816,11 @@ footer {
                             "img4"
                             "dondeEstamos"
                             "mapa";
+        padding: 0rem 0rem 0rem 0rem;
     }
-/*
-    header {
-        display: flex;
-        background-color: rgb(0, 0, 0);
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        align-content: center;
-        height: 35vh;
-    }
-*/
 
     .navbar-brand {
         font-size: 1rem;
-    }
-
-    .ul__nav {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin: 0;
-        padding: 0;
     }
 
     h1{
@@ -919,12 +837,16 @@ footer {
         font-size: 1rem;
     }
 
-    .dondeEstamos h2{
-        margin: 2rem;
+    .main__section__servicios {
+        margin: 0rem;
+    }
+    
+    .main__actividades {
+        margin: 0rem;
     }
 
-    .dondeEstamos p{
-        margin-bottom: 2rem;
+    .dondeEstamos h2{
+        margin: 2rem;
     }
 
     /*/////////////     TORNEOS     /////////////*/
