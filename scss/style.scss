@@ -1,0 +1,422 @@
+@import 'variables';
+@import url('https://fonts.cdnfonts.com/css/dcc-ash');
+
+* { 
+    margin: 0px; 
+    padding: 0px;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.navbar-brand img{
+    width: 5rem;
+}
+
+.navLink {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #8cbb00;
+    text-decoration: none;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+}
+
+.navLink:hover {
+    color: #ccff33;
+}
+
+.fBlack {
+    background-color: black;
+}
+
+.top__img img{
+    width: 100%;
+}
+
+.titH1 {
+    margin-bottom: 2rem;
+    font-family: 'DCC - Ash', sans-serif;
+    font-weight: 400;
+    font-size: 5rem;
+    text-align: center;
+}
+
+.subH2 {
+    margin-bottom: 2rem;
+    font-family: 'DCC - Ash', sans-serif;
+    font-weight: 400;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.subH3 {
+    margin-bottom: 2rem;
+    font-family: 'DCC - Ash', sans-serif;
+    font-weight: 400;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.green {
+    color: #0a9916;
+}
+
+.white {
+    color: whitesmoke;
+}
+
+.grid__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "main__section__presentacion main__section__presentacion main__presentacion__img main__presentacion__img"
+                        "servicios servicios actividades actividades"
+                        "img1 img2 img3 img4"
+                        "dondeEstamos dondeEstamos mapa mapa";
+    padding: 0rem 2rem;
+    
+}
+
+.main__section__presentacion {
+    display: flex;
+    flex-direction: column;
+    grid-area: main__section__presentacion;
+    padding: 1rem;
+    text-align: center;
+}
+
+.main__section__presentacion p{
+    font-size: 1.5rem;
+    color: whitesmoke;
+}
+
+.main__presentacion__img {
+    grid-area: main__presentacion__img;
+    padding: 1rem;
+    align-self: center;
+}
+
+.main__presentacion__img img{
+    width: 100%;
+}
+
+.main__section__servicios {
+    grid-area: servicios;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(../recursos/caja-watercolor-deg.jpg);
+    background-size: cover;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.main__section__servicios ul {
+    list-style-type: none;
+    color: whitesmoke;
+}
+
+.main__section__servicios li {
+    font-size: 1.5rem;
+    color: whitesmoke;
+    margin-bottom: 1rem;
+}
+
+.main__actividades {
+    grid-area: actividades;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(../recursos/caja-watercolor-deg.jpg);
+    background-size: cover;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.main__actividades ul {
+    list-style-type: none;
+    color: whitesmoke;
+}
+
+.main__actividades li {
+    font-size: 1.5rem;
+    color: whitesmoke;
+    margin-bottom: 1rem;
+}
+
+.imgStilos {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    transform: scale(1);
+}
+
+.imgStilos:hover {
+    transform: scale(1.1);
+}
+
+.imgStilos img{
+    width: 100%;
+}
+
+.img1 {
+    grid-area: img1;
+}
+
+.img2 {
+    grid-area: img2;
+}
+
+.img3 {
+    grid-area: img3;
+}
+
+.img4 {
+    grid-area: img4;
+}
+
+.dondeEstamos {
+    grid-area: dondeEstamos;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #0a9916;
+    text-align: center;
+}
+
+.dondeEstamos p {
+    color: #f8f8f8;
+}
+
+.mapa {
+    grid-area: mapa;
+    margin: 0;
+    padding: 0;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    background-color: #ccff33;
+}
+
+.redes {
+    width: 2rem;
+}
+
+/*/////////////     BUFFET     /////////////*/
+
+.mainBuffet {
+    padding: 0rem 1rem;
+}
+
+.mainBuffet__comida__carrousel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url(../recursos/caja-dark-concrete-deg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 2rem;
+}
+
+.mainBuffet__comida__carrousel__texto {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: 45%;
+}
+
+.mainBuffet__comida__carrousel__imagenes {
+    width: 45%;
+    padding: 1rem;
+}
+
+.mainBuffet__bebidas__carrousel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url(../recursos/caja-dark-concrete-deg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.mainBuffet__bebidas__carrousel__texto {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: 45%;
+}
+
+.mainBuffet__bebidas__carrousel__imagenes {
+    width: 45%;
+    padding: 1rem;
+}
+
+.mainBuffet p {
+    text-align: center;
+    color: whitesmoke;
+    font-size: 1.5rem;
+}
+
+.section__buffet__comidas {
+    background-color: aqua;
+    padding: 2rem 1rem 2rem 1rem;
+    margin: 2rem 0rem 2rem 0rem;
+}
+
+.section__buffet__comidas__caja {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.section__buffet__comidas__caja img {
+    width: 20%;
+    border: 4px solid whitesmoke;
+    transform: scale(1);
+}
+
+.section__buffet__comidas__caja img:hover {
+    transform: scale(1.1);
+}
+
+.section__buffet__bebidas {
+    background-color: aquamarine;
+    padding: 2rem 1rem 2rem 1rem;
+    margin: 2rem 0rem 2rem 0rem;
+}
+
+.section__buffet__bebidas__caja {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.section__buffet__bebidas__caja img {
+    width: 20%;
+    border: 4px solid whitesmoke;
+}
+
+/*/////////////     ESCUELA FUTBOL   /////////////*/
+
+.escuelaFutbol {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.escuelaFutbol__presentacion {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: 45%;
+    text-align: center;
+}
+
+.escuelaFutbol__presentacion p{
+    color: whitesmoke;
+    font-size: 1.5rem;
+}
+
+.escuelaFutbol__imagen {
+    padding: 1rem;
+    width: 45%;
+}
+
+.escuelaFutbol__imagen img{
+    width: 100%;
+}
+
+.escuela_calendario {
+    display: flex;
+    flex-direction: column;
+    background-image: url(../recursos/section-separador.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding-top: 7rem;
+    padding-bottom: 2rem;
+}
+
+/*/////////////     TORNEOS     /////////////*/
+
+.mainTorneoBootstrap__section {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2rem;
+}
+
+.btn-torneo {
+    color: whitesmoke;
+    background-color: #8cbb00;
+    border: 1px solid #5c7a00;
+}
+
+.btn-torneo:hover {
+    background-color: #b3ef00;
+}
+
+.mainTorneoBootstrap__section__tarjeta {
+    width: 45%;
+    background-image: url(../recursos/caja-dark-concrete-deg.jpg);
+    background-size: cover;
+}
+
+.mainTorneoBootstrap__section__tarjeta p{
+    color:whitesmoke;
+}
+
+.mainTorneoBootstrap__section__tarjeta h5{
+    font-family: 'DCC - Ash', sans-serif;
+    color:whitesmoke;
+    margin: 1rem 0rem;
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+.mainTorneos__section__comodidades {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: black;
+    color: #ccff33;
+    text-align: center;
+}
+
+.mainTorneos__section__comodidades__div {
+    width: 200px;
+    padding: 1rem;
+}
+
+.mainTorneos__section__comodidades__div img{
+    width: 80px;
+}
+
+/*//////////////     CONTACTO Y RESERVAS     /////////////*/
+
+.mainContacto {
+    padding: 1rem 2rem;
+}
+
+.mainContacto__form{
+    background-image: url(../recursos/caja-dark-concrete-deg.jpg); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 2px solid green;
+}
+
+.mainContacto section{
+    padding: 1rem 2rem;
+    border-radius: 10px;
+}
+
+.mainContacto__formulario__enviarConsulta {
+    font-size: 1.2rem;
+    border: none;
+    margin-bottom: 1rem;
+    width: 100%;
+    background: #5aaf45; 
+}
