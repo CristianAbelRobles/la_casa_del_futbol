@@ -14,12 +14,12 @@
 .navLink {
     display: block;
     padding: 0.5rem 1rem;
-    color: #8cbb00;
+    color: $verde;
     text-decoration: none;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
 
     &:hover {
-        color: #ccff33;
+        color: $verde-claro;
     }
 }
 
@@ -57,11 +57,11 @@
 }
 
 .green {
-    color: #0a9916;
+    color: $verde;
 }
 
 .white {
-    color: whitesmoke;
+    color: $blanco;
 }
 
 .grid__container {
@@ -82,7 +82,7 @@
 
         p {
             font-size: 1.5rem;
-            color: whitesmoke;
+            color: $blanco;
         }
     }
 
@@ -108,12 +108,11 @@
     
         ul {
             list-style-type: none;
-            color: whitesmoke;
         
             li {
                 font-size: 1.5rem;
-                color: whitesmoke;
                 margin-bottom: 1rem;
+                color: $blanco;
             }
         }
     }
@@ -130,11 +129,10 @@
     
         ul {
             list-style-type: none;
-            color: whitesmoke;
         
             li {
                 font-size: 1.5rem;
-                color: whitesmoke;
+                color: $blanco;
                 margin-bottom: 1rem;
             }
         }
@@ -162,11 +160,11 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        background-color: #0a9916;
+        background-color: $verde;
         text-align: center;
     
         p {
-            color: #f8f8f8;
+            color: $blanco;
         }
     }
     
@@ -197,7 +195,7 @@ footer {
     justify-content: center;
     align-items: center;
     height: 100px;
-    background-color: #ccff33;
+    background-color: $verde-claro;
 }
 
 .redes {
@@ -226,7 +224,7 @@ footer {
             width: 45%;
             p {
                 text-align: center;
-                color: whitesmoke;
+                color: $blanco;
                 font-size: 1.5rem;
             }
         }
@@ -253,7 +251,7 @@ footer {
             width: 45%;
             p {
                 text-align: center;
-                color: whitesmoke;
+                color: $blanco;
                 font-size: 1.5rem;
             }
         }
@@ -280,7 +278,7 @@ footer {
         text-align: center;
 
         p {
-            color: whitesmoke;
+            color: $blanco;
             font-size: 1.5rem;
         }
     }
@@ -320,12 +318,12 @@ footer {
 
         p {
             font-size: 1rem;
-            color:whitesmoke;
+            color:$blanco;
         }
 
         h5 {
             font-family: 'DCC - Ash', sans-serif;
-            color:whitesmoke;
+            color:$blanco;
             margin: 1rem 0rem;
             font-weight: 400;
             font-size: 2rem;
@@ -335,12 +333,12 @@ footer {
 }
 
 .btn-torneo {
-    color: whitesmoke;
-    background-color: #8cbb00;
-    border: 1px solid #5c7a00;
+    color: $blanco;
+    background-color: $verde;
+    border: 1px solid $verde-oscuro;
 
     &:hover {
-        background-color: #b3ef00;
+        background-color: $verde-claro;
     }
 }
 
@@ -350,7 +348,7 @@ footer {
     justify-content: space-evenly;
     align-items: center;
     background-color: black;
-    color: #ccff33;
+    color: $verde-claro;
     text-align: center;
 
     &__div {
@@ -385,10 +383,10 @@ footer {
     border: none;
     margin-bottom: 1rem;
     width: 100%;
-    background-color: #8cbb00;
+    background-color: $verde;
 
     &:hover {
-        background-color: #b3ef00;
+        background-color: $verde-claro;
     }
 }
 

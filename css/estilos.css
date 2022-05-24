@@ -44,10 +44,10 @@
   text-align: center; }
 
 .green {
-  color: #0a9916; }
+  color: #8cbb00; }
 
 .white {
-  color: whitesmoke; }
+  color: #f8f8f8; }
 
 .grid__container {
   display: grid;
@@ -62,7 +62,7 @@
     text-align: center; }
     .grid__container .main__section__presentacion p {
       font-size: 1.5rem;
-      color: whitesmoke; }
+      color: #f8f8f8; }
   .grid__container .main__presentacion__img {
     grid-area: main__presentacion__img;
     padding: 1rem;
@@ -79,12 +79,11 @@
     padding: 1rem;
     margin: 1rem; }
     .grid__container .main__section__servicios ul {
-      list-style-type: none;
-      color: whitesmoke; }
+      list-style-type: none; }
       .grid__container .main__section__servicios ul li {
         font-size: 1.5rem;
-        color: whitesmoke;
-        margin-bottom: 1rem; }
+        margin-bottom: 1rem;
+        color: #f8f8f8; }
   .grid__container .main__actividades {
     grid-area: actividades;
     display: flex;
@@ -95,11 +94,10 @@
     padding: 1rem;
     margin: 1rem; }
     .grid__container .main__actividades ul {
-      list-style-type: none;
-      color: whitesmoke; }
+      list-style-type: none; }
       .grid__container .main__actividades ul li {
         font-size: 1.5rem;
-        color: whitesmoke;
+        color: #f8f8f8;
         margin-bottom: 1rem; }
   .grid__container .img1 {
     grid-area: img1; }
@@ -114,7 +112,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: #0a9916;
+    background-color: #8cbb00;
     text-align: center; }
     .grid__container .dondeEstamos p {
       color: #f8f8f8; }
@@ -162,7 +160,7 @@ footer {
       width: 45%; }
       .mainBuffet__comida__carrousel__texto p {
         text-align: center;
-        color: whitesmoke;
+        color: #f8f8f8;
         font-size: 1.5rem; }
     .mainBuffet__comida__carrousel__imagenes {
       width: 45%;
@@ -182,7 +180,7 @@ footer {
       width: 45%; }
       .mainBuffet__bebidas__carrousel__texto p {
         text-align: center;
-        color: whitesmoke;
+        color: #f8f8f8;
         font-size: 1.5rem; }
     .mainBuffet__bebidas__carrousel__imagenes {
       width: 45%;
@@ -200,7 +198,7 @@ footer {
     width: 45%;
     text-align: center; }
     .escuelaFutbol__presentacion p {
-      color: whitesmoke;
+      color: #f8f8f8;
       font-size: 1.5rem; }
   .escuelaFutbol__imagen {
     padding: 1rem;
@@ -229,20 +227,20 @@ footer {
     background-size: cover; }
     .mainTorneoBootstrap__section__tarjeta p {
       font-size: 1rem;
-      color: whitesmoke; }
+      color: #f8f8f8; }
     .mainTorneoBootstrap__section__tarjeta h5 {
       font-family: 'DCC - Ash', sans-serif;
-      color: whitesmoke;
+      color: #f8f8f8;
       margin: 1rem 0rem;
       font-weight: 400;
       font-size: 2rem; }
 
 .btn-torneo {
-  color: whitesmoke;
+  color: #f8f8f8;
   background-color: #8cbb00;
-  border: 1px solid #5c7a00; }
+  border: 1px solid #0a9916; }
   .btn-torneo:hover {
-    background-color: #b3ef00; }
+    background-color: #ccff33; }
 
 .mainTorneos__section__comodidades {
   display: flex;
@@ -277,7 +275,7 @@ footer {
   width: 100%;
   background-color: #8cbb00; }
   .mainContacto__formulario__enviarConsulta:hover {
-    background-color: #b3ef00; }
+    background-color: #ccff33; }
 
 /*//////////////// MEDIAQUERIES ////////////////*/
 @media (min-width: 541px) and (max-width: 720px) {
