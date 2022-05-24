@@ -17,11 +17,12 @@
     color: #8cbb00;
     text-decoration: none;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+
+    &:hover {
+        color: #ccff33;
+    }
 }
 
-.navLink:hover {
-    color: #ccff33;
-}
 
 .fBlack {
     background-color: black;
@@ -72,122 +73,122 @@
                         "dondeEstamos dondeEstamos mapa mapa";
     padding: 0rem 2rem;
     
-}
+    .main__section__presentacion {
+        display: flex;
+        flex-direction: column;
+        grid-area: main__section__presentacion;
+        padding: 1rem;
+        text-align: center;
 
-.main__section__presentacion {
-    display: flex;
-    flex-direction: column;
-    grid-area: main__section__presentacion;
-    padding: 1rem;
-    text-align: center;
-}
+        p {
+            font-size: 1.5rem;
+            color: whitesmoke;
+        }
+    }
 
-.main__section__presentacion p{
-    font-size: 1.5rem;
-    color: whitesmoke;
-}
+    .main__presentacion__img {
+        grid-area: main__presentacion__img;
+        padding: 1rem;
+        align-self: center;
+    
+        img{
+            width: 100%;
+        }
+    }
 
-.main__presentacion__img {
-    grid-area: main__presentacion__img;
-    padding: 1rem;
-    align-self: center;
-}
+    .main__section__servicios {
+        grid-area: servicios;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-image: url(../recursos/caja-watercolor-deg.jpg);
+        background-size: cover;
+        padding: 1rem;
+        margin: 1rem;
+    
+        ul {
+            list-style-type: none;
+            color: whitesmoke;
+        
+            li {
+                font-size: 1.5rem;
+                color: whitesmoke;
+                margin-bottom: 1rem;
+            }
+        }
+    }
 
-.main__presentacion__img img{
-    width: 100%;
-}
-
-.main__section__servicios {
-    grid-area: servicios;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-image: url(../recursos/caja-watercolor-deg.jpg);
-    background-size: cover;
-    padding: 1rem;
-    margin: 1rem;
-}
-
-.main__section__servicios ul {
-    list-style-type: none;
-    color: whitesmoke;
-}
-
-.main__section__servicios li {
-    font-size: 1.5rem;
-    color: whitesmoke;
-    margin-bottom: 1rem;
-}
-
-.main__actividades {
-    grid-area: actividades;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-image: url(../recursos/caja-watercolor-deg.jpg);
-    background-size: cover;
-    padding: 1rem;
-    margin: 1rem;
-}
-
-.main__actividades ul {
-    list-style-type: none;
-    color: whitesmoke;
-}
-
-.main__actividades li {
-    font-size: 1.5rem;
-    color: whitesmoke;
-    margin-bottom: 1rem;
+    .main__actividades {
+        grid-area: actividades;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-image: url(../recursos/caja-watercolor-deg.jpg);
+        background-size: cover;
+        padding: 1rem;
+        margin: 1rem;
+    
+        ul {
+            list-style-type: none;
+            color: whitesmoke;
+        
+            li {
+                font-size: 1.5rem;
+                color: whitesmoke;
+                margin-bottom: 1rem;
+            }
+        }
+    
+    }
+    
+    .img1 {
+        grid-area: img1;
+    }
+    
+    .img2 {
+        grid-area: img2;
+    }
+    
+    .img3 {
+        grid-area: img3;
+    }
+    
+    .img4 {
+        grid-area: img4;
+    }
+    
+    .dondeEstamos {
+        grid-area: dondeEstamos;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #0a9916;
+        text-align: center;
+    
+        p {
+            color: #f8f8f8;
+        }
+    }
+    
+    .mapa {
+        grid-area: mapa;
+        margin: 0;
+        padding: 0;
+    }
 }
 
 .imgStilos {
     padding: 1rem;
     margin-bottom: 1rem;
     transform: scale(1);
-}
 
-.imgStilos:hover {
-    transform: scale(1.1);
-}
+    &:hover {
+        transform: scale(1.1);
+    }
 
-.imgStilos img{
-    width: 100%;
-}
-
-.img1 {
-    grid-area: img1;
-}
-
-.img2 {
-    grid-area: img2;
-}
-
-.img3 {
-    grid-area: img3;
-}
-
-.img4 {
-    grid-area: img4;
-}
-
-.dondeEstamos {
-    grid-area: dondeEstamos;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: #0a9916;
-    text-align: center;
-}
-
-.dondeEstamos p {
-    color: #f8f8f8;
-}
-
-.mapa {
-    grid-area: mapa;
-    margin: 0;
-    padding: 0;
+    img{
+        width: 100%;
+    }
 }
 
 footer {
@@ -207,96 +208,61 @@ footer {
 
 .mainBuffet {
     padding: 0rem 1rem;
-}
 
-.mainBuffet__comida__carrousel {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    background-image: url(../recursos/caja-dark-concrete-deg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin-bottom: 2rem;
-}
+    &__comida__carrousel {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-image: url(../recursos/caja-dark-concrete-deg.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-bottom: 2rem;
 
-.mainBuffet__comida__carrousel__texto {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    width: 45%;
-}
+        &__texto {
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+            width: 45%;
+            p {
+                text-align: center;
+                color: whitesmoke;
+                font-size: 1.5rem;
+            }
+        }
 
-.mainBuffet__comida__carrousel__imagenes {
-    width: 45%;
-    padding: 1rem;
-}
+        &__imagenes {
+            width: 45%;
+            padding: 1rem;
+        }
+    }
 
-.mainBuffet__bebidas__carrousel {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    background-image: url(../recursos/caja-dark-concrete-deg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.mainBuffet__bebidas__carrousel__texto {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    width: 45%;
-}
-
-.mainBuffet__bebidas__carrousel__imagenes {
-    width: 45%;
-    padding: 1rem;
-}
-
-.mainBuffet p {
-    text-align: center;
-    color: whitesmoke;
-    font-size: 1.5rem;
-}
-
-.section__buffet__comidas {
-    background-color: aqua;
-    padding: 2rem 1rem 2rem 1rem;
-    margin: 2rem 0rem 2rem 0rem;
-}
-
-.section__buffet__comidas__caja {
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-}
-
-.section__buffet__comidas__caja img {
-    width: 20%;
-    border: 4px solid whitesmoke;
-    transform: scale(1);
-}
-
-.section__buffet__comidas__caja img:hover {
-    transform: scale(1.1);
-}
-
-.section__buffet__bebidas {
-    background-color: aquamarine;
-    padding: 2rem 1rem 2rem 1rem;
-    margin: 2rem 0rem 2rem 0rem;
-}
-
-.section__buffet__bebidas__caja {
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-}
-
-.section__buffet__bebidas__caja img {
-    width: 20%;
-    border: 4px solid whitesmoke;
+    &__bebidas__carrousel {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-image: url(../recursos/caja-dark-concrete-deg.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    
+        &__texto {
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+            width: 45%;
+            p {
+                text-align: center;
+                color: whitesmoke;
+                font-size: 1.5rem;
+            }
+        }
+    
+        &__imagenes {
+            width: 45%;
+            padding: 1rem;
+        }
+    }
 }
 
 /*/////////////     ESCUELA FUTBOL   /////////////*/
@@ -305,28 +271,28 @@ footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
-}
 
-.escuelaFutbol__presentacion {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    width: 45%;
-    text-align: center;
-}
+    &__presentacion {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        width: 45%;
+        text-align: center;
 
-.escuelaFutbol__presentacion p{
-    color: whitesmoke;
-    font-size: 1.5rem;
-}
+        p {
+            color: whitesmoke;
+            font-size: 1.5rem;
+        }
+    }
 
-.escuelaFutbol__imagen {
-    padding: 1rem;
-    width: 45%;
-}
-
-.escuelaFutbol__imagen img{
-    width: 100%;
+    &__imagen {
+        padding: 1rem;
+        width: 45%;
+    
+        img {
+            width: 100%;
+        }
+    }
 }
 
 .escuela_calendario {
@@ -346,34 +312,36 @@ footer {
     display: flex;
     flex-direction: row;
     margin-bottom: 2rem;
+
+    &__tarjeta {
+        width: 45%;
+        background-image: url(../recursos/caja-dark-concrete-deg.jpg);
+        background-size: cover;
+
+        p {
+            font-size: 1rem;
+            color:whitesmoke;
+        }
+
+        h5 {
+            font-family: 'DCC - Ash', sans-serif;
+            color:whitesmoke;
+            margin: 1rem 0rem;
+            font-weight: 400;
+            font-size: 2rem;
+        }
+    }
+
 }
 
 .btn-torneo {
     color: whitesmoke;
     background-color: #8cbb00;
     border: 1px solid #5c7a00;
-}
 
-.btn-torneo:hover {
-    background-color: #b3ef00;
-}
-
-.mainTorneoBootstrap__section__tarjeta {
-    width: 45%;
-    background-image: url(../recursos/caja-dark-concrete-deg.jpg);
-    background-size: cover;
-}
-
-.mainTorneoBootstrap__section__tarjeta p{
-    color:whitesmoke;
-}
-
-.mainTorneoBootstrap__section__tarjeta h5{
-    font-family: 'DCC - Ash', sans-serif;
-    color:whitesmoke;
-    margin: 1rem 0rem;
-    font-weight: 400;
-    font-size: 2rem;
+    &:hover {
+        background-color: #b3ef00;
+    }
 }
 
 .mainTorneos__section__comodidades {
@@ -384,33 +352,32 @@ footer {
     background-color: black;
     color: #ccff33;
     text-align: center;
-}
 
-.mainTorneos__section__comodidades__div {
-    width: 200px;
-    padding: 1rem;
-}
-
-.mainTorneos__section__comodidades__div img{
-    width: 80px;
+    &__div {
+        width: 200px;
+        padding: 1rem;
+        img {
+            width: 80px;
+        }
+    }
 }
 
 /*//////////////     CONTACTO Y RESERVAS     /////////////*/
 
 .mainContacto {
     padding: 1rem 2rem;
-}
 
-.mainContacto__form{
-    background-image: url(../recursos/caja-dark-concrete-deg.jpg); 
-    background-repeat: no-repeat;
-    background-size: cover;
-    border: 2px solid green;
-}
+    section {
+        padding: 1rem 2rem;
+        border-radius: 10px;
+    }
 
-.mainContacto section{
-    padding: 1rem 2rem;
-    border-radius: 10px;
+    &__form{
+        background-image: url(../recursos/caja-dark-concrete-deg.jpg); 
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: 2px solid green;
+    }
 }
 
 .mainContacto__formulario__enviarConsulta {
@@ -418,263 +385,13 @@ footer {
     border: none;
     margin-bottom: 1rem;
     width: 100%;
-    background: #5aaf45; 
+    background-color: #8cbb00;
+
+    &:hover {
+        background-color: #b3ef00;
+    }
 }
 
-/*///////////////////////////////////////////////*/
-/*/////////////     RESPONSIVE     /////////////*/
-/*/////////////////////////////////////////////*/
+/*//////////////// MEDIAQUERIES ////////////////*/
 
-@media (min-width: 541px) and (max-width: 720px) {
-    .grid__container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: "main__section__presentacion main__section__presentacion"
-                            "main__presentacion__img main__presentacion__img"
-                            "servicios servicios"
-                            "actividades actividades"
-                            "img1 img2"
-                            "img3 img4"
-                            "dondeEstamos dondeEstamos"
-                            "mapa mapa";
-    }
-
-    .titH1 {
-        font-size: 4rem;
-    }
-    
-    .subH2 {
-        font-size: 2.5rem;
-    }
-    
-    .subH3 {
-        font-size: 2rem;
-    }
-
-    /*/////////////     ESCUELA FUTBOL   /////////////*/
-
-    .escuelaFutbol {
-        flex-direction: column;
-    }
-
-    .escuelaFutbol__presentacion {
-        width: 90%;
-    }
-
-    .escuelaFutbol__imagen {
-        padding: 1rem;
-        width: 80%;
-    }
-
-    /*/////////////     BUFFET   /////////////*/
-
-    .mainBuffet__comida__carrousel {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-image: url(../recursos/caja-dark-concrete-deg.jpg);
-    }
-
-    .mainBuffet__comida__carrousel__texto {
-        display: flex;
-        flex-direction: column;
-        padding: 1rem;
-        width: 90%;
-    }
-    
-    .mainBuffet__comida__carrousel__imagenes {
-        width: 80%;
-        padding: 1rem;
-    }
-
-    .mainBuffet__bebidas__carrousel {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-image: url(../recursos/caja-dark-concrete-deg.jpg);
-    }
-
-    .mainBuffet__bebidas__carrousel__texto {
-        display: flex;
-        flex-direction: column;
-        width: 90%;
-    }
-    
-    .mainBuffet__bebidas__carrousel__imagenes {
-        width: 80%;
-    }
-
-    /*/////////////////  TORNEO   /////////////////*/
-
-    .mainTorneoBootstrap__section {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .mainTorneoBootstrap__section__tarjeta {
-        width: 90%;
-        margin-bottom: 2rem;
-    }
-    
-}
-
-@media (max-width: 540px) {
-    .grid__container {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-areas: "main__section__presentacion"
-                            "main__presentacion__img"
-                            "servicios"
-                            "actividades"
-                            "img1"
-                            "img2"
-                            "img3"
-                            "img4"
-                            "dondeEstamos"
-                            "mapa";
-        padding: 0rem 0rem 0rem 0rem;
-    }
-
-    .navbar-brand {
-        font-size: 1rem;
-    }
-
-    .titH1 {
-        font-size: 3rem;
-    }
-    
-    .subH2 {
-        font-size: 2rem;
-    }
-    
-    .subH3 {
-        font-size: 1.5rem;
-    }
-
-    .main__section__presentacion P{
-        font-size: 1.5rem;
-    }
-
-    .main__section__servicios {
-        margin: 0rem;
-    }
-    
-    .main__actividades {
-        margin: 0rem;
-    }
-
-    /*/////////////     TORNEOS     /////////////*/
-
-    .mainTorneoBootstrap__section {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .mainTorneoBootstrap__section__tarjeta {
-        width: 90%;
-        margin-bottom: 2rem;
-    }
-
-    .mainTorneos {
-        display: grid;
-        grid-template-rows: 0.8fr 0.8fr 0.1fr;
-        grid-template-columns: auto;
-        grid-template-areas: "mainTorneos__section__amateurs" 
-                            "mainTorneos__section__tuTorneo"
-                            "mainTorneos__section__mensaje"
-                            "mainTorneos__section__comodidades";
-    }
-
-    .mainTorneos__section__amateurs img{
-        width: 65%;
-    }
-
-    .mainTorneos__section__tuTorneo img{
-        width: 65%;
-    }
-
-    .mainTorneos__section__comodidades {
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-    }
-
-    .mainTorneos__section__comodidades__div {
-
-        padding: 1rem;
-    }
-
-    .mainTorneos__section__comodidades img{
-        width: 60px;
-    }
-
-    /*/////////////     ESCUELA FUTBOL   /////////////*/
-
-    .escuelaFutbol {
-        flex-direction: column;
-    }
-
-    .escuelaFutbol__presentacion {
-        width: 90%;
-    }
-
-    .escuelaFutbol__imagen {
-        padding: 1rem;
-        width: 70%;
-    }
-
-    /*/////////////     BUFFET   /////////////*/
-
-    .mainBuffet__comida__carrousel {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-image: url(../recursos/caja-dark-concrete-deg.jpg);
-    }
-
-    .mainBuffet__comida__carrousel__texto {
-        display: flex;
-        flex-direction: column;
-        padding: 1rem;
-        width: 90%;
-    }
-    
-    .mainBuffet__comida__carrousel__imagenes {
-        width: 80%;
-        padding: 1rem;
-    }
-
-    .mainBuffet__bebidas__carrousel {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-image: url(../recursos/caja-dark-concrete-deg.jpg);
-    }
-
-    .mainBuffet__bebidas__carrousel__texto {
-        display: flex;
-        flex-direction: column;
-        width: 90%;
-    }
-    
-    .mainBuffet__bebidas__carrousel__imagenes {
-        width: 80%;
-    }
-    
-    .section__buffet__bebidas__caja img {
-        width: 80%;
-    }
-
-    /*/////////////////  CONTACTO Y RESERVAS   /////////////////*/
-    
-    .mainContacto {
-        padding: 0;
-    }
-
-    .mainContacto__form{
-        border: none;
-    }
-    .mainContacto section{
-        border-radius: 0;
-    }
-}
+@import 'mediaqueries';
