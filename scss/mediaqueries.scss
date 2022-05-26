@@ -10,6 +10,8 @@
                             "img3 img4"
                             "dondeEstamos dondeEstamos"
                             "mapa mapa";
+        padding-left: 0rem;
+        padding-right: 0rem;
     }
 
     .titH1 {
@@ -22,6 +24,14 @@
     
     .subH3 {
         font-size: 2rem;
+    }
+
+    .main__section__servicios {
+        margin: 0rem;
+    }
+    
+    .main__actividades {
+        margin: 0rem;
     }
 
     /*/////////////     ESCUELA FUTBOL   /////////////*/

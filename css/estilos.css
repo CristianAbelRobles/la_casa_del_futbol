@@ -112,9 +112,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 2rem;
+    background-image: url(../recursos/la_casa_del_futbol_transparente.png);
     background-color: #8cbb00;
     text-align: center; }
     .grid__container .dondeEstamos p {
+      font-size: 1.2rem;
       color: #f8f8f8; }
   .grid__container .mapa {
     grid-area: mapa;
@@ -209,9 +212,10 @@ footer {
 .escuela_calendario {
   display: flex;
   flex-direction: column;
-  background-image: url(../recursos/section-separador.jpg);
-  background-size: cover;
+  background-image: url(../recursos/separador_3_illustrator.png);
+  background-size: auto;
   background-repeat: no-repeat;
+  background-color: white;
   text-align: center;
   padding-top: 7rem;
   padding-bottom: 2rem; }
@@ -282,13 +286,19 @@ footer {
   .grid__container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: "main__section__presentacion main__section__presentacion" "main__presentacion__img main__presentacion__img" "servicios servicios" "actividades actividades" "img1 img2" "img3 img4" "dondeEstamos dondeEstamos" "mapa mapa"; }
+    grid-template-areas: "main__section__presentacion main__section__presentacion" "main__presentacion__img main__presentacion__img" "servicios servicios" "actividades actividades" "img1 img2" "img3 img4" "dondeEstamos dondeEstamos" "mapa mapa";
+    padding-left: 0rem;
+    padding-right: 0rem; }
   .titH1 {
     font-size: 4rem; }
   .subH2 {
     font-size: 2.5rem; }
   .subH3 {
     font-size: 2rem; }
+  .main__section__servicios {
+    margin: 0rem; }
+  .main__actividades {
+    margin: 0rem; }
   /*/////////////     ESCUELA FUTBOL   /////////////*/
   .escuelaFutbol {
     flex-direction: column; }
