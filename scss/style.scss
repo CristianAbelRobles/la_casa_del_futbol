@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'sasscript';
 @import url('https://fonts.cdnfonts.com/css/dcc-ash');
 
 * { 
@@ -181,10 +182,9 @@
 .imgStilos {
     padding: 1rem;
     margin-bottom: 1rem;
-    transform: scale(1);
 
     &:hover {
-        transform: scale(1.1);
+        border: 3px solid $verde-claro;
     }
 
     img{

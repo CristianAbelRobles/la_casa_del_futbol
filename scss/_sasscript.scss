@@ -1,0 +1,12 @@
+@mixin imgHome {
+    padding: 1rem;
+    margin-bottom: 1rem;
+
+    &:hover {
+        border: 3px solid $verde-claro;
+    }
+
+    img{
+        width: 100%;
+    }
+}

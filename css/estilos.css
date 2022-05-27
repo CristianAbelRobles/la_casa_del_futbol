@@ -1,3 +1,7 @@
+@charset "UTF-8";
+/* COLORES*/
+/* LETRAS */
+/* TAMAÑOS*/
 @import url("https://fonts.cdnfonts.com/css/dcc-ash");
 * {
   margin: 0px;
@@ -126,10 +130,9 @@
 
 .imgStilos {
   padding: 1rem;
-  margin-bottom: 1rem;
-  transform: scale(1); }
+  margin-bottom: 1rem; }
   .imgStilos:hover {
-    transform: scale(1.1); }
+    border: 3px solid #ccff33; }
   .imgStilos img {
     width: 100%; }
 
