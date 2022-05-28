@@ -104,13 +104,37 @@
         color: #f8f8f8;
         margin-bottom: 1rem; }
   .grid__container .img1 {
-    grid-area: img1; }
+    grid-area: img1;
+    padding: 1rem;
+    margin-bottom: 1rem; }
+    .grid__container .img1:hover {
+      border: 3px solid #ccff33; }
+    .grid__container .img1 img {
+      width: 100%; }
   .grid__container .img2 {
-    grid-area: img2; }
+    grid-area: img2;
+    padding: 1rem;
+    margin-bottom: 1rem; }
+    .grid__container .img2:hover {
+      border: 3px solid #ccff33; }
+    .grid__container .img2 img {
+      width: 100%; }
   .grid__container .img3 {
-    grid-area: img3; }
+    grid-area: img3;
+    padding: 1rem;
+    margin-bottom: 1rem; }
+    .grid__container .img3:hover {
+      border: 3px solid #ccff33; }
+    .grid__container .img3 img {
+      width: 100%; }
   .grid__container .img4 {
-    grid-area: img4; }
+    grid-area: img4;
+    padding: 1rem;
+    margin-bottom: 1rem; }
+    .grid__container .img4:hover {
+      border: 3px solid #ccff33; }
+    .grid__container .img4 img {
+      width: 100%; }
   .grid__container .dondeEstamos {
     grid-area: dondeEstamos;
     display: flex;
@@ -127,14 +151,6 @@
     grid-area: mapa;
     margin: 0;
     padding: 0; }
-
-.imgStilos {
-  padding: 1rem;
-  margin-bottom: 1rem; }
-  .imgStilos:hover {
-    border: 3px solid #ccff33; }
-  .imgStilos img {
-    width: 100%; }
 
 footer {
   display: flex;
