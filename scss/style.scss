@@ -296,8 +296,44 @@ footer {
     background-color: white;
     text-align: center;
     padding-top: 7rem;
-    padding-bottom: 2rem;
+    padding-bottom: 5rem;
 }
+
+.section__escuelaFutbol {
+    background-image: url(../recursos/separador_4.png);
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-color: black;
+    padding: 5rem 0rem 5rem 0rem;
+
+    &__galeria {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    
+        $galeriaEscuelas: (caja1: _1, caja2: _2, caja3: _3, caja4: _4, caja5: _5, caja6: _6,caja7: _7, caja8: _8, caja9: _9, caja10: _10, caja11: _11, caja12: _12);
+        
+        @each $key, $numero in $galeriaEscuelas {
+            .section__escuelaFutbol__galeria__#{$key} {
+                width: 250px;
+                height: 250px;
+                background-image: url(../recursos/escuela_futbol/escuela_futbol#{$numero}.jpg);
+                background-size: cover;
+                border: 3px solid $verde-oscuro;
+                margin: 1rem;
+    
+                &:hover {
+                    border: 3px solid $verde-claro;
+                }
+            }
+            
+        }
+    }
+}
+
+
 
 /*/////////////     TORNEOS     /////////////*/
 

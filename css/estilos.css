@@ -237,7 +237,128 @@ footer {
   background-color: white;
   text-align: center;
   padding-top: 7rem;
-  padding-bottom: 2rem; }
+  padding-bottom: 5rem; }
+
+.section__escuelaFutbol {
+  background-image: url(../recursos/separador_4.png);
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-color: black;
+  padding: 5rem 0rem 5rem 0rem; }
+  .section__escuelaFutbol__galeria {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center; }
+    .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja1 {
+      width: 250px;
+      height: 250px;
+      background-image: url(../recursos/escuela_futbol/escuela_futbol_1.jpg);
+      background-size: cover;
+      border: 3px solid #0a9916;
+      margin: 1rem; }
+      .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja1:hover {
+        border: 3px solid #ccff33; }
+    .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja2 {
+      width: 250px;
+      height: 250px;
+      background-image: url(../recursos/escuela_futbol/escuela_futbol_2.jpg);
+      background-size: cover;
+      border: 3px solid #0a9916;
+      margin: 1rem; }
+      .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja2:hover {
+        border: 3px solid #ccff33; }
+    .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja3 {
+      width: 250px;
+      height: 250px;
+      background-image: url(../recursos/escuela_futbol/escuela_futbol_3.jpg);
+      background-size: cover;
+      border: 3px solid #0a9916;
+      margin: 1rem; }
+      .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja3:hover {
+        border: 3px solid #ccff33; }
+    .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja4 {
+      width: 250px;
+      height: 250px;
+      background-image: url(../recursos/escuela_futbol/escuela_futbol_4.jpg);
+      background-size: cover;
+      border: 3px solid #0a9916;
+      margin: 1rem; }
+      .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja4:hover {
+        border: 3px solid #ccff33; }
+    .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja5 {
+      width: 250px;
+      height: 250px;
+      background-image: url(../recursos/escuela_futbol/escuela_futbol_5.jpg);
+      background-size: cover;
+      border: 3px solid #0a9916;
+      margin: 1rem; }
+      .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja5:hover {
+        border: 3px solid #ccff33; }
+    .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja6 {
+      width: 250px;
+      height: 250px;
+      background-image: url(../recursos/escuela_futbol/escuela_futbol_6.jpg);
+      background-size: cover;
+      border: 3px solid #0a9916;
+      margin: 1rem; }
+      .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja6:hover {
+        border: 3px solid #ccff33; }
+    .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja7 {
+      width: 250px;
+      height: 250px;
+      background-image: url(../recursos/escuela_futbol/escuela_futbol_7.jpg);
+      background-size: cover;
+      border: 3px solid #0a9916;
+      margin: 1rem; }
+      .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja7:hover {
+        border: 3px solid #ccff33; }
+    .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja8 {
+      width: 250px;
+      height: 250px;
+      background-image: url(../recursos/escuela_futbol/escuela_futbol_8.jpg);
+      background-size: cover;
+      border: 3px solid #0a9916;
+      margin: 1rem; }
+      .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja8:hover {
+        border: 3px solid #ccff33; }
+    .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja9 {
+      width: 250px;
+      height: 250px;
+      background-image: url(../recursos/escuela_futbol/escuela_futbol_9.jpg);
+      background-size: cover;
+      border: 3px solid #0a9916;
+      margin: 1rem; }
+      .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja9:hover {
+        border: 3px solid #ccff33; }
+    .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja10 {
+      width: 250px;
+      height: 250px;
+      background-image: url(../recursos/escuela_futbol/escuela_futbol_10.jpg);
+      background-size: cover;
+      border: 3px solid #0a9916;
+      margin: 1rem; }
+      .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja10:hover {
+        border: 3px solid #ccff33; }
+    .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja11 {
+      width: 250px;
+      height: 250px;
+      background-image: url(../recursos/escuela_futbol/escuela_futbol_11.jpg);
+      background-size: cover;
+      border: 3px solid #0a9916;
+      margin: 1rem; }
+      .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja11:hover {
+        border: 3px solid #ccff33; }
+    .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja12 {
+      width: 250px;
+      height: 250px;
+      background-image: url(../recursos/escuela_futbol/escuela_futbol_12.jpg);
+      background-size: cover;
+      border: 3px solid #0a9916;
+      margin: 1rem; }
+      .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja12:hover {
+        border: 3px solid #ccff33; }
 
 /*/////////////     TORNEOS     /////////////*/
 .mainTorneoBootstrap__section {
