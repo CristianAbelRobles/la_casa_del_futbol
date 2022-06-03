@@ -102,7 +102,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-image: url(../recursos/caja-watercolor-deg.jpg);
+        background-image: url(../recursos/caja-watercolor.jpg);
         background-size: cover;
         padding: 1rem;
         margin: 1rem;
@@ -123,7 +123,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-image: url(../recursos/caja-watercolor-deg.jpg);
+        background-image: url(../recursos/caja-watercolor.jpg);
         background-size: cover;
         padding: 1rem;
         margin: 1rem;
@@ -206,7 +206,7 @@ footer {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        background-image: url(../recursos/caja-dark-concrete-deg.jpg);
+        background-image: url(../recursos/caja-watercolor.jpg);
         background-repeat: no-repeat;
         background-size: cover;
         margin-bottom: 2rem;
@@ -215,7 +215,7 @@ footer {
             display: flex;
             flex-direction: column;
             padding: 1rem;
-            width: 45%;
+            width: 55%;
             p {
                 text-align: center;
                 color: $blanco;
@@ -224,7 +224,7 @@ footer {
         }
 
         &__imagenes {
-            width: 45%;
+            width: 35%;
             padding: 1rem;
         }
     }
@@ -234,7 +234,7 @@ footer {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        background-image: url(../recursos/caja-dark-concrete-deg.jpg);
+        background-image: url(../recursos/caja-watercolor.jpg);
         background-repeat: no-repeat;
         background-size: cover;
     
@@ -242,7 +242,7 @@ footer {
             display: flex;
             flex-direction: column;
             padding: 1rem;
-            width: 45%;
+            width: 55%;
             p {
                 text-align: center;
                 color: $blanco;
@@ -251,7 +251,7 @@ footer {
         }
     
         &__imagenes {
-            width: 45%;
+            width: 35%;
             padding: 1rem;
         }
     }
