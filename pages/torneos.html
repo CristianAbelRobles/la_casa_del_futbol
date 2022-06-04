@@ -16,6 +16,7 @@
     <title>La Casa del Futbol - Torneo</title>
 </head>
 <body class="fBlack">
+    <!---------- NAVEGACION ---------->
     <header class="sticky-top">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid d-flex">
@@ -26,32 +27,34 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav justify-content-end">
                         <li class="nav-item">
-                            <a class="navLink" href="../index.html">Inicio</a>
+                            <a class="nav__link" href="../index.html">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="navLink" href="buffet.html">Buffet</a>
+                            <a class="nav__link" href="buffet.html">Buffet</a>
                         </li>
                         <li class="nav-item">
-                            <a class="navLink" href="escuela_futbol.html">Escuela de Futbol</a>
+                            <a class="nav__link" href="escuela_futbol.html">Escuela de Futbol</a>
                         </li>
                         <li class="nav-item">
-                            <a class="navLink" href="torneos.html">Torneos</a>
+                            <a class="nav__link" href="torneos.html">Torneos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="navLink" href="contacto.html">Contacto</a>
+                            <a class="nav__link" href="contacto.html">Contacto</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+    <!---------- IMAGEN TOP ---------->
     <div class="top__img">
-        <img src="../recursos/top_home4.jpg" alt="Imagen del campo de juego"/>
+        <img src="../recursos/top_home4.jpg" alt="cancha de futbol 5"/>
     </div>
-    <h1 class="titH1 green">TORNEOS</h1>
     <main>
-        <section class="d-flex justify-content-around mainTorneoBootstrap__section">
-            <div class="card text-center mainTorneoBootstrap__section__tarjeta">
+        <h1 class="green">TORNEOS</h1>
+        <section class="d-flex justify-content-around main__section__torneo">
+        <!---------- TARJETA AMATEUR ---------->
+            <div class="card text-center main__section__torneo__tarjeta">
                 <h2 class="subH2 white">TORNEOS DE FUTBOL AMATEUR</h2>
                 <img src="../recursos/torneo_amateur2.png" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -64,7 +67,8 @@
                     <a href="contacto.html" class="btn btn-torneo">Inscribite</a>
                 </div>
             </div>
-            <div class="card text-center mainTorneoBootstrap__section__tarjeta">
+        <!---------- COMODIDADES TU TORNEO ---------->
+            <div class="card text-center main__section__torneo__tarjeta">
                 <h2 class="subH2 white">ORGANIZAMOS TU TORNEO</h2>
                 <img src="../recursos/tu_torneo.png" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -78,36 +82,38 @@
                 </div>
             </div>
         </section>
-        <h2 class="subH2 green">Contamos con ...</h2>
-        <section class="mainTorneos__section__comodidades">
-            <div class="mainTorneos__section__comodidades__div">
+        <!---------- COMODIDADES ICONOS ---------->
+        <h2 class="green">Contamos con ...</h2>
+        <section class="main__section__comodidades">
+            <div class="main__section__comodidades__div">
                 <img src="../recursos/comodidades_cesped.png" alt="icono cesped"/>
                 <p>Pasto nuevo de ultima generación</p>
             </div>
-            <div class="mainTorneos__section__comodidades__div">
+            <div class="main__section__comodidades__div">
                 <img src="../recursos/comodidades_arbitro.png" alt="icono arbitro"/>
                 <p>Arbitraje Profesional</p>
             </div>
-            <div class="mainTorneos__section__comodidades__div">
+            <div class="main__section__comodidades__div">
                 <img src="../recursos/comodidades_iluminacion.png" alt="icono de iluminacion"/>
                 <p>Excelente Iluminación</p>
             </div>
-            <div class="mainTorneos__section__comodidades__div">
+            <div class="main__section__comodidades__div">
                 <img src="../recursos/comodidades_vestuario.png" alt="icono de vestuario"/>
                 <p>Baños y Vestidores</p>
             </div>
-            <div class="mainTorneos__section__comodidades__div">
+            <div class="main__section__comodidades__div">
                 <img src="../recursos/comodidades_comida.png" alt="icono de buffet"/>
                 <p>Venta de Bebidas y Alimentos</p>
             </div>
-            <div class="mainTorneos__section__comodidades__div">
+            <div class="main__section__comodidades__div">
                 <img src="../recursos/comodidades_ambulancia.png" alt="icono de ambulancia"/>
                 <p>Servicio de Emergencias</p>
             </div>
         </section>
         
     </main>
-    <footer class="footer">
+    <!---------- FOOTER ---------->
+    <footer>
         <div>
             <a href="https://www.facebook.com/LaCasaDelFutbol5" target="_blank"><img class="redes" src="../recursos/facebook.svg" alt="icono facebook"/></a>
             <a href="https://www.instagram.com/la.casa_del.futbol/" target="_blank"><img class="redes" src="../recursos/instagram.svg" alt="icono instagram"/></a>
@@ -117,6 +123,7 @@
             Todos los Derechos Reservados
         </p>
     </footer>
+    <!---------- SCRIPTS ---------->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

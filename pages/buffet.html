@@ -15,7 +15,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One:ital@0;1&family=Roboto:wght@500&display=swap">
     <title>La Casa del Futbol - Buffet</title>
 </head>
-<body class="fBlack">
+<body>
+    <!---------- NAVEGACION ---------->
     <header  class="sticky-top">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid d-flex">
@@ -26,57 +27,59 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav justify-content-end">
                         <li class="nav-item">
-                            <a class="navLink" href="../index.html">Inicio</a>
+                            <a class="nav__link" href="../index.html">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="navLink" href="buffet.html">Buffet</a>
+                            <a class="nav__link" href="buffet.html">Buffet</a>
                         </li>
                         <li class="nav-item">
-                            <a class="navLink" href="escuela_futbol.html">Escuela de Futbol</a>
+                            <a class="nav__link" href="escuela_futbol.html">Escuela de Futbol</a>
                         </li>
                         <li class="nav-item">
-                            <a class="navLink" href="torneos.html">Torneos</a>
+                            <a class="nav__link" href="torneos.html">Torneos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="navLink" href="contacto.html">Contacto</a>
+                            <a class="nav__link" href="contacto.html">Contacto</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+    <!---------- IMAGEN TOP ---------->
     <div class="top__img">
-        <img src="../recursos/top_home4.jpg" alt="Imagen del campo de juego"/>
+        <img src="../recursos/top_home4.jpg" alt="cancha de futbol 5"/>
     </div>
-    <main class="mainBuffet">
-        <h1 class="titH1 green">BUFFET</h1>
-        <h2 class="subH2 white">Quedate al tercer tiempo!</h2>        
-        <section class="mainBuffet__comida__carrousel">
-            <div class="mainBuffet__comida__carrousel__texto">
-                <h2 class="subH2 green">COMIDAS</h2>
+    <main class="buffet">
+        <h1 class="green">BUFFET</h1>
+        <h2 class="white">Quedate al tercer tiempo!</h2>
+        <!---------- CARROUSEL COMIDA ---------->
+        <section class="buffet__carrousel">
+            <div class="buffet__carrousel__texto">
+                <h3 class="green">COMIDAS</h3>
                 <p>
                     Probá nuestras riquísimas hamburguesas y panchos. Consultános por eventos privados y seguínos para conocer nuestras novedades.
                 </p>
             </div>
-            <div id="carouselExampleControls" class="mainBuffet__comida__carrousel__imagenes carousel slide" data-bs-ride="carousel">
+            <div id="carouselExampleControls" class="buffet__carrousel__imagenes carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="../recursos/buffet/buffet_comida_1.jpg" class="d-block w-100" alt="parrilla"/>
                     </div>
                     <div class="carousel-item">
-                        <img src="../recursos/buffet/buffet_comida_2.jpg" class="d-block w-100" alt="parrilla"/>
+                        <img src="../recursos/buffet/buffet_comida_2.jpg" class="d-block w-100" alt="papas fritas"/>
                     </div>
                     <div class="carousel-item">
-                        <img src="../recursos/buffet/buffet_comida_3.jpg" class="d-block w-100" alt="parrilla"/>
+                        <img src="../recursos/buffet/buffet_comida_3.jpg" class="d-block w-100" alt="pancho"/>
                     </div>
                     <div class="carousel-item">
-                        <img src="../recursos/buffet/buffet_comida_4.jpg" class="d-block w-100" alt="parrilla"/>
+                        <img src="../recursos/buffet/buffet_comida_4.jpg" class="d-block w-100" alt="choripan"/>
                     </div>
                     <div class="carousel-item">
-                        <img src="../recursos/buffet/buffet_comida_5.jpg" class="d-block w-100" alt="parrilla"/>
+                        <img src="../recursos/buffet/buffet_comida_5.jpg" class="d-block w-100" alt="hamburguesa"/>
                     </div>
                     <div class="carousel-item">
-                        <img src="../recursos/buffet/buffet_comida_6.jpg" class="d-block w-100" alt="parrilla"/>
+                        <img src="../recursos/buffet/buffet_comida_6.jpg" class="d-block w-100" alt="sandwich de milanesa"/>
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -89,44 +92,46 @@
                 </button>
             </div>
         </section>
-        <section class="mainBuffet__bebidas__carrousel">
-            <div class="mainBuffet__bebidas__carrousel__texto">
-                <h2 class="subH2 green">BEBIDAS</h2>
+        <!---------- CARROUSEL BEBIDAS ---------->
+        <section class="buffet__carrousel">
+            <div class="buffet__carrousel__texto">
+                <h3 class="green">BEBIDAS</h3>
                 <p>
                     El BUFFET está abierto a todo el público con bebidas de primera línea. Consultános por eventos privados y seguínos para conocer nuestras novedades.
                 </p>
             </div>
-            <div id="carouselExampleControls2" class="mainBuffet__bebidas__carrousel__imagenes carousel slide" data-bs-ride="carousel">
+            
+            <div id="carouselExampleControls2" class="buffet__carrousel__imagenes carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="../recursos/buffet/buffet_bebidas_1.jpg" class="d-block w-100" alt="parrilla"/>
+                        <img src="../recursos/buffet/buffet_bebidas_1.jpg" class="d-block w-100" alt="agua saborizada chica"/>
                     </div>
                     <div class="carousel-item">
-                        <img src="../recursos/buffet/buffet_bebidas_2.jpg" class="d-block w-100" alt="parrilla"/>
+                        <img src="../recursos/buffet/buffet_bebidas_2.jpg" class="d-block w-100" alt="agua saborizada grande"/>
                     </div>
                     <div class="carousel-item">
-                        <img src="../recursos/buffet/buffet_bebidas_3.jpg" class="d-block w-100" alt="parrilla"/>
+                        <img src="../recursos/buffet/buffet_bebidas_3.jpg" class="d-block w-100" alt="bebidas energizantes"/>
                     </div>
                     <div class="carousel-item">
-                        <img src="../recursos/buffet/buffet_bebidas_4.jpg" class="d-block w-100" alt="parrilla"/>
+                        <img src="../recursos/buffet/buffet_bebidas_4.jpg" class="d-block w-100" alt="botella de agua mineral"/>
                     </div>
                     <div class="carousel-item">
-                        <img src="../recursos/buffet/buffet_bebidas_5.jpg" class="d-block w-100" alt="parrilla"/>
+                        <img src="../recursos/buffet/buffet_bebidas_5.jpg" class="d-block w-100" alt="botellas de vino"/>
                     </div>
                     <div class="carousel-item">
-                        <img src="../recursos/buffet/buffet_bebidas_6.jpg" class="d-block w-100" alt="parrilla"/>
+                        <img src="../recursos/buffet/buffet_bebidas_6.jpg" class="d-block w-100" alt="botella de fernet y botella de coca-cola"/>
                     </div>
                     <div class="carousel-item">
-                        <img src="../recursos/buffet/buffet_bebidas_7.jpg" class="d-block w-100" alt="parrilla"/>
+                        <img src="../recursos/buffet/buffet_bebidas_7.jpg" class="d-block w-100" alt="latas de gaseosas"/>
                     </div>
                     <div class="carousel-item">
-                        <img src="../recursos/buffet/buffet_bebidas_8.jpg" class="d-block w-100" alt="parrilla"/>
+                        <img src="../recursos/buffet/buffet_bebidas_8.jpg" class="d-block w-100" alt="botellas de gaseosas"/>
                     </div>
                     <div class="carousel-item">
-                        <img src="../recursos/buffet/buffet_bebidas_9.jpg" class="d-block w-100" alt="parrilla"/>
+                        <img src="../recursos/buffet/buffet_bebidas_9.jpg" class="d-block w-100" alt="botellas chicas de gaseosas"/>
                     </div>
                     <div class="carousel-item">
-                        <img src="../recursos/buffet/buffet_bebidas_10.jpg" class="d-block w-100" alt="parrilla"/>
+                        <img src="../recursos/buffet/buffet_bebidas_10.jpg" class="d-block w-100" alt="botellas de cervezas"/>
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls2" data-bs-slide="prev">
@@ -140,7 +145,8 @@
             </div>
         </section>
     </main>
-    <footer class="footer">
+    <!---------- FOOTER ---------->
+    <footer>
         <div>
             <a href="https://www.facebook.com/LaCasaDelFutbol5" target="_blank"><img class="redes" src="../recursos/facebook.svg" alt="icono facebook"/></a>
             <a href="https://www.instagram.com/la.casa_del.futbol/" target="_blank"><img class="redes" src="../recursos/instagram.svg" alt="icono instagram"/></a>
@@ -150,6 +156,7 @@
             Todos los Derechos Reservados
         </p>
     </footer>
+    <!---------- SCRIPTS ---------->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

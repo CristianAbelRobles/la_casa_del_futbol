@@ -8,44 +8,43 @@
   padding: 0px;
   font-family: 'DM Sans', sans-serif; }
 
-.navbar-brand img {
-  width: 5rem; }
-
-.navLink {
-  display: block;
-  padding: 0.5rem 1rem;
-  color: #8cbb00;
-  text-decoration: none;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out; }
-  .navLink:hover {
-    color: #ccff33; }
-
-.fBlack {
-  background-color: black; }
-
-.top__img img {
-  width: 100%; }
-
-.titH1 {
+h1 {
   margin-bottom: 2rem;
   font-family: 'DCC - Ash', sans-serif;
   font-weight: 400;
   font-size: 5rem;
   text-align: center; }
 
-.subH2 {
+h2 {
   margin-bottom: 2rem;
   font-family: 'DCC - Ash', sans-serif;
   font-weight: 400;
   font-size: 3rem;
   text-align: center; }
 
-.subH3 {
+h3 {
   margin-bottom: 2rem;
   font-family: 'DCC - Ash', sans-serif;
   font-weight: 400;
   font-size: 2rem;
   text-align: center; }
+
+main {
+  background-color: black; }
+
+.navbar-brand img {
+  width: 5rem; }
+
+.nav__link {
+  padding: 0.5rem 1rem;
+  color: #8cbb00;
+  text-decoration: none;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out; }
+  .nav__link:hover {
+    color: #ccff33; }
+
+.top__img img {
+  width: 100%; }
 
 .green {
   color: #8cbb00; }
@@ -56,7 +55,7 @@
 .grid__container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-areas: "main__section__presentacion main__section__presentacion main__presentacion__img main__presentacion__img" "servicios servicios actividades actividades" "img1 img2 img3 img4" "dondeEstamos dondeEstamos mapa mapa";
+  grid-template-areas: "main__section__presentacion main__section__presentacion main__presentacion__img main__presentacion__img" "servicios servicios actividades actividades" "img1 img2 img3 img4" "ubicacion ubicacion mapa mapa";
   padding: 0rem 2rem; }
   .grid__container .main__section__presentacion {
     display: flex;
@@ -70,9 +69,10 @@
   .grid__container .main__presentacion__img {
     grid-area: main__presentacion__img;
     padding: 1rem;
-    align-self: center; }
+    align-self: center;
+    text-align: center; }
     .grid__container .main__presentacion__img img {
-      width: 100%; }
+      width: 80%; }
   .grid__container .main__section__servicios {
     grid-area: servicios;
     display: flex;
@@ -135,8 +135,8 @@
       border: 3px solid #ccff33; }
     .grid__container .img4 img {
       width: 100%; }
-  .grid__container .dondeEstamos {
-    grid-area: dondeEstamos;
+  .grid__container .ubicacion {
+    grid-area: ubicacion;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -144,7 +144,7 @@
     background-image: url(../recursos/la_casa_del_futbol_transparente.png);
     background-color: #8cbb00;
     text-align: center; }
-    .grid__container .dondeEstamos p {
+    .grid__container .ubicacion p {
       font-size: 1.2rem;
       color: #f8f8f8; }
   .grid__container .mapa {
@@ -164,9 +164,9 @@ footer {
   width: 2rem; }
 
 /*/////////////     BUFFET     /////////////*/
-.mainBuffet {
+.buffet {
   padding: 0rem 1rem; }
-  .mainBuffet__comida__carrousel {
+  .buffet__carrousel {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -174,61 +174,41 @@ footer {
     background-image: url(../recursos/caja-watercolor.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    margin-bottom: 2rem; }
-    .mainBuffet__comida__carrousel__texto {
+    margin-top: 2rem; }
+    .buffet__carrousel__texto {
       display: flex;
       flex-direction: column;
       padding: 1rem;
       width: 55%; }
-      .mainBuffet__comida__carrousel__texto p {
+      .buffet__carrousel__texto p {
         text-align: center;
         color: #f8f8f8;
         font-size: 1.5rem; }
-    .mainBuffet__comida__carrousel__imagenes {
-      width: 35%;
-      padding: 1rem; }
-  .mainBuffet__bebidas__carrousel {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    background-image: url(../recursos/caja-watercolor.jpg);
-    background-repeat: no-repeat;
-    background-size: cover; }
-    .mainBuffet__bebidas__carrousel__texto {
-      display: flex;
-      flex-direction: column;
-      padding: 1rem;
-      width: 55%; }
-      .mainBuffet__bebidas__carrousel__texto p {
-        text-align: center;
-        color: #f8f8f8;
-        font-size: 1.5rem; }
-    .mainBuffet__bebidas__carrousel__imagenes {
+    .buffet__carrousel__imagenes {
       width: 35%;
       padding: 1rem; }
 
 /*/////////////     ESCUELA FUTBOL   /////////////*/
-.escuelaFutbol {
+.escuela {
   display: flex;
   justify-content: space-around;
   align-items: center; }
-  .escuelaFutbol__presentacion {
+  .escuela__presentacion {
     display: flex;
     flex-direction: column;
     padding: 1rem;
     width: 45%;
     text-align: center; }
-    .escuelaFutbol__presentacion p {
+    .escuela__presentacion p {
       color: #f8f8f8;
       font-size: 1.5rem; }
-  .escuelaFutbol__imagen {
+  .escuela__imagen {
     padding: 1rem;
     width: 45%; }
-    .escuelaFutbol__imagen img {
+    .escuela__imagen img {
       width: 100%; }
 
-.escuela_calendario {
+.escuela__calendario {
   display: flex;
   flex-direction: column;
   background-image: url(../recursos/separador_3_illustrator.png);
@@ -239,140 +219,140 @@ footer {
   padding-top: 7rem;
   padding-bottom: 5rem; }
 
-.section__escuelaFutbol {
+.section__escuela {
   background-image: url(../recursos/separador_4.png);
   background-size: auto;
   background-repeat: no-repeat;
   background-color: black;
   padding: 5rem 0rem 5rem 0rem; }
-  .section__escuelaFutbol__galeria {
+  .section__escuela__galeria {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center; }
-    .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja1 {
+    .section__escuela__galeria .section__escuela__galeria__caja1 {
       width: 250px;
       height: 250px;
       background-image: url(../recursos/escuela_futbol/escuela_futbol_1.jpg);
       background-size: cover;
       border: 3px solid #0a9916;
       margin: 1rem; }
-      .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja1:hover {
+      .section__escuela__galeria .section__escuela__galeria__caja1:hover {
         border: 3px solid #ccff33; }
-    .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja2 {
+    .section__escuela__galeria .section__escuela__galeria__caja2 {
       width: 250px;
       height: 250px;
       background-image: url(../recursos/escuela_futbol/escuela_futbol_2.jpg);
       background-size: cover;
       border: 3px solid #0a9916;
       margin: 1rem; }
-      .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja2:hover {
+      .section__escuela__galeria .section__escuela__galeria__caja2:hover {
         border: 3px solid #ccff33; }
-    .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja3 {
+    .section__escuela__galeria .section__escuela__galeria__caja3 {
       width: 250px;
       height: 250px;
       background-image: url(../recursos/escuela_futbol/escuela_futbol_3.jpg);
       background-size: cover;
       border: 3px solid #0a9916;
       margin: 1rem; }
-      .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja3:hover {
+      .section__escuela__galeria .section__escuela__galeria__caja3:hover {
         border: 3px solid #ccff33; }
-    .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja4 {
+    .section__escuela__galeria .section__escuela__galeria__caja4 {
       width: 250px;
       height: 250px;
       background-image: url(../recursos/escuela_futbol/escuela_futbol_4.jpg);
       background-size: cover;
       border: 3px solid #0a9916;
       margin: 1rem; }
-      .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja4:hover {
+      .section__escuela__galeria .section__escuela__galeria__caja4:hover {
         border: 3px solid #ccff33; }
-    .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja5 {
+    .section__escuela__galeria .section__escuela__galeria__caja5 {
       width: 250px;
       height: 250px;
       background-image: url(../recursos/escuela_futbol/escuela_futbol_5.jpg);
       background-size: cover;
       border: 3px solid #0a9916;
       margin: 1rem; }
-      .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja5:hover {
+      .section__escuela__galeria .section__escuela__galeria__caja5:hover {
         border: 3px solid #ccff33; }
-    .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja6 {
+    .section__escuela__galeria .section__escuela__galeria__caja6 {
       width: 250px;
       height: 250px;
       background-image: url(../recursos/escuela_futbol/escuela_futbol_6.jpg);
       background-size: cover;
       border: 3px solid #0a9916;
       margin: 1rem; }
-      .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja6:hover {
+      .section__escuela__galeria .section__escuela__galeria__caja6:hover {
         border: 3px solid #ccff33; }
-    .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja7 {
+    .section__escuela__galeria .section__escuela__galeria__caja7 {
       width: 250px;
       height: 250px;
       background-image: url(../recursos/escuela_futbol/escuela_futbol_7.jpg);
       background-size: cover;
       border: 3px solid #0a9916;
       margin: 1rem; }
-      .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja7:hover {
+      .section__escuela__galeria .section__escuela__galeria__caja7:hover {
         border: 3px solid #ccff33; }
-    .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja8 {
+    .section__escuela__galeria .section__escuela__galeria__caja8 {
       width: 250px;
       height: 250px;
       background-image: url(../recursos/escuela_futbol/escuela_futbol_8.jpg);
       background-size: cover;
       border: 3px solid #0a9916;
       margin: 1rem; }
-      .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja8:hover {
+      .section__escuela__galeria .section__escuela__galeria__caja8:hover {
         border: 3px solid #ccff33; }
-    .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja9 {
+    .section__escuela__galeria .section__escuela__galeria__caja9 {
       width: 250px;
       height: 250px;
       background-image: url(../recursos/escuela_futbol/escuela_futbol_9.jpg);
       background-size: cover;
       border: 3px solid #0a9916;
       margin: 1rem; }
-      .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja9:hover {
+      .section__escuela__galeria .section__escuela__galeria__caja9:hover {
         border: 3px solid #ccff33; }
-    .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja10 {
+    .section__escuela__galeria .section__escuela__galeria__caja10 {
       width: 250px;
       height: 250px;
       background-image: url(../recursos/escuela_futbol/escuela_futbol_10.jpg);
       background-size: cover;
       border: 3px solid #0a9916;
       margin: 1rem; }
-      .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja10:hover {
+      .section__escuela__galeria .section__escuela__galeria__caja10:hover {
         border: 3px solid #ccff33; }
-    .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja11 {
+    .section__escuela__galeria .section__escuela__galeria__caja11 {
       width: 250px;
       height: 250px;
       background-image: url(../recursos/escuela_futbol/escuela_futbol_11.jpg);
       background-size: cover;
       border: 3px solid #0a9916;
       margin: 1rem; }
-      .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja11:hover {
+      .section__escuela__galeria .section__escuela__galeria__caja11:hover {
         border: 3px solid #ccff33; }
-    .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja12 {
+    .section__escuela__galeria .section__escuela__galeria__caja12 {
       width: 250px;
       height: 250px;
       background-image: url(../recursos/escuela_futbol/escuela_futbol_12.jpg);
       background-size: cover;
       border: 3px solid #0a9916;
       margin: 1rem; }
-      .section__escuelaFutbol__galeria .section__escuelaFutbol__galeria__caja12:hover {
+      .section__escuela__galeria .section__escuela__galeria__caja12:hover {
         border: 3px solid #ccff33; }
 
 /*/////////////     TORNEOS     /////////////*/
-.mainTorneoBootstrap__section {
+.main__section__torneo {
   display: flex;
   flex-direction: row;
   margin-bottom: 2rem; }
-  .mainTorneoBootstrap__section__tarjeta {
+  .main__section__torneo__tarjeta {
     width: 45%;
     background-image: url(../recursos/caja-dark-concrete-deg.jpg);
     background-size: cover; }
-    .mainTorneoBootstrap__section__tarjeta p {
+    .main__section__torneo__tarjeta p {
       font-size: 1rem;
       color: #f8f8f8; }
-    .mainTorneoBootstrap__section__tarjeta h5 {
+    .main__section__torneo__tarjeta h5 {
       font-family: 'DCC - Ash', sans-serif;
       color: #f8f8f8;
       margin: 1rem 0rem;
@@ -386,7 +366,7 @@ footer {
   .btn-torneo:hover {
     background-color: #ccff33; }
 
-.mainTorneos__section__comodidades {
+.main__section__comodidades {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -394,89 +374,82 @@ footer {
   background-color: black;
   color: #ccff33;
   text-align: center; }
-  .mainTorneos__section__comodidades__div {
+  .main__section__comodidades__div {
     width: 200px;
     padding: 1rem; }
-    .mainTorneos__section__comodidades__div img {
+    .main__section__comodidades__div img {
       width: 80px; }
 
 /*//////////////     CONTACTO Y RESERVAS     /////////////*/
-.mainContacto {
+.contacto {
   padding: 1rem 2rem; }
-  .mainContacto section {
+  .contacto section {
     padding: 1rem 2rem;
-    border-radius: 10px; }
-  .mainContacto__form {
+    border-radius: 10px;
     background-image: url(../recursos/caja-dark-concrete-deg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     border: 2px solid green; }
 
-.mainContacto__formulario__enviarConsulta {
+.contacto__formulario__enviar {
   font-size: 1.2rem;
   border: none;
   margin-bottom: 1rem;
   width: 100%;
   background-color: #8cbb00; }
-  .mainContacto__formulario__enviarConsulta:hover {
+  .contacto__formulario__enviar:hover {
     background-color: #ccff33; }
 
 /*//////////////// MEDIAQUERIES ////////////////*/
-@media (min-width: 541px) and (max-width: 720px) {
+@media (min-width: 541px) and (max-width: 900px) {
+  h1 {
+    font-size: 4rem; }
+  h2 {
+    font-size: 2.5rem; }
+  h3 {
+    font-size: 2rem; }
   .grid__container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: "main__section__presentacion main__section__presentacion" "main__presentacion__img main__presentacion__img" "servicios servicios" "actividades actividades" "img1 img2" "img3 img4" "dondeEstamos dondeEstamos" "mapa mapa";
+    grid-template-areas: "main__section__presentacion main__section__presentacion" "main__presentacion__img main__presentacion__img" "servicios servicios" "actividades actividades" "img1 img2" "img3 img4" "ubicacion ubicacion" "mapa mapa";
     padding-left: 0rem;
     padding-right: 0rem; }
-  .titH1 {
-    font-size: 4rem; }
-  .subH2 {
-    font-size: 2.5rem; }
-  .subH3 {
-    font-size: 2rem; }
-  .main__section__servicios {
-    margin: 0rem; }
-  .main__actividades {
-    margin: 0rem; }
+    .grid__container .main__presentacion__img {
+      text-align: center; }
+      .grid__container .main__presentacion__img img {
+        width: 80%; }
+    .grid__container .main__section__servicios {
+      margin: 1rem; }
+    .grid__container .main__actividades {
+      margin: 1rem; }
   /*/////////////     ESCUELA FUTBOL   /////////////*/
-  .escuelaFutbol {
+  .escuela {
     flex-direction: column; }
-  .escuelaFutbol__presentacion {
+  .escuela__presentacion {
     width: 90%; }
-  .escuelaFutbol__imagen {
+  .escuela__imagen {
     padding: 1rem;
     width: 80%; }
   /*/////////////     BUFFET   /////////////*/
-  .mainBuffet__comida__carrousel {
+  .buffet__carrousel {
     display: flex;
     flex-direction: column;
     align-items: center; }
-  .mainBuffet__comida__carrousel__texto {
+  .buffet__carrousel__texto {
     display: flex;
     flex-direction: column;
     padding: 1rem;
     width: 90%; }
-  .mainBuffet__comida__carrousel__imagenes {
+  .buffet__carrousel__imagenes {
     width: 80%;
     padding: 1rem; }
-  .mainBuffet__bebidas__carrousel {
-    display: flex;
-    flex-direction: column;
-    align-items: center; }
-  .mainBuffet__bebidas__carrousel__texto {
-    display: flex;
-    flex-direction: column;
-    width: 90%; }
-  .mainBuffet__bebidas__carrousel__imagenes {
-    width: 80%; }
   /*/////////////////  TORNEO   /////////////////*/
-  .mainTorneoBootstrap__section {
+  .main__section__torneo {
     flex-direction: column;
     align-items: center; }
-  .mainTorneoBootstrap__section__tarjeta {
-    width: 90%;
-    margin-bottom: 2rem; } }
+    .main__section__torneo__tarjeta {
+      width: 90%;
+      margin-bottom: 2rem; } }
 
 /*/////////////////////////////////////////*/
 /*//////////////// MOVIL //////////////////*/
@@ -485,32 +458,36 @@ footer {
   .grid__container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-areas: "main__section__presentacion" "main__presentacion__img" "servicios" "actividades" "img1" "img2" "img3" "img4" "dondeEstamos" "mapa";
+    grid-template-areas: "main__section__presentacion" "main__presentacion__img" "servicios" "actividades" "img1" "img2" "img3" "img4" "ubicacion" "mapa";
     padding: 0rem 0rem 0rem 0rem; }
+    .grid__container .main__section__presentacion p {
+      font-size: 1.5rem; }
+    .grid__container .main__presentacion__img {
+      text-align: center; }
+      .grid__container .main__presentacion__img img {
+        width: 70%; }
+    .grid__container .main__section__servicios {
+      margin: 0rem 0rem 1rem 0rem; }
+    .grid__container .main__actividades {
+      margin: 0rem; }
   .navbar-brand {
     font-size: 1rem; }
-  .titH1 {
+  h1 {
     font-size: 3rem; }
-  .subH2 {
+  h2 {
     font-size: 2rem; }
-  .subH3 {
+  h3 {
     font-size: 1.5rem; }
-  .main__section__presentacion p {
-    font-size: 1.5rem; }
-  .main__section__servicios {
-    margin: 0rem; }
-  .main__actividades {
-    margin: 0rem; }
   /*/////////////     TORNEOS     /////////////*/
-  .mainTorneoBootstrap__section {
+  .main__section__torneo {
     flex-direction: column;
     align-items: center; }
-    .mainTorneoBootstrap__section__tarjeta {
+    .main__section__torneo__tarjeta {
       width: 90%;
       margin-bottom: 2rem; }
-    .mainTorneoBootstrap__section__amateurs img {
+    .main__section__torneo__amateurs img {
       width: 65%; }
-    .mainTorneoBootstrap__section__tuTorneo img {
+    .main__section__torneo__tuTorneo img {
       width: 65%; }
   .mainTorneos__section__comodidades {
     flex-direction: column;
@@ -521,40 +498,29 @@ footer {
       .mainTorneos__section__comodidades__div img {
         width: 60px; }
   /*/////////////     ESCUELA FUTBOL   /////////////*/
-  .escuelaFutbol {
+  .escuela {
     flex-direction: column; }
-    .escuelaFutbol__presentacion {
+    .escuela__presentacion {
       width: 90%; }
-    .escuelaFutbol__imagen {
+    .escuela__imagen {
       padding: 1rem;
       width: 70%; }
   /*/////////////     BUFFET   /////////////*/
-  .mainBuffet__comida__carrousel {
+  .buffet__carrousel {
     display: flex;
     flex-direction: column;
     align-items: center; }
-    .mainBuffet__comida__carrousel__texto {
+    .buffet__carrousel__texto {
       display: flex;
       flex-direction: column;
       padding: 1rem;
       width: 90%; }
-    .mainBuffet__comida__carrousel__imagenes {
+    .buffet__carrousel__imagenes {
       width: 80%;
       padding: 1rem; }
-  .mainBuffet__bebidas__carrousel {
-    display: flex;
-    flex-direction: column;
-    align-items: center; }
-    .mainBuffet__bebidas__carrousel__texto {
-      display: flex;
-      flex-direction: column;
-      width: 90%; }
-    .mainBuffet__bebidas__carrousel__imagenes {
-      width: 80%; }
   /*/////////////////  CONTACTO Y RESERVAS   /////////////////*/
-  .mainContacto {
+  .contacto {
     padding: 0; }
-    .mainContacto__form {
-      border: none; }
-    .mainContacto section {
-      border-radius: 0; } }
+    .contacto section {
+      border-radius: 0;
+      border: none; } }

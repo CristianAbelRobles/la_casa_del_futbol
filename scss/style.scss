@@ -8,12 +8,39 @@
     font-family: 'DM Sans', sans-serif;
 }
 
+h1 {
+    margin-bottom: 2rem;
+    font-family: 'DCC - Ash', sans-serif;
+    font-weight: 400;
+    font-size: 5rem;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 2rem;
+    font-family: 'DCC - Ash', sans-serif;
+    font-weight: 400;
+    font-size: 3rem;
+    text-align: center;
+}
+
+h3 {
+    margin-bottom: 2rem;
+    font-family: 'DCC - Ash', sans-serif;
+    font-weight: 400;
+    font-size: 2rem;
+    text-align: center;
+}
+
+main {
+    background-color: black;
+}
+
 .navbar-brand img{
     width: 5rem;
 }
 
-.navLink {
-    display: block;
+.nav__link {
     padding: 0.5rem 1rem;
     color: $verde;
     text-decoration: none;
@@ -24,37 +51,8 @@
     }
 }
 
-
-.fBlack {
-    background-color: black;
-}
-
 .top__img img{
     width: 100%;
-}
-
-.titH1 {
-    margin-bottom: 2rem;
-    font-family: 'DCC - Ash', sans-serif;
-    font-weight: 400;
-    font-size: 5rem;
-    text-align: center;
-}
-
-.subH2 {
-    margin-bottom: 2rem;
-    font-family: 'DCC - Ash', sans-serif;
-    font-weight: 400;
-    font-size: 3rem;
-    text-align: center;
-}
-
-.subH3 {
-    margin-bottom: 2rem;
-    font-family: 'DCC - Ash', sans-serif;
-    font-weight: 400;
-    font-size: 2rem;
-    text-align: center;
 }
 
 .green {
@@ -71,7 +69,7 @@
     grid-template-areas: "main__section__presentacion main__section__presentacion main__presentacion__img main__presentacion__img"
                         "servicios servicios actividades actividades"
                         "img1 img2 img3 img4"
-                        "dondeEstamos dondeEstamos mapa mapa";
+                        "ubicacion ubicacion mapa mapa";
     padding: 0rem 2rem;
     
     .main__section__presentacion {
@@ -91,9 +89,10 @@
         grid-area: main__presentacion__img;
         padding: 1rem;
         align-self: center;
+        text-align: center;
     
         img{
-            width: 100%;
+            width: 80%;
         }
     }
 
@@ -142,26 +141,26 @@
     
     .img1 {
         grid-area: img1;
-        @include imgHome;
+        @include img__home;
     }
     
     .img2 {
         grid-area: img2;
-        @include imgHome;
+        @include img__home;
     }
     
     .img3 {
         grid-area: img3;
-        @include imgHome;
+        @include img__home;
     }
     
     .img4 {
         grid-area: img4;
-        @include imgHome;
+        @include img__home;
     }
     
-    .dondeEstamos {
-        grid-area: dondeEstamos;
+    .ubicacion {
+        grid-area: ubicacion;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -198,10 +197,10 @@ footer {
 
 /*/////////////     BUFFET     /////////////*/
 
-.mainBuffet {
+.buffet {
     padding: 0rem 1rem;
 
-    &__comida__carrousel {
+    &__carrousel {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -209,7 +208,7 @@ footer {
         background-image: url(../recursos/caja-watercolor.jpg);
         background-repeat: no-repeat;
         background-size: cover;
-        margin-bottom: 2rem;
+        margin-top: 2rem;
 
         &__texto {
             display: flex;
@@ -223,33 +222,6 @@ footer {
             }
         }
 
-        &__imagenes {
-            width: 35%;
-            padding: 1rem;
-        }
-    }
-
-    &__bebidas__carrousel {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        background-image: url(../recursos/caja-watercolor.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-    
-        &__texto {
-            display: flex;
-            flex-direction: column;
-            padding: 1rem;
-            width: 55%;
-            p {
-                text-align: center;
-                color: $blanco;
-                font-size: 1.5rem;
-            }
-        }
-    
         &__imagenes {
             width: 35%;
             padding: 1rem;
@@ -259,7 +231,7 @@ footer {
 
 /*/////////////     ESCUELA FUTBOL   /////////////*/
 
-.escuelaFutbol {
+.escuela {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -287,7 +259,7 @@ footer {
     }
 }
 
-.escuela_calendario {
+.escuela__calendario {
     display: flex;
     flex-direction: column;
     background-image: url(../recursos/separador_3_illustrator.png);
@@ -299,7 +271,7 @@ footer {
     padding-bottom: 5rem;
 }
 
-.section__escuelaFutbol {
+.section__escuela {
     background-image: url(../recursos/separador_4.png);
     background-size: auto;
     background-repeat: no-repeat;
@@ -316,7 +288,7 @@ footer {
         $galeriaEscuelas: (caja1: _1, caja2: _2, caja3: _3, caja4: _4, caja5: _5, caja6: _6,caja7: _7, caja8: _8, caja9: _9, caja10: _10, caja11: _11, caja12: _12);
         
         @each $key, $numero in $galeriaEscuelas {
-            .section__escuelaFutbol__galeria__#{$key} {
+            .section__escuela__galeria__#{$key} {
                 width: 250px;
                 height: 250px;
                 background-image: url(../recursos/escuela_futbol/escuela_futbol#{$numero}.jpg);
@@ -333,11 +305,9 @@ footer {
     }
 }
 
-
-
 /*/////////////     TORNEOS     /////////////*/
 
-.mainTorneoBootstrap__section {
+.main__section__torneo {
     display: flex;
     flex-direction: row;
     margin-bottom: 2rem;
@@ -373,7 +343,7 @@ footer {
     }
 }
 
-.mainTorneos__section__comodidades {
+.main__section__comodidades {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -385,6 +355,7 @@ footer {
     &__div {
         width: 200px;
         padding: 1rem;
+        
         img {
             width: 80px;
         }
@@ -393,15 +364,12 @@ footer {
 
 /*//////////////     CONTACTO Y RESERVAS     /////////////*/
 
-.mainContacto {
+.contacto {
     padding: 1rem 2rem;
 
     section {
         padding: 1rem 2rem;
         border-radius: 10px;
-    }
-
-    &__form{
         background-image: url(../recursos/caja-dark-concrete-deg.jpg); 
         background-repeat: no-repeat;
         background-size: cover;
@@ -409,7 +377,7 @@ footer {
     }
 }
 
-.mainContacto__formulario__enviarConsulta {
+.contacto__formulario__enviar {
     font-size: 1.2rem;
     border: none;
     margin-bottom: 1rem;

@@ -1,4 +1,16 @@
-@media (min-width: 541px) and (max-width: 720px) {
+@media (min-width: 541px) and (max-width: 900px) {
+    h1 {
+        font-size: 4rem;
+    }
+    
+    h2 {
+        font-size: 2.5rem;
+    }
+    
+    h3 {
+        font-size: 2rem;
+    }
+
     .grid__container {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -8,95 +20,74 @@
                             "actividades actividades"
                             "img1 img2"
                             "img3 img4"
-                            "dondeEstamos dondeEstamos"
+                            "ubicacion ubicacion"
                             "mapa mapa";
         padding-left: 0rem;
         padding-right: 0rem;
-    }
 
-    .titH1 {
-        font-size: 4rem;
-    }
-    
-    .subH2 {
-        font-size: 2.5rem;
-    }
-    
-    .subH3 {
-        font-size: 2rem;
-    }
+        .main__presentacion__img {
+            text-align: center;
 
-    .main__section__servicios {
-        margin: 0rem;
-    }
-    
-    .main__actividades {
-        margin: 0rem;
+            img {
+            width: 80%;
+            }
+        }
+
+        .main__section__servicios {
+            margin: 1rem;
+        }
+        
+        .main__actividades {
+            margin: 1rem;
+        }
     }
 
     /*/////////////     ESCUELA FUTBOL   /////////////*/
 
-    .escuelaFutbol {
+    .escuela {
         flex-direction: column;
     }
 
-    .escuelaFutbol__presentacion {
+    .escuela__presentacion {
         width: 90%;
     }
 
-    .escuelaFutbol__imagen {
+    .escuela__imagen {
         padding: 1rem;
         width: 80%;
     }
 
     /*/////////////     BUFFET   /////////////*/
 
-    .mainBuffet__comida__carrousel {
+    .buffet__carrousel {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .mainBuffet__comida__carrousel__texto {
+    .buffet__carrousel__texto {
         display: flex;
         flex-direction: column;
         padding: 1rem;
         width: 90%;
     }
     
-    .mainBuffet__comida__carrousel__imagenes {
+    .buffet__carrousel__imagenes {
         width: 80%;
         padding: 1rem;
-    }
-
-    .mainBuffet__bebidas__carrousel {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .mainBuffet__bebidas__carrousel__texto {
-        display: flex;
-        flex-direction: column;
-        width: 90%;
-    }
-    
-    .mainBuffet__bebidas__carrousel__imagenes {
-        width: 80%;
     }
 
     /*/////////////////  TORNEO   /////////////////*/
 
-    .mainTorneoBootstrap__section {
+    .main__section__torneo {
         flex-direction: column;
         align-items: center;
+
+        &__tarjeta {
+            width: 90%;
+            margin-bottom: 2rem;
+        }
     }
-    
-    .mainTorneoBootstrap__section__tarjeta {
-        width: 90%;
-        margin-bottom: 2rem;
-    }
-    
 }
 
 /*/////////////////////////////////////////*/
@@ -115,42 +106,50 @@
                             "img2"
                             "img3"
                             "img4"
-                            "dondeEstamos"
+                            "ubicacion"
                             "mapa";
         padding: 0rem 0rem 0rem 0rem;
+
+        .main__section__presentacion p {
+            font-size: 1.5rem;
+        }
+
+        .main__presentacion__img {
+            text-align: center;
+            
+            img {
+            width: 70%;
+            }
+        }
+
+        .main__section__servicios {
+            margin: 0rem 0rem 1rem 0rem;
+        }
+        
+        .main__actividades {
+            margin: 0rem;
+        }
     }
 
     .navbar-brand {
         font-size: 1rem;
     }
 
-    .titH1 {
+    h1 {
         font-size: 3rem;
     }
     
-    .subH2 {
+    h2 {
         font-size: 2rem;
     }
     
-    .subH3 {
+    h3 {
         font-size: 1.5rem;
-    }
-
-    .main__section__presentacion p {
-        font-size: 1.5rem;
-    }
-
-    .main__section__servicios {
-        margin: 0rem;
-    }
-    
-    .main__actividades {
-        margin: 0rem;
     }
 
     /*/////////////     TORNEOS     /////////////*/
 
-    .mainTorneoBootstrap__section {
+    .main__section__torneo {
         flex-direction: column;
         align-items: center;
 
@@ -185,7 +184,7 @@
 
     /*/////////////     ESCUELA FUTBOL   /////////////*/
 
-    .escuelaFutbol {
+    .escuela {
         flex-direction: column;
 
         &__presentacion {
@@ -200,7 +199,7 @@
 
     /*/////////////     BUFFET   /////////////*/
 
-    .mainBuffet__comida__carrousel {
+    .buffet__carrousel {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -215,35 +214,17 @@
         &__imagenes {
             width: 80%;
             padding: 1rem;
-        }
-    }
-
-    .mainBuffet__bebidas__carrousel {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        &__texto {
-            display: flex;
-            flex-direction: column;
-            width: 90%;
-        }
-        
-        &__imagenes {
-            width: 80%;
         }
     }
 
     /*/////////////////  CONTACTO Y RESERVAS   /////////////////*/
     
-    .mainContacto {
+    .contacto {
         padding: 0;
 
-        &__form {
-            border: none;
-        }
         section {
             border-radius: 0;
+            border: none;
         }
     }
 
