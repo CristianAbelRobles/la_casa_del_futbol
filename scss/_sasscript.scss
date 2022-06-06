@@ -10,3 +10,13 @@
         width: 100%;
     }
 }
+
+.tarjeta__home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(../recursos/caja-watercolor.jpg);
+    background-size: cover;
+    padding: 1rem;
+    margin: 1rem;
+}
