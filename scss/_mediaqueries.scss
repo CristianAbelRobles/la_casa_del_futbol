@@ -42,6 +42,13 @@
         }
     }
 
+    footer .contenedor{
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap:30px;
+        padding: 35px 0px;
+    }
+
     /*/////////////     ESCUELA FUTBOL   /////////////*/
 
     .escuela {
@@ -145,6 +152,13 @@
     
     h3 {
         font-size: 1.5rem;
+    }
+
+    footer .contenedor{
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap:30px;
+        padding: 35px 0px;
     }
 
     /*/////////////     TORNEOS     /////////////*/

@@ -1,5 +1,6 @@
 @import 'variables';
 @import 'sasscript';
+@import 'footer';
 @import url('https://fonts.cdnfonts.com/css/dcc-ash');
 
 * { 
@@ -170,6 +171,7 @@ main {
     }
 }
 
+/*
 footer {
     display: flex;
     flex-direction: column;
@@ -182,6 +184,7 @@ footer {
 .redes {
     width: 2rem;
 }
+*/
 
 /*/////////////     BUFFET     /////////////*/
 

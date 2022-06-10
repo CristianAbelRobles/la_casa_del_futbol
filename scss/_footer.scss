@@ -1,0 +1,101 @@
+footer {
+    width: 100%;
+    background-color: $verde-oscuro;
+
+    .contenedor {
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 3rem;
+        padding: 3rem 0rem;
+
+        &__caja {
+            
+            figure {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+                
+                a {
+                    color: whitesmoke;
+                    text-decoration: none;
+                    text-align: center;
+            
+                    &:hover {
+                        color: $verde-claro;
+                    }
+                }
+
+                img {
+                    width: 80px;
+                }
+            }
+
+            & h4{
+                color: #000000;
+                font-family: 'DCC - Ash', sans-serif;
+                font-weight: 400;
+                margin-bottom: 2rem;
+                font-size: 1.5rem;
+                text-align: center;
+
+            }
+            & p{
+                color: whitesmoke;
+                margin-bottom: 1rem;
+                text-align: center;
+            }
+
+            &__social {
+                text-align: center;
+            
+                a {
+                    display: inline-block;
+                    font-size: 1.5rem;
+                    text-decoration: none;
+                    width: 3rem;
+                    height: 3rem;
+                    line-height: 3rem;
+                    color: $verde-oscuro;
+                    margin-right: 1rem;
+                    background-color: whitesmoke;
+                    text-align: center;
+                    transition: all 300ms ease;
+                    border-radius: 10%;
+                    &:hover {
+                        color: whitesmoke;
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+
+    }
+
+    .footer__copy {
+        background-color: black;
+        padding: 1rem 1rem;
+        text-align: center;
+        color: whitesmoke;
+    
+        small{
+            font-size: 1rem;
+        }
+    }
+}
+
+.bi-facebook:hover{
+    background-color: #3b5998;
+}
+
+.bi-instagram:hover{
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+}
+
+.bi-whatsapp:hover{
+    background-color: #25d366;
+}
