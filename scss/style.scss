@@ -10,27 +10,18 @@
 }
 
 h1 {
-    margin-bottom: 2rem;
-    font-family: 'DCC - Ash', sans-serif;
-    font-weight: 400;
     font-size: 5rem;
-    text-align: center;
+    @extend .titulos;
 }
 
 h2 {
-    margin-bottom: 2rem;
-    font-family: 'DCC - Ash', sans-serif;
-    font-weight: 400;
     font-size: 3rem;
-    text-align: center;
+    @extend .titulos;
 }
 
 h3 {
-    margin-bottom: 2rem;
-    font-family: 'DCC - Ash', sans-serif;
-    font-weight: 400;
     font-size: 2.5rem;
-    text-align: center;
+    @extend .titulos;
 }
 
 main {
@@ -166,25 +157,8 @@ main {
     
     .mapa {
         grid-area: mapa;
-        margin: 0;
-        padding: 0;
     }
 }
-
-/*
-footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    background-color: $verde-claro;
-}
-
-.redes {
-    width: 2rem;
-}
-*/
 
 /*/////////////     BUFFET     /////////////*/
 
@@ -279,7 +253,7 @@ footer {
         $galeriaEscuelas: (caja1: _1, caja2: _2, caja3: _3, caja4: _4, caja5: _5, caja6: _6,caja7: _7, caja8: _8, caja9: _9, caja10: _10, caja11: _11, caja12: _12);
         
         @each $key, $numero in $galeriaEscuelas {
-            .section__escuela__galeria__#{$key} {
+            &__#{$key} {
                 width: 250px;
                 height: 250px;
                 background-image: url(../recursos/escuela_futbol/escuela_futbol#{$numero}.jpg);

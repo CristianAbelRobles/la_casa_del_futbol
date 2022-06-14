@@ -3,12 +3,12 @@ footer {
     background-color: $verde-oscuro;
 
     .contenedor {
-        width: 100%;
-        max-width: 1200px;
-        margin: auto;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 3rem;
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
         padding: 3rem 0rem;
 
         &__caja {
