@@ -17,7 +17,6 @@ let listaReservas = [
     {nombre: "joaquin", apellido: "robles", dia: "viernes", horario: 13, telefono: 116463498, mail: "joaquin@gmail.com", parrilla: "si"}
 ]
 
-
 const agregarReserva = () => {
     let nombre = prompt("Ingresa su nombre.");
     let apellido = prompt(`${nombre}, ingresa tu Apellido.`);
@@ -31,7 +30,6 @@ const agregarReserva = () => {
     let mail = prompt("Ingresa tu Mail de contacto");
     let parrilla = prompt("Quiere reservar parrilla con su alquiler?");
     alert(`Reserva creada por ${nombre} ${apellido} para el día ${dia} a las ${horario}hs. su telefono de contacto es ${telefono} y su correo ${mail}, ${parrilla} quiere reservar la parrilla.`);
-
     let reservaNueva = new Reserva (nombre, apellido, dia, horario, telefono, mail, parrilla);
     listaReservas.push(reservaNueva)
 }
@@ -39,23 +37,22 @@ const agregarReserva = () => {
 let respuesta = parseInt(prompt("que le gustaria hacer?\n 1- Crear Reserva \n 2- Consultar Reservas hechas \n 3- eliminar una reserva\n 4- Salir"));
 
 if (respuesta === 4){
-    alert("Gracias por visitarnos")
+    alert(`Gracias por visitarnos`)
 }else if (respuesta === 1){
     agregarReserva()
-    let respuestaNueva = prompt("Desea crear otra reserva?").toUpperCase;
+    let respuestaNueva = prompt("Desea crear otra reserva?").toLowerCase;
     while (respuestaNueva == "si") {
         agregarReserva()
     }
 }else if (respuesta === 2){
-    
-    alert("MOSTTRAR RESERVAS")
+    for(let i = 0; i < listaReservas.length; i++){
+        alert(`Reserva creada por ${listaReservas[i].nombre} ${listaReservas[i].apellido} para el día ${listaReservas[i].dia} a las ${listaReservas[i].horario}hs. su telefono de contacto es ${listaReservas[i].telefono} y su correo ${listaReservas[i].mail}, ${listaReservas[i].parrilla} quiere reservar la parrilla.`)
+    }
 }else if (respuesta === 3){
     alert("ELIMINAR RESERVA")
 }else {
     alert("Ingrese una respuesta valida.")
 }
-
-console.log(listaReservas)
 
 
 
