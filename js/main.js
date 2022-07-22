@@ -8,14 +8,50 @@ let listaReservas = [
     {nombre: "Ulises", apellido: "Benitez", dia: "Sabado", horario: 22, telefono: 1164634538, mail: "ulises@gmail.com", parrilla: "si"},
 ]
 
+function aparecer (){
+    document.getElementById("tarjetero").style.display = "block";
+}
+
+function ocultar (){
+    document.getElementById("tarjetero").style.display = "none";
+}
+
+ocultar ()
+
 const mostrarReserva = () => {
-    for(let i = 0; i < listaReservas.length; ++i){
+    for(let i = 0; i < listaReservas.length; i++){
+        /*
+        const contenedorDiv = document.createElement("div");
+        tarjetero.appendChild(contenedorDiv);
+        contenedorDiv.className = "card m-2";
+        contenedorDiv.id = ("tarjetas" + i);
+
+        console.log("tarjetas" + i)
+        
+        const contenedorDivBody = document.createElement("div");
+        ("tarjeta" + i).appendChild(contenedorDivBody);
+        contenedorDivBody.className = "card-body";
+        contenedorDivBody.id = ("cardBody" + i);
+
+        console.log("cardBody" + i)
+
+        const tituloCard = document.createElement("h5");
+        ("cardBody" + i).appendChild(tituloCard);
+        tituloCard.className = "card-title";
+        tituloCard.id = ("js-card-titulo" + i);
+
+        */
+        
         document.querySelector("#js-card-titulo" + i).textContent = (`Reserva de ${listaReservas[i].nombre} ${listaReservas[i].apellido}`);
         document.querySelector("#js-card-text" + i).textContent = (`para el día ${listaReservas[i].dia} a las ${listaReservas[i].horario}hs. su telefono de contacto es ${listaReservas[i].telefono} y su correo ${listaReservas[i].mail}, ${listaReservas[i].parrilla} quiere reservar la parrilla.`);
     }
 }
+document.querySelector("#btnVisualizarReservas").addEventListener("click", function() {
+    mostrarReserva ()
+});
 
-mostrarReserva ()
+
+
 
 /*
 class Reserva{

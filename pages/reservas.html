@@ -59,17 +59,19 @@
 
         <section>
             <div class="d-flex justify-content-evenly align-text-center">
-                <button type="submit" class="btn btn-success" id="btn-reservar">Crear reserva</button>
-                <button type="submit" class="btn btn-info" id="btn-visualizar">visualizar reservas</button>
-                <button type="submit" class="btn btn-danger" id="btn-borrar">borrar reserva</button>
+                <button type="submit" class="btn btn-success" id="btnReservar">Crear reserva</button>
+                <button type="submit" class="btn btn-info" id="btnVisualizarReservas">visualizar reservas</button>
+                <button type="submit" class="btn btn-danger" id="btnBorrar">borrar reserva</button>
             </div>
             <div>
                 <h2 class="white">titulo</h2>
                 <h3 class="green">subtilo</h3>
+            </div>
+            <div>
                 <!-- TARJETAS DE RESERVAS-->
-                <div class="d-flex flex-wrap justify-content-evenly align-text-center">
+                <div class="d-flex flex-wrap justify-content-evenly align-text-center" id="tarjetero">
                     <!-- TARJETAS -->
-                    <div class="card m-2" style="width: 15rem;">
+                    <div class="card m-2" style="width: 15rem;" id="tarjeta0">
                         <img src="../recursos/img_cancha.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title" id="js-card-titulo0"></h5>
@@ -77,6 +79,9 @@
                             <a href="#" class="btn btn-danger">Eliminar</a>
                         </div>
                     </div>
+
+
+
                     <div class="card m-2" style="width: 15rem;">
                         <img src="../recursos/img_cancha.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -103,6 +108,7 @@
                             <a href="#" class="btn btn-danger">Eliminar</a>
                         </div>
                     </div>
+
                 </div>
                 <p class="white">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti voluptas facere vel reiciendis reprehenderit magni dolorum laboriosam esse ipsum nostrum! Dolore totam quae est doloremque soluta labore, illo maiores. Vitae?

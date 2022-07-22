@@ -444,6 +444,7 @@ main {
   .contacto__formulario__enviar:hover {
     background-color: #ccff33; }
 
+/*/////////////////// RESERVAS //////////////////*/
 /*//////////////// MEDIAQUERIES ////////////////*/
 @media (min-width: 541px) and (max-width: 900px) {
   h1 {
