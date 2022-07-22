@@ -1,4 +1,23 @@
 
+let listaReservas = [
+    {nombre: "Cristian", apellido: "robles", dia: "Lunes", horario: 15, telefono: 1130164798, mail: "cristian@gmail.com", parrilla: "si"},
+    {nombre: "Laura", apellido: "nacimiento", dia: "Martes", horario: 19, telefono: 1164568798, mail: "laura@gmail.com", parrilla: "no"},
+    {nombre: "Joaquin", apellido: "robles", dia: "Miercoles", horario: 13, telefono: 116567798, mail: "joaquin@gmail.com", parrilla: "si"},
+    {nombre: "Abel", apellido: "Lopez", dia: "Jueves", horario: 14, telefono: 118768598, mail: "abel@gmail.com", parrilla: "si"},
+    {nombre: "Ezequiel", apellido: "Gonzalez", dia: "Viernes", horario: 16, telefono: 1165684564, mail: "ezeuiel@gmail.com", parrilla: "no"},
+    {nombre: "Ulises", apellido: "Benitez", dia: "Sabado", horario: 22, telefono: 1164634538, mail: "ulises@gmail.com", parrilla: "si"},
+]
+
+const mostrarReserva = () => {
+    for(let i = 0; i < listaReservas.length; ++i){
+        document.querySelector("#js-card-titulo" + i).textContent = (`Reserva de ${listaReservas[i].nombre} ${listaReservas[i].apellido}`);
+        document.querySelector("#js-card-text" + i).textContent = (`para el día ${listaReservas[i].dia} a las ${listaReservas[i].horario}hs. su telefono de contacto es ${listaReservas[i].telefono} y su correo ${listaReservas[i].mail}, ${listaReservas[i].parrilla} quiere reservar la parrilla.`);
+    }
+}
+
+mostrarReserva ()
+
+/*
 class Reserva{
     constructor(nombre, apellido, dia, horario, telefono, mail, parrilla){
         this.nombre = nombre;
@@ -62,7 +81,15 @@ if (respuesta === 4){
 
 
 
-/*
+
+
+
+
+
+
+
+
+
 
 function crearReserva () {
     let nombreReserva = prompt("Ingresa su nombre.");
