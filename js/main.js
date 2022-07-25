@@ -6,20 +6,23 @@ let listaReservas = [
     {nombre: "Abel", apellido: "Lopez", dia: "Jueves", horario: 14, telefono: 118768598, mail: "abel@gmail.com", parrilla: "si"},
     {nombre: "Ezequiel", apellido: "Gonzalez", dia: "Viernes", horario: 16, telefono: 1165684564, mail: "ezeuiel@gmail.com", parrilla: "no"},
     {nombre: "Ulises", apellido: "Benitez", dia: "Sabado", horario: 22, telefono: 1164634538, mail: "ulises@gmail.com", parrilla: "si"},
-]
-
-function aparecer (){
-    document.getElementById("tarjetero").style.display = "block";
-}
-
-function ocultar (){
-    document.getElementById("tarjetero").style.display = "none";
-}
-
-ocultar ()
-
+    {nombre: "Alejandro", apellido: "robles", dia: "Lunes", horario: 15, telefono: 1130164798, mail: "cristian@gmail.com", parrilla: "si"},
+    {nombre: "Pablo", apellido: "nacimiento", dia: "Martes", horario: 19, telefono: 1164568798, mail: "laura@gmail.com", parrilla: "no"},
+    {nombre: "Enrique", apellido: "robles", dia: "Miercoles", horario: 13, telefono: 116567798, mail: "joaquin@gmail.com", parrilla: "si"},
+    {nombre: "Nahuel", apellido: "Lopez", dia: "Jueves", horario: 14, telefono: 118768598, mail: "abel@gmail.com", parrilla: "si"},
+    {nombre: "Ciro", apellido: "Gonzalez", dia: "Viernes", horario: 16, telefono: 1165684564, mail: "ezeuiel@gmail.com", parrilla: "no"},
+    {nombre: "Mateo", apellido: "Benitez", dia: "Sabado", horario: 22, telefono: 1164634538, mail: "ulises@gmail.com", parrilla: "si"},
+    {nombre: "Gustavo", apellido: "robles", dia: "Lunes", horario: 15, telefono: 1130164798, mail: "cristian@gmail.com", parrilla: "si"},
+    {nombre: "Javier", apellido: "nacimiento", dia: "Martes", horario: 19, telefono: 1164568798, mail: "laura@gmail.com", parrilla: "no"},
+    {nombre: "Diego", apellido: "robles", dia: "Miercoles", horario: 13, telefono: 116567798, mail: "joaquin@gmail.com", parrilla: "si"},
+    {nombre: "Jorge", apellido: "Lopez", dia: "Jueves", horario: 14, telefono: 118768598, mail: "abel@gmail.com", parrilla: "si"},
+    {nombre: "Nemias", apellido: "Gonzalez", dia: "Viernes", horario: 16, telefono: 1165684564, mail: "ezeuiel@gmail.com", parrilla: "no"},
+    {nombre: "Emanuel", apellido: "Benitez", dia: "Sabado", horario: 22, telefono: 1164634538, mail: "ulises@gmail.com", parrilla: "si"},
+];
+console.log(listaReservas);
 const mostrarReserva = () => {
     for(let i = 0; i < listaReservas.length; i++){
+        let numeroReserva = i + 1;
         /*
         const contenedorDiv = document.createElement("div");
         tarjetero.appendChild(contenedorDiv);
@@ -33,27 +36,20 @@ const mostrarReserva = () => {
         contenedorDivBody.className = "card-body";
         contenedorDivBody.id = ("cardBody" + i);
 
-        console.log("cardBody" + i)
+        console.log("#cardBody" + i)
 
         const tituloCard = document.createElement("h5");
         ("cardBody" + i).appendChild(tituloCard);
         tituloCard.className = "card-title";
         tituloCard.id = ("js-card-titulo" + i);
-
         */
         
-        document.querySelector("#js-card-titulo" + i).textContent = (`Reserva de ${listaReservas[i].nombre} ${listaReservas[i].apellido}`);
+        
+        document.querySelector("#js-card-titulo" + i).textContent = (`Reserva N°${numeroReserva} de ${listaReservas[i].nombre} ${listaReservas[i].apellido}`);
         document.querySelector("#js-card-text" + i).textContent = (`para el día ${listaReservas[i].dia} a las ${listaReservas[i].horario}hs. su telefono de contacto es ${listaReservas[i].telefono} y su correo ${listaReservas[i].mail}, ${listaReservas[i].parrilla} quiere reservar la parrilla.`);
     }
 }
-document.querySelector("#btnVisualizarReservas").addEventListener("click", function() {
-    mostrarReserva ()
-});
 
-
-
-
-/*
 class Reserva{
     constructor(nombre, apellido, dia, horario, telefono, mail, parrilla){
         this.nombre = nombre;
@@ -65,12 +61,6 @@ class Reserva{
         this.parrilla = parrilla
     }
 }
-
-let listaReservas = [
-    {nombre: "cristian", apellido: "robles", dia: "martes", horario: 15, telefono: 1130164798, mail: "cristian@gmail.com", parrilla: "si"},
-    {nombre: "laura", apellido: "nacimiento", dia: "miercoles", horario: 19, telefono: 1164688798, mail: "laura@gmail.com", parrilla: "no"},
-    {nombre: "joaquin", apellido: "robles", dia: "viernes", horario: 13, telefono: 116463498, mail: "joaquin@gmail.com", parrilla: "si"}
-]
 
 const agregarReserva = () => {
     let nombre = prompt("Ingresa su nombre.");
@@ -89,42 +79,41 @@ const agregarReserva = () => {
     listaReservas.push(reservaNueva)
 }
 
-let respuesta = parseInt(prompt("que le gustaria hacer?\n 1- Crear Reserva \n 2- Consultar Reservas hechas \n 3- eliminar una reserva\n 4- Salir"));
-
-if (respuesta === 4){
-    alert(`Gracias por visitarnos`)
-}else if (respuesta === 1){
-    agregarReserva()
-    let respuestaNueva = prompt("Desea crear otra reserva?").toLowerCase;
-    while (respuestaNueva == "si") {
-        agregarReserva()
-    }
-}else if (respuesta === 2){
-    for(let i = 0; i < listaReservas.length; i++){
-        alert(`Reserva creada por ${listaReservas[i].nombre} ${listaReservas[i].apellido} para el día ${listaReservas[i].dia} a las ${listaReservas[i].horario}hs. su telefono de contacto es ${listaReservas[i].telefono} y su correo ${listaReservas[i].mail}, ${listaReservas[i].parrilla} quiere reservar la parrilla.`)
-    }
-}else if (respuesta === 3){
-    alert("ELIMINAR RESERVA")
-}else {
-    alert("Ingrese una respuesta valida.")
+const eliminarReserva = () => {
+    let deleteR = parseInt(prompt("¿Qué Número de reserva le gustaria borrar?"));
+    console.log(deleteR);
+    console.log(listaReservas[deleteR]);
+    listaReservas.splice(deleteR - 1, 1);
+    mostrarReserva ()
+    console.log(listaReservas);
 }
 
+document.querySelector("#btnVisualizarReservas").addEventListener("click", function() {
+    mostrarReserva ()
+});
+
+document.querySelector("#btnReservar").addEventListener("click", function() {
+    agregarReserva ()
+});
+
+
+document.querySelector("#btnEliminar").addEventListener("click", function() {
+    eliminarReserva()
+});
+
+/*
 
 
 
+function aparecer (){
+    document.getElementById("tarjetero").style.display = "block";
+}
 
+function ocultar (){
+    document.getElementById("tarjetero").style.display = "none";
+}
 
-
-
-
-
-
-
-
-
-
-
-
+ocultar ()
 
 
 function crearReserva () {
