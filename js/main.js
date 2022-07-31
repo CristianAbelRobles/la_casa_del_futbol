@@ -29,32 +29,31 @@ const visulalizarReserva = () => {
                 <div class="col" id="reserva${numeroReserva}">
                     ${numeroReserva}
                 </div>
-                <div class="col" id="dia">
+                <div class="col" id="">
                     ${listaReservas[i].dia}
                 </div>
-                <div class="col" id="nombre">
+                <div class="col" id="">
                     ${listaReservas[i].nombre}
                 </div>
-                <div class="col" id="apellido">
+                <div class="col" id="">
                     ${listaReservas[i].apellido}
                 </div>
-                <div class="col" id="horario">
+                <div class="col" id="">
                     ${listaReservas[i].horario}
                 </div>
-                <div class="col" id="telefono">
+                <div class="col" id="">
                     ${listaReservas[i].telefono}
                 </div>
-                <div class="col" id="mail">
+                <div class="col" id="">
                     ${listaReservas[i].mail}
                 </div>
-                <div class="col"id="parrilla">
+                <div class="col"id="">
                     ${listaReservas[i].parrilla}
                 </div>
-                <div class="col" id="eliminar">
-                    <button type="button" class="btn btn-danger" id="btnEliminar">Eliminar</button>
+                <div class="col">
+                    <button type="button" class="btn btn-danger eliminar">Eliminar</button>
                 </div>
             </div>
-        
     `
     }
 }
@@ -71,26 +70,7 @@ class Reserva{
     }
 }
 
-/*
 const agregarReserva = () => {
-    let nombre = prompt("Ingresa su nombre.");
-    let apellido = prompt(`${nombre}, ingresa tu Apellido.`);
-    let dia = prompt(`${nombre}, qué dia te gustaria reservar?`);
-    let horario = parseInt(prompt(`${nombre}, en que horario te gustaria jugar?`));
-        while ((horario<=9) || (horario>=23)) {
-            alert(`${nombre}, no tenemos alquiler disponible en ese horario, por favor elija uno diferente.`);
-            horario = parseInt(prompt(`${nombre}, en que horario te gustaria jugar?`));
-        }
-    let telefono = prompt("Ingresa tu Telefono de contacto");
-    let mail = prompt("Ingresa tu Mail de contacto");
-    let parrilla = prompt("Quiere reservar parrilla con su alquiler?");
-    alert(`Reserva creada por ${nombre} ${apellido} para el día ${dia} a las ${horario}hs. su telefono de contacto es ${telefono} y su correo ${mail}, ${parrilla} quiere reservar la parrilla.`);
-    let reservaNueva = new Reserva (nombre, apellido, dia, horario, telefono, mail, parrilla);
-    listaReservas.push(reservaNueva)
-}
-*/
-
-const agregarReservaNueva = () => {
     let nombre = document.querySelector("#nombre").value;
     console.log(nombre);
     let apellido = document.querySelector("#apellido").value;
@@ -105,12 +85,26 @@ const agregarReservaNueva = () => {
     console.log(mail);
     let parrilla = document.querySelector("#parrilla").value;
     console.log(parrilla);
-    alert(`Reserva creada por ${nombre} ${apellido} para el día ${dia} a las ${horario}hs. su telefono de contacto es ${telefono} y su correo ${mail}, ${parrilla} quiere reservar la parrilla.`);
     let reservaNueva = new Reserva (nombre, apellido, dia, horario, telefono, mail, parrilla);
     listaReservas.push(reservaNueva);
     console.log(listaReservas)
 }
 
+// eliminar reservas del array 
+
+let botonesEliminar = document.querySelectorAll(".eliminar"); //selecciono todos los botones eliminar
+    for (let i=0; i<botonesEliminar.length; i++){
+        let boton = botonesEliminar[i];
+        boton.addEventListener(click, eliminarReserva);
+}
+
+function eliminarReserva (e){
+    let boton = e.target;
+    console.log(boton)
+}
+
+
+/*
 const eliminarReserva = () => {
     let deleteR = parseInt(prompt("¿Qué Número de reserva le gustaria borrar?"));
     console.log(deleteR);
@@ -119,14 +113,17 @@ const eliminarReserva = () => {
     mostrarReserva ()
     console.log(listaReservas);
 }
+*/
+
+
 
 document.querySelector("#visualizarReservas").addEventListener("click", function() {
     visulalizarReserva ()
 });
 
 document.querySelector("#btnReservar").addEventListener("click", function() {
-
-    agregarReservaNueva ()
+    event.preventDefault();
+    agregarReserva ()
 });
 
 /*
