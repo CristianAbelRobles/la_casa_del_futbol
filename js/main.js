@@ -19,34 +19,43 @@ let listaReservas = [
     {nombre: "Nemias", apellido: "Gonzalez", dia: "Viernes", horario: 16, telefono: 1165684564, mail: "ezeuiel@gmail.com", parrilla: "no"},
     {nombre: "Emanuel", apellido: "Benitez", dia: "Sabado", horario: 22, telefono: 1164634538, mail: "ulises@gmail.com", parrilla: "si"},
 ];
-console.log(listaReservas);
-const mostrarReserva = () => {
+
+const visulalizarReserva = () => {
     for(let i = 0; i < listaReservas.length; i++){
+        let tablaReservas = document.querySelector(".tablaReservas");
         let numeroReserva = i + 1;
-        /*
-        const contenedorDiv = document.createElement("div");
-        tarjetero.appendChild(contenedorDiv);
-        contenedorDiv.className = "card m-2";
-        contenedorDiv.id = ("tarjetas" + i);
-
-        console.log("tarjetas" + i)
+        tablaReservas.innerHTML += `
+            <div class="row align-items-start white" >
+                <div class="col" id="reserva${numeroReserva}">
+                    ${numeroReserva}
+                </div>
+                <div class="col" id="dia">
+                    ${listaReservas[i].dia}
+                </div>
+                <div class="col" id="nombre">
+                    ${listaReservas[i].nombre}
+                </div>
+                <div class="col" id="apellido">
+                    ${listaReservas[i].apellido}
+                </div>
+                <div class="col" id="horario">
+                    ${listaReservas[i].horario}
+                </div>
+                <div class="col" id="telefono">
+                    ${listaReservas[i].telefono}
+                </div>
+                <div class="col" id="mail">
+                    ${listaReservas[i].mail}
+                </div>
+                <div class="col"id="parrilla">
+                    ${listaReservas[i].parrilla}
+                </div>
+                <div class="col" id="eliminar">
+                    <button type="button" class="btn btn-danger" id="btnEliminar">Eliminar</button>
+                </div>
+            </div>
         
-        const contenedorDivBody = document.createElement("div");
-        ("tarjeta" + i).appendChild(contenedorDivBody);
-        contenedorDivBody.className = "card-body";
-        contenedorDivBody.id = ("cardBody" + i);
-
-        console.log("#cardBody" + i)
-
-        const tituloCard = document.createElement("h5");
-        ("cardBody" + i).appendChild(tituloCard);
-        tituloCard.className = "card-title";
-        tituloCard.id = ("js-card-titulo" + i);
-        */
-        
-        
-        document.querySelector("#js-card-titulo" + i).textContent = (`Reserva N°${numeroReserva} de ${listaReservas[i].nombre} ${listaReservas[i].apellido}`);
-        document.querySelector("#js-card-text" + i).textContent = (`para el día ${listaReservas[i].dia} a las ${listaReservas[i].horario}hs. su telefono de contacto es ${listaReservas[i].telefono} y su correo ${listaReservas[i].mail}, ${listaReservas[i].parrilla} quiere reservar la parrilla.`);
+    `
     }
 }
 
@@ -62,6 +71,7 @@ class Reserva{
     }
 }
 
+/*
 const agregarReserva = () => {
     let nombre = prompt("Ingresa su nombre.");
     let apellido = prompt(`${nombre}, ingresa tu Apellido.`);
@@ -78,6 +88,28 @@ const agregarReserva = () => {
     let reservaNueva = new Reserva (nombre, apellido, dia, horario, telefono, mail, parrilla);
     listaReservas.push(reservaNueva)
 }
+*/
+
+const agregarReservaNueva = () => {
+    let nombre = document.querySelector("#nombre").value;
+    console.log(nombre);
+    let apellido = document.querySelector("#apellido").value;
+    console.log(apellido);
+    let dia = document.querySelector("#dia").value;
+    console.log(dia);
+    let horario = document.querySelector("#hora").value;
+    console.log(horario);
+    let telefono = document.querySelector("#telefono").value;
+    console.log(telefono);
+    let mail = document.querySelector("#mail").value;
+    console.log(mail);
+    let parrilla = document.querySelector("#parrilla").value;
+    console.log(parrilla);
+    alert(`Reserva creada por ${nombre} ${apellido} para el día ${dia} a las ${horario}hs. su telefono de contacto es ${telefono} y su correo ${mail}, ${parrilla} quiere reservar la parrilla.`);
+    let reservaNueva = new Reserva (nombre, apellido, dia, horario, telefono, mail, parrilla);
+    listaReservas.push(reservaNueva);
+    console.log(listaReservas)
+}
 
 const eliminarReserva = () => {
     let deleteR = parseInt(prompt("¿Qué Número de reserva le gustaria borrar?"));
@@ -88,18 +120,36 @@ const eliminarReserva = () => {
     console.log(listaReservas);
 }
 
-document.querySelector("#btnVisualizarReservas").addEventListener("click", function() {
-    mostrarReserva ()
+document.querySelector("#visualizarReservas").addEventListener("click", function() {
+    visulalizarReserva ()
 });
 
 document.querySelector("#btnReservar").addEventListener("click", function() {
-    agregarReserva ()
+
+    agregarReservaNueva ()
 });
 
+/*
+document.querySelector("#btnReservar").addEventListener("click", function() {
+    agregarReserva ()
+});
+*/
 
+
+/*
 document.querySelector("#btnEliminar").addEventListener("click", function() {
     eliminarReserva()
 });
+
+*/
+
+
+
+
+
+
+
+
 
 /*
 

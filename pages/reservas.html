@@ -55,255 +55,114 @@
         <img src="../recursos/top_home4.jpg" alt="cancha de futbol 5"/>
     </div>
     <main class="contacto">
-        <!---------- PROYECTO JAVA ---------->
 
+        <!---------- FORMULARIO ---------->
+        <section>
+            <h1 class="green">HACE TU RESERVA</h1>
+            <form class="row g-3 d-flex justify-content-center" method="post">
+                <div class="col-md-6">
+                    <label for="nombre" class="form-label text-white">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="apellido" class="form-label text-white">Apellido</label>
+                    <input type="text" class="form-control" id="apellido" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="telefono" class="form-label text-white">Telefono</label>
+                    <input type="text" class="form-control" id="telefono" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="email" class="form-label text-white" required>Email</label>
+                    <input type="email" class="form-control" id="mail">
+                </div>
+                <div class="col-md-4">
+                    <label class="white" for="start">Día de Reserva</label>
+                    <input class="col-md-6" type="date" name="trip-start" value="" min="" max="" id="dia" required>
+                </div>
+                <div class="col-md-4">
+                <select class="form-select col-md-6 form-control" aria-label="Default select example" id="hora" >
+                    <option selected>Hora de Reserva</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                </select>
+                </div>
+                <div class="form-check col-md-4 d-flex justify-content-evenly align-items-center reservaParrilla">
+                    <input class="form-check-input" type="checkbox" value="" id="parrillaCheck">
+                    <label class="form-check-label white" for="parrillaCheck">
+                    ¿Reservar Parrilla?
+                    </label>
+                </div>
+                <div class="col-md-3">
+                    <button type="submit" class="btn contacto__formulario__enviar" id="btnReservar">Solicitar Reserva</button>
+                </div>
+            </form>
+            
+        </section>
+
+        <!---------- PROYECTO JAVA ---------->
         <section>
             <div>
                 <h2 class="white">RESERVAS</h2>
                 <h3 class="green">Puede realizar una reserva de manera Online</h3>
             </div>
             <div class="d-flex justify-content-evenly align-text-center mb-4">
-                <button type="submit" class="btn btn-success" id="btnReservar">Crear reserva</button>
-                <button type="submit" class="btn btn-info" id="btnVisualizarReservas">Visualizar reservas</button>
-                <button type="submit" class="btn btn-danger" id="btnEliminar">Eliminar Reserva</button>
+                <button type="submit" class="btn btn-success" >Crear reserva</button>
+                <button type="submit" class="btn btn-info" id="visualizarReservas">Visualizar Reservas</button>
             </div>
-            <div>
-                <!-- TARJETAS DE RESERVAS-->
-                <div class="d-flex flex-wrap justify-content-evenly align-text-center" id="tarjetero">
-                    <!-- TARJETAS -->
-                    <div class="card m-2" style="width: 15rem;" id="tarjeta0">
-                        <img src="../recursos/img_cancha.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title" id="js-card-titulo0"></h5>
-                            <p class="card-text" id="js-card-text0"></p>
-                            <!-- <a href="#" class="btn btn-danger">Eliminar</a>  -->
-                        </div>
-                    </div>
-                    <div class="card m-2" style="width: 15rem;">
-                        <img src="../recursos/img_cancha.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title js-card-titulo" id="js-card-titulo1"></h5>
-                            <p class="card-text js-card-text" id="js-card-text1"></p>
-                            <!-- <a href="#" class="btn btn-danger">Eliminar</a>  -->
-                        </div>
-                    </div>
-                    <!-- TARJETAS -->
-                    <div class="card m-2" style="width: 15rem;">
-                        <img src="../recursos/img_cancha.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title" id="js-card-titulo2"></h5>
-                            <p class="card-text" id="js-card-text2"></p>
-                            <!-- <a href="#" class="btn btn-danger">Eliminar</a>  -->
-                        </div>
-                    </div>
-                    <!-- TARJETAS -->
-                    <div class="card m-2" style="width: 15rem;">
-                        <img src="../recursos/img_cancha.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title" id="js-card-titulo3"></h5>
-                            <p class="card-text" id="js-card-text3"></p>
-                            <!-- <a href="#" class="btn btn-danger">Eliminar</a>  -->
-                        </div>
-                    </div>
-                    <!-- TARJETAS -->
-                    <div class="card m-2" style="width: 15rem;">
-                        <img src="../recursos/img_cancha.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title" id="js-card-titulo4"></h5>
-                            <p class="card-text" id="js-card-text4"></p>
-                            <!-- <a href="#" class="btn btn-danger">Eliminar</a>  -->
-                        </div>
-                    </div>
-                    <!-- TARJETAS -->
-                    <div class="card m-2" style="width: 15rem;">
-                        <img src="../recursos/img_cancha.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title" id="js-card-titulo5"></h5>
-                            <p class="card-text" id="js-card-text5"></p>
-                            <!-- <a href="#" class="btn btn-danger">Eliminar</a>  -->
-                        </div>
-                    </div>
-                    <!-- TARJETAS -->
-                    <div class="card m-2" style="width: 15rem;">
-                        <img src="../recursos/img_cancha.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title" id="js-card-titulo6"></h5>
-                            <p class="card-text" id="js-card-text6"></p>
-                            <!-- <a href="#" class="btn btn-danger">Eliminar</a>  -->
-                        </div>
-                    </div>
-                    <!-- TARJETAS -->
-                    <div class="card m-2" style="width: 15rem;">
-                        <img src="../recursos/img_cancha.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title" id="js-card-titulo7"></h5>
-                            <p class="card-text" id="js-card-text7"></p>
-                            <!-- <a href="#" class="btn btn-danger">Eliminar</a>  -->
-                        </div>
-                    </div>
-                    <!-- TARJETAS -->
-                    <div class="card m-2" style="width: 15rem;">
-                        <img src="../recursos/img_cancha.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title" id="js-card-titulo8"></h5>
-                            <p class="card-text" id="js-card-text8"></p>
-                            <!-- <a href="#" class="btn btn-danger">Eliminar</a>  -->
-                        </div>
-                    </div>
-                    <!-- TARJETAS -->
-                    <div class="card m-2" style="width: 15rem;">
-                        <img src="../recursos/img_cancha.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title" id="js-card-titulo9"></h5>
-                            <p class="card-text" id="js-card-text9"></p>
-                            <!-- <a href="#" class="btn btn-danger">Eliminar</a>  -->
-                        </div>
-                    </div>
-                    <!-- TARJETAS -->
-                    <div class="card m-2" style="width: 15rem;">
-                        <img src="../recursos/img_cancha.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title" id="js-card-titulo10"></h5>
-                            <p class="card-text" id="js-card-text10"></p>
-                            <!-- <a href="#" class="btn btn-danger">Eliminar</a>  -->
-                        </div>
-                    </div>
-                    <!-- TARJETAS -->
-                    <div class="card m-2" style="width: 15rem;">
-                        <img src="../recursos/img_cancha.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title" id="js-card-titulo11"></h5>
-                            <p class="card-text" id="js-card-text11"></p>
-                            <!-- <a href="#" class="btn btn-danger">Eliminar</a>  -->
-                        </div>
-                    </div>
-                    <!-- TARJETAS -->
-                    <div class="card m-2" style="width: 15rem;">
-                        <img src="../recursos/img_cancha.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title" id="js-card-titulo12"></h5>
-                            <p class="card-text" id="js-card-text12"></p>
-                            <!-- <a href="#" class="btn btn-danger">Eliminar</a>  -->
-                        </div>
-                    </div>
-                    <!-- TARJETAS -->
-                    <div class="card m-2" style="width: 15rem;">
-                        <img src="../recursos/img_cancha.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title" id="js-card-titulo13"></h5>
-                            <p class="card-text" id="js-card-text13"></p>
-                            <!-- <a href="#" class="btn btn-danger">Eliminar</a>  -->
-                        </div>
-                    </div>
-                    <!-- TARJETAS -->
-                    <div class="card m-2" style="width: 15rem;">
-                        <img src="../recursos/img_cancha.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title" id="js-card-titulo14"></h5>
-                            <p class="card-text" id="js-card-text14"></p>
-                            <!-- <a href="#" class="btn btn-danger">Eliminar</a>  -->
-                        </div>
-                    </div>
-                    <!-- TARJETAS -->
-                    <div class="card m-2" style="width: 15rem;">
-                        <img src="../recursos/img_cancha.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title" id="js-card-titulo15"></h5>
-                            <p class="card-text" id="js-card-text15"></p>
-                            <!-- <a href="#" class="btn btn-danger">Eliminar</a>  -->
-                        </div>
-                    </div>
-                    <!-- TARJETAS -->
-                    <div class="card m-2" style="width: 15rem;">
-                        <img src="../recursos/img_cancha.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title" id="js-card-titulo16"></h5>
-                            <p class="card-text" id="js-card-text16"></p>
-                            <!-- <a href="#" class="btn btn-danger">Eliminar</a>  -->
-                        </div>
-                    </div>
-                    <!-- TARJETAS -->
-                    <div class="card m-2" style="width: 15rem;">
-                        <img src="../recursos/img_cancha.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title" id="js-card-titulo17"></h5>
-                            <p class="card-text" id="js-card-text17"></p>
-                            <!-- <a href="#" class="btn btn-danger">Eliminar</a>  -->
-                        </div>
-                    </div>
-                    <!-- TARJETAS -->
-                    <div class="card m-2" style="width: 15rem;">
-                        <img src="../recursos/img_cancha.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title" id="js-card-titulo18"></h5>
-                            <p class="card-text" id="js-card-text18"></p>
-                            <!-- <a href="#" class="btn btn-danger">Eliminar</a>  -->
-                        </div>
-                    </div>
-                    <!-- TARJETAS -->
-                    <div class="card m-2" style="width: 15rem;">
-                        <img src="../recursos/img_cancha.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title" id="js-card-titulo19"></h5>
-                            <p class="card-text" id="js-card-text19"></p>
-                            <!-- <a href="#" class="btn btn-danger">Eliminar</a>  -->
-                        </div>
-                    </div>
-                    <!-- TARJETAS -->
-                    <div class="card m-2" style="width: 15rem;">
-                        <img src="../recursos/img_cancha.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title" id="js-card-titulo20"></h5>
-                            <p class="card-text" id="js-card-text20"></p>
-                            <!-- <a href="#" class="btn btn-danger">Eliminar</a>  -->
-                        </div>
-                    </div>
-                </div>
-                <p class="white">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti voluptas facere vel reiciendis reprehenderit magni dolorum laboriosam esse ipsum nostrum! Dolore totam quae est doloremque soluta labore, illo maiores. Vitae?
-                    Dolore pariatur magnam nemo? Impedit aspernatur quasi velit corrupti! Rerum id error facere iure odit et repudiandae consequatur eius. Ratione, ipsam fugiat tempora nesciunt maiores fuga tenetur libero unde saepe.
-                </p>
-            </div>
-        </section>
 
-        <!---------- FORMULARIO 
-        <section>
-            <h1 class="green">HACE TU RESERVA</h1>
-            <form class="row g-3" method="post">
-                <div class="col-md-6">
-                    <label for="nombre" class="form-label text-white">Nombre</label>
-                    <input type="text" class="form-control" id="nombre">
+            <hr>
+            
+            <div class="container text-center tablaReservas">
+                <!-- RESERVA -->
+
+                <div class="row align-items-start white" >
+                    <div class="col" id="">
+                        N°
+                    </div>
+                    <div class="col" id="">
+                        DÍA
+                    </div>
+                    <div class="col" id="">
+                        NOMBRE
+                    </div>
+                    <div class="col" id="">
+                        APELLIDO
+                    </div>
+                    <div class="col" id="">
+                        HORARIO
+                    </div>
+                    <div class="col" id="">
+                        TELEFONO
+                    </div>
+                    <div class="col" id="">
+                        MAIL
+                    </div>
+                    <div class="col" id="">
+                        PARILLA
+                    </div>
+                    <div class="col" id="">
+                        <!--
+                        <button type="button" class="btn btn-danger" id="btnEliminar">Eliminar</button>
+                        -->
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <label for="apellido" class="form-label text-white">Apellido</label>
-                    <input type="text" class="form-control" id="apellido">
-                </div>
-                <div class="col-12">
-                    <label for="telefono" class="form-label text-white">Telefono</label>
-                    <input type="text" class="form-control" id="telefono">
-                </div>
-                <div class="col-12">
-                    <label for="email" class="form-label text-white">Email</label>
-                    <input type="email" class="form-control" id="email">
-                </div>
-                <div class="col-md-6">
-                    <label for="dia" class="form-label text-white">Día de Reserva</label>
-                    <input type="text" class="form-control" id="dia">
-                </div>
-                <div class="col-md-6">
-                    <label for="hora" class="form-label text-white">Hora de Reserva</label>
-                    <input type="text" class="form-control" id="hora">
-                </div>
-                <div class="col-12">
-                    <label for="parrilla" class="form-label text-white">Quiere reservar parrilla?</label>
-                    <input type="text" class="form-control" id="parrilla">
-                </div>
-                <div class="col-12">
-                    <button type="submit" class="btn contacto__formulario__enviar">Solicitar Reserva</button>
-                </div>
-            </form>
-            ---------->
+
+            </div>
         </section>
+        
     </main>
     <!---------- FOOTER ---------->
     <footer>

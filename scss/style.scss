@@ -356,7 +356,16 @@ main {
 
 /*/////////////////// RESERVAS //////////////////*/
 
+.row {
+    margin: 0.5rem;
+    border-bottom: 2px dashed $verde-claro;
+    padding: .5rem;
+    font-size: 1.5rem;
+}
 
+.tablaReservas {
+    width: 100%;
+}
 
 /*//////////////// MEDIAQUERIES ////////////////*/
 
