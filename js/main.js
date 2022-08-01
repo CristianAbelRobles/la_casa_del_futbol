@@ -1,23 +1,23 @@
 
 let listaReservas = [
-    {nombre: "Cristian", apellido: "robles", dia: "Lunes", horario: 15, telefono: 1130164798, mail: "cristian@gmail.com", parrilla: "si"},
-    {nombre: "Laura", apellido: "nacimiento", dia: "Martes", horario: 19, telefono: 1164568798, mail: "laura@gmail.com", parrilla: "no"},
-    {nombre: "Joaquin", apellido: "robles", dia: "Miercoles", horario: 13, telefono: 116567798, mail: "joaquin@gmail.com", parrilla: "si"},
-    {nombre: "Abel", apellido: "Lopez", dia: "Jueves", horario: 14, telefono: 118768598, mail: "abel@gmail.com", parrilla: "si"},
-    {nombre: "Ezequiel", apellido: "Gonzalez", dia: "Viernes", horario: 16, telefono: 1165684564, mail: "ezeuiel@gmail.com", parrilla: "no"},
-    {nombre: "Ulises", apellido: "Benitez", dia: "Sabado", horario: 22, telefono: 1164634538, mail: "ulises@gmail.com", parrilla: "si"},
-    {nombre: "Alejandro", apellido: "robles", dia: "Lunes", horario: 15, telefono: 1130164798, mail: "cristian@gmail.com", parrilla: "si"},
-    {nombre: "Pablo", apellido: "nacimiento", dia: "Martes", horario: 19, telefono: 1164568798, mail: "laura@gmail.com", parrilla: "no"},
-    {nombre: "Enrique", apellido: "robles", dia: "Miercoles", horario: 13, telefono: 116567798, mail: "joaquin@gmail.com", parrilla: "si"},
-    {nombre: "Nahuel", apellido: "Lopez", dia: "Jueves", horario: 14, telefono: 118768598, mail: "abel@gmail.com", parrilla: "si"},
-    {nombre: "Ciro", apellido: "Gonzalez", dia: "Viernes", horario: 16, telefono: 1165684564, mail: "ezeuiel@gmail.com", parrilla: "no"},
-    {nombre: "Mateo", apellido: "Benitez", dia: "Sabado", horario: 22, telefono: 1164634538, mail: "ulises@gmail.com", parrilla: "si"},
-    {nombre: "Gustavo", apellido: "robles", dia: "Lunes", horario: 15, telefono: 1130164798, mail: "cristian@gmail.com", parrilla: "si"},
-    {nombre: "Javier", apellido: "nacimiento", dia: "Martes", horario: 19, telefono: 1164568798, mail: "laura@gmail.com", parrilla: "no"},
-    {nombre: "Diego", apellido: "robles", dia: "Miercoles", horario: 13, telefono: 116567798, mail: "joaquin@gmail.com", parrilla: "si"},
-    {nombre: "Jorge", apellido: "Lopez", dia: "Jueves", horario: 14, telefono: 118768598, mail: "abel@gmail.com", parrilla: "si"},
-    {nombre: "Nemias", apellido: "Gonzalez", dia: "Viernes", horario: 16, telefono: 1165684564, mail: "ezeuiel@gmail.com", parrilla: "no"},
-    {nombre: "Emanuel", apellido: "Benitez", dia: "Sabado", horario: 22, telefono: 1164634538, mail: "ulises@gmail.com", parrilla: "si"},
+    {nombre: "Cristian", apellido: "robles", dia: "2022-08-24", horario: 15, telefono: 1130164798, mail: "cristian@gmail.com", parrilla: "si"},
+    {nombre: "Laura", apellido: "nacimiento", dia: "2022-08-24", horario: 19, telefono: 1164568798, mail: "laura@gmail.com", parrilla: "no"},
+    {nombre: "Joaquin", apellido: "robles", dia: "2022-08-24", horario: 13, telefono: 116567798, mail: "joaquin@gmail.com", parrilla: "si"},
+    {nombre: "Abel", apellido: "Lopez", dia: "2022-08-25", horario: 14, telefono: 118768598, mail: "abel@gmail.com", parrilla: "si"},
+    {nombre: "Ezequiel", apellido: "Gonzalez", dia: "2022-08-25", horario: 16, telefono: 1165684564, mail: "ezeuiel@gmail.com", parrilla: "no"},
+    {nombre: "Ulises", apellido: "Benitez", dia: "2022-08-25", horario: 22, telefono: 1164634538, mail: "ulises@gmail.com", parrilla: "si"},
+    {nombre: "Alejandro", apellido: "robles", dia: "2022-08-26", horario: 15, telefono: 1130164798, mail: "cristian@gmail.com", parrilla: "si"},
+    {nombre: "Pablo", apellido: "nacimiento", dia: "2022-08-26", horario: 19, telefono: 1164568798, mail: "laura@gmail.com", parrilla: "no"},
+    {nombre: "Enrique", apellido: "robles", dia: "2022-08-26", horario: 13, telefono: 116567798, mail: "joaquin@gmail.com", parrilla: "si"},
+    {nombre: "Nahuel", apellido: "Lopez", dia: "2022-08-27", horario: 14, telefono: 118768598, mail: "abel@gmail.com", parrilla: "si"},
+    {nombre: "Ciro", apellido: "Gonzalez", dia: "2022-08-27", horario: 16, telefono: 1165684564, mail: "ezeuiel@gmail.com", parrilla: "no"},
+    {nombre: "Mateo", apellido: "Benitez", dia: "2022-08-27", horario: 22, telefono: 1164634538, mail: "ulises@gmail.com", parrilla: "si"},
+    {nombre: "Gustavo", apellido: "robles", dia: "2022-08-27", horario: 15, telefono: 1130164798, mail: "cristian@gmail.com", parrilla: "si"},
+    {nombre: "Javier", apellido: "nacimiento", dia: "2022-08-27", horario: 19, telefono: 1164568798, mail: "laura@gmail.com", parrilla: "no"},
+    {nombre: "Diego", apellido: "robles", dia: "2022-08-28", horario: 13, telefono: 116567798, mail: "joaquin@gmail.com", parrilla: "si"},
+    {nombre: "Jorge", apellido: "Lopez", dia: "2022-08-28", horario: 14, telefono: 118768598, mail: "abel@gmail.com", parrilla: "si"},
+    {nombre: "Nemias", apellido: "Gonzalez", dia: "2022-08-28", horario: 16, telefono: 1165684564, mail: "ezeuiel@gmail.com", parrilla: "no"},
+    {nombre: "Emanuel", apellido: "Benitez", dia: "2022-08-29", horario: 22, telefono: 1164634538, mail: "ulises@gmail.com", parrilla: "si"},
 ];
 
 const visulalizarReserva = () => {
@@ -56,6 +56,7 @@ const visulalizarReserva = () => {
             </div>
     `
     }
+    console.log(botonesEliminar)
 }
 
 class Reserva{
@@ -72,19 +73,12 @@ class Reserva{
 
 const agregarReserva = () => {
     let nombre = document.querySelector("#nombre").value;
-    console.log(nombre);
     let apellido = document.querySelector("#apellido").value;
-    console.log(apellido);
     let dia = document.querySelector("#dia").value;
-    console.log(dia);
     let horario = document.querySelector("#hora").value;
-    console.log(horario);
     let telefono = document.querySelector("#telefono").value;
-    console.log(telefono);
     let mail = document.querySelector("#mail").value;
-    console.log(mail);
     let parrilla = document.querySelector("#parrilla").value;
-    console.log(parrilla);
     let reservaNueva = new Reserva (nombre, apellido, dia, horario, telefono, mail, parrilla);
     listaReservas.push(reservaNueva);
     console.log(listaReservas)
@@ -100,10 +94,10 @@ let botonesEliminar = document.querySelectorAll(".eliminar"); //selecciono todos
 
 function eliminarReserva (e){
     let boton = e.target;
-    console.log(boton)
+    let padre = boton.parentElement;
+    let idReserva = padre.querySelector("#id");
+    console.log(idReserva)
 }
-
-
 /*
 const eliminarReserva = () => {
     let deleteR = parseInt(prompt("¿Qué Número de reserva le gustaria borrar?"));
@@ -122,7 +116,6 @@ document.querySelector("#visualizarReservas").addEventListener("click", function
 });
 
 document.querySelector("#btnReservar").addEventListener("click", function() {
-    event.preventDefault();
     agregarReserva ()
 });
 
