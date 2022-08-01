@@ -356,7 +356,7 @@ main {
 
 /*/////////////////// RESERVAS //////////////////*/
 
-.row {
+.listaReserva {
     margin: 0.5rem;
     border-bottom: 2px dashed $verde-claro;
     padding: .5rem;
@@ -365,6 +365,15 @@ main {
 
 .tablaReservas {
     width: 100%;
+
+
+    .open {
+        display: block;
+    }
+}
+
+.ocultar {
+    display: none;
 }
 
 /*//////////////// MEDIAQUERIES ////////////////*/

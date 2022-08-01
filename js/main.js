@@ -1,3 +1,7 @@
+let btnOcultar = document.querySelector("#btnOcultar");
+let btnVisualizarReservas = document.querySelector("#visualizarReservas");
+let btnReservar = document.querySelector("#btnReservar");
+let contenedorReservas = document.querySelector("#tablaReservas");
 
 let listaReservas = [
     {nombre: "Cristian", apellido: "robles", dia: "2022-08-24", horario: 15, telefono: 1130164798, mail: "cristian@gmail.com", parrilla: "si"},
@@ -20,12 +24,48 @@ let listaReservas = [
     {nombre: "Emanuel", apellido: "Benitez", dia: "2022-08-29", horario: 22, telefono: 1164634538, mail: "ulises@gmail.com", parrilla: "si"},
 ];
 
+class Reserva{
+    constructor(nombre, apellido, dia, horario, telefono, mail, parrilla){
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.dia = dia;
+        this.horario = horario;
+        this.telefono = telefono;
+        this.mail = mail;
+        this.parrilla = parrilla
+    }
+}
+
+const agregarReserva = () => {
+    let nombre = document.querySelector("#nombre").value;
+    let apellido = document.querySelector("#apellido").value;
+    let dia = document.querySelector("#dia").value;
+    let horario = document.querySelector("#hora").value;
+    let telefono = document.querySelector("#telefono").value;
+    let mail = document.querySelector("#mail").value;
+    let parrilla = document.querySelector("#parrilla").value;
+    let reservaNueva = new Reserva (nombre, apellido, dia, horario, telefono, mail, parrilla);
+    listaReservas.push(reservaNueva);
+    console.log(listaReservas)
+}
+
+function mostrar() {
+    if(btnOcultar.classList.contains("ocultar")) {
+        btnOcultar.classList.remove("ocultar");
+        btnVisualizarReservas.classList.add("ocultar");
+        contenedorReservas.classList.remove("ocultar");
+    } else {
+        btnOcultar.classList.add("ocultar");
+        btnVisualizarReservas.classList.remove("ocultar");
+        contenedorReservas.classList.add("ocultar");
+    }
+}
+
 const visulalizarReserva = () => {
     for(let i = 0; i < listaReservas.length; i++){
-        let tablaReservas = document.querySelector(".tablaReservas");
         let numeroReserva = i + 1;
-        tablaReservas.innerHTML += `
-            <div class="row align-items-start white" >
+        contenedorReservas.innerHTML += `
+            <div class="row listaReserva align-items-start white" >
                 <div class="col" id="reserva${numeroReserva}">
                     ${numeroReserva}
                 </div>
@@ -56,32 +96,7 @@ const visulalizarReserva = () => {
             </div>
     `
     }
-    console.log(botonesEliminar)
-}
-
-class Reserva{
-    constructor(nombre, apellido, dia, horario, telefono, mail, parrilla){
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.dia = dia;
-        this.horario = horario;
-        this.telefono = telefono;
-        this.mail = mail;
-        this.parrilla = parrilla
-    }
-}
-
-const agregarReserva = () => {
-    let nombre = document.querySelector("#nombre").value;
-    let apellido = document.querySelector("#apellido").value;
-    let dia = document.querySelector("#dia").value;
-    let horario = document.querySelector("#hora").value;
-    let telefono = document.querySelector("#telefono").value;
-    let mail = document.querySelector("#mail").value;
-    let parrilla = document.querySelector("#parrilla").value;
-    let reservaNueva = new Reserva (nombre, apellido, dia, horario, telefono, mail, parrilla);
-    listaReservas.push(reservaNueva);
-    console.log(listaReservas)
+    mostrar()
 }
 
 // eliminar reservas del array 
@@ -110,150 +125,11 @@ const eliminarReserva = () => {
 */
 
 
-
-document.querySelector("#visualizarReservas").addEventListener("click", function() {
-    visulalizarReserva ()
+btnReservar.addEventListener("click", (e)=>{
+    e.preventDefault();
+    agregarReserva ();
 });
 
-document.querySelector("#btnReservar").addEventListener("click", function() {
-    agregarReserva ()
-});
+btnVisualizarReservas.addEventListener("click", visulalizarReserva);
 
-/*
-document.querySelector("#btnReservar").addEventListener("click", function() {
-    agregarReserva ()
-});
-*/
-
-
-/*
-document.querySelector("#btnEliminar").addEventListener("click", function() {
-    eliminarReserva()
-});
-
-*/
-
-
-
-
-
-
-
-
-
-/*
-
-
-
-function aparecer (){
-    document.getElementById("tarjetero").style.display = "block";
-}
-
-function ocultar (){
-    document.getElementById("tarjetero").style.display = "none";
-}
-
-ocultar ()
-
-
-function crearReserva () {
-    let nombreReserva = prompt("Ingresa su nombre.");
-    let apellidoReserva = prompt(`${nombreReserva}, ingresa tu Apellido.`);
-    let diaReserva = prompt(`${nombreReserva}, qué dia te gustaria reservar?`);
-    let horarioReserva = parseInt(prompt(`${nombreReserva}, en que horario te gustaria jugar?`));
-        while ((horarioReserva<=9) || (horarioReserva>=23)) {
-            alert(`${nombreReserva}, no tenemos alquiler disponible en ese horario, por favor elija uno diferente.`);
-            horarioReserva = parseInt(prompt(`${nombreReserva}, en que horario te gustaria jugar?`));
-            }
-    let telefonoReserva = prompt("Ingresa tu Telefono de contacto");
-    let mailReserva = prompt("Ingresa tu Mail de contacto");
-    let parrillaReserva = prompt("Quiere reservar parrilla con su alquiler?");
-    alert(`Reserva creada por ${nombreReserva} ${apellidoReserva} para el día ${diaReserva} a las ${horarioReserva}hs. su telefono de contacto es ${telefonoReserva} y su correo ${mailReserva}, ${parrillaReserva} quiere reservar la parrilla.`);
-    
-}
-let respuesta = parseInt(prompt("que le gustaria hacer?\n 1- Crear Reserva \n 2- Consultar Reservas hechas \n 3- eliminar una reserva\n 4- Salir"));
-
-if (respuesta === 4){
-    alert("Gracias por visitarnos")
-}else if (respuesta === 1){
-    crearReserva ()
-    let respuestaNueva = prompt("Desea crear otra reserva?").toUpperCase;
-    while (respuestaNueva == "si") {
-        crearReserva()
-    }
-}else if (respuesta === 2){
-    alert("MOSTTRAR RESERVAS")
-}else if (respuesta === 3){
-    alert("ELIMINAR RESERVA")
-}else {
-    alert("Ingrese una respuesta valida.")
-}
-
-
-function crearReserva () {
-    let nombreReserva = prompt("Ingresa su nombre.");
-    let apellidoReserva = prompt(`${nombreReserva}, ingresa su Apellido.`);
-    let diaReserva = prompt(`${nombreReserva}, qué dia te gustaria reservar?`);
-    let horarioReserva = parseInt(prompt(`${nombreReserva}, en que horario te gustaria jugar?`));
-        while ((horarioReserva<=9) || (horarioReserva>=23)) {
-            alert(`${nombreReserva}, no tenemos alquiler disponible en ese horario, por favor elija uno diferente.`);
-            horarioReserva = parseInt(prompt(`${nombreReserva}, en que horario te gustaria jugar?`));
-            }
-    let telefonoReserva = prompt("Ingresa tu Telefono de contacto");
-    let mailReserva = prompt("Ingresa tu Mail de contacto");
-    let parrillaReserva = prompt("Quiere reservar parrilla con su alquiler?");
-    alert(`Reserva creada por ${nombreReserva} ${apellidoReserva} el día ${diaReserva} a las ${horarioReserva}, su telefono de contacto es ${telefonoReserva} y su correo ${mailReserva}, ${parrillaReserva} quiere reservar la parrilla.`);
-
-
-crearReserva ()
-
-array de objetos 
-
-let listaReservas = [ {
-    nombre: cristian,
-    apellido: robles,
-    dia: martes,
-    horario: 20,
-    correo: cristian@gmail.com,
-    telefono: 11 3322 55696,
-    parrilla: si,
-}, {reserva2}, {reserva3}, {reserva4}, {reserva5}];
-
-
-console.log(listaReservas [0].nombre) /// cristian
-console.log(listaReservas [0].apellido) /// robles
-console.log(listaReservas [0].dia) /// martes
-console.log(listaReservas [0].horario) /// 20
-console.log(listaReservas [0].correo) /// cristian@gmail.com
-console.log(listaReservas [0].telefono) /// 11 3322 55696
-console.log(listaReservas [0].parrilla) /// si
-
-cosonle.log(listaReservas.length) 
-
-listaReservas.push(reserva)    // Agregar reserva al array
-
-
-listaReservas.splice()        // para borrar un elemento especifico del array   // hay que fijarse de donde hasta donde queremos borrar 
-
-listaReservas.splice(listaReservas.indexOf("martes"),1);                 // para eliminar una reserva
-console.log(listaRservas);
-
-let reservaBorrar = prompt ("Cual reservar le gustaria eliminar?");      // para eliminar una reserva
-if (listaReservas.indexOf(reservaBorrar)) != -1 {
-    listaReservas.splice(listaReservas.indexOf(reservaBorrar),1);
-}
-console.log(listaReservas);
-
-
-
-
-function borrar(){
-    let reservaBorrar = prompt ("Cual reservar le gustaria eliminar?");      // FUNCTION para eliminar una reserva
-    if (listaReservas.indexOf(reservaBorrar) != -1) {
-        listaReservas.splice(listaReservas.indexOf(reservaBorrar),1);
-    }
-    console.log(listaReservas);
-}
-
-*/
-
+btnOcultar.addEventListener("click", mostrar);

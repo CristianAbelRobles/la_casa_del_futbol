@@ -445,7 +445,7 @@ main {
     background-color: #ccff33; }
 
 /*/////////////////// RESERVAS //////////////////*/
-.row {
+.listaReserva {
   margin: 0.5rem;
   border-bottom: 2px dashed #ccff33;
   padding: .5rem;
@@ -453,6 +453,11 @@ main {
 
 .tablaReservas {
   width: 100%; }
+  .tablaReservas .open {
+    display: block; }
+
+.ocultar {
+  display: none; }
 
 /*//////////////// MEDIAQUERIES ////////////////*/
 @media (min-width: 541px) and (max-width: 900px) {

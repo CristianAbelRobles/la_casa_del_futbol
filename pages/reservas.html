@@ -99,31 +99,27 @@
                     <option value="23">23</option>
                 </select>
                 </div>
-                <div class="form-check col-md-4 d-flex justify-content-evenly align-items-center reservaParrilla">
-                    <input class="form-check-input" type="checkbox" value="" id="parrilla">
-                    <label class="form-check-label white" for="parrillaCheck">
-                    ¿Reservar Parrilla?
-                    </label>
-                </div>
+                <div class="col-md-4">
+                    <label class="white" for="parrilla">Hora de Reserva</label>
+                    <select class="form-select form-control" aria-label="" id="parrilla" >
+                        <option selected>No</option>
+                        <option value="si">Si</option>
+                    </select>
+                    </div>
                 <div class="col-md-3">
                     <button type="submit" class="btn contacto__formulario__enviar" id="btnReservar">Solicitar Reserva</button>
                 </div>
             </form>
-            
-        </section>
-        <!---------- PROYECTO JAVA ---------->
-        <section>
-            <div>
-                <h2 class="white">RESERVAS</h2>
-                <h3 class="green">Puede realizar una reserva de manera Online</h3>
-            </div>
-            <div class="mb-4">
-                <button type="submit" class="btn btn-info" id="visualizarReservas">Visualizar Reservas</button>
-            </div>
-            <hr>
-            <div class="container text-center tablaReservas">
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-info" id="visualizarReservas"><i class="bi bi-eye-fill"></i> Visualizar Reservas</button>
+                <button type="submit" class="btn btn-light ocultar" id="btnOcultar"><i class="bi bi-eye-slash-fill"></i> Ocultar Reservas</button>
+            </div>    
+            <div class="container text-center ocultar" id="tablaReservas">
+                <div>
+                    <h3 class="green">LISTADO DE RESERVAS</h3>
+                </div>
                 <!-- RESERVA -->
-                <div class="row align-items-start white" >
+                <div class="row listaReserva align-items-start white" >
                     <div class="col" id="">
                         N°
                     </div>
@@ -154,7 +150,6 @@
                         -->
                     </div>
                 </div>
-
             </div>
         </section>
         
