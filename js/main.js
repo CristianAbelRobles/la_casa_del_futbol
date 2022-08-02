@@ -3,6 +3,7 @@ let btnVisualizarReservas = document.querySelector("#visualizarReservas");
 let btnReservar = document.querySelector("#btnReservar");
 let contenedorReservas = document.querySelector("#tablaReservas");
 
+
 let listaReservas = [
     {nombre: "Cristian", apellido: "robles", dia: "2022-08-24", horario: 15, telefono: 1130164798, mail: "cristian@gmail.com", parrilla: "si"},
     {nombre: "Laura", apellido: "nacimiento", dia: "2022-08-24", horario: 19, telefono: 1164568798, mail: "laura@gmail.com", parrilla: "no"},
@@ -61,12 +62,54 @@ function mostrar() {
     }
 }
 
+
+
+function limpiarTabla(){                // FUNCTION PARA LIMPIAR EL CONTENEDOR DE LAS RESERVAS, PARA QUE CADA VEZ QUE SE PRESIONA VISUALIZAR NO CARGUE UNA LISTA NUEVA SUMADA A LA ANTERIOR
+    contenedorReservas.innerHTML = `
+    <div>
+        <h3 class="green">LISTADO DE RESERVAS</h3>
+    </div>
+    <div class="row listaReserva align-items-start white" >
+        <div class="col" id="">
+            N°
+        </div>
+        <div class="col" id="">
+            DÍA
+        </div>
+        <div class="col" id="">
+            NOMBRE
+        </div>
+        <div class="col" id="">
+            APELLIDO
+        </div>
+        <div class="col" id="">
+            HORA
+        </div>
+        <div class="col" id="">
+            TELEFONO
+        </div>
+        <div class="col" id="">
+            MAIL
+        </div>
+        <div class="col" id="">
+            PARRILLA
+        </div>
+        
+        <div class="col">
+            ACCIÓN
+        </div>
+        
+    </div>
+    `
+}
+
 const visulalizarReserva = () => {
+    limpiarTabla()
     for(let i = 0; i < listaReservas.length; i++){
         let numeroReserva = i + 1;
         contenedorReservas.innerHTML += `
             <div class="row listaReserva align-items-start white" >
-                <div class="col" id="reserva${numeroReserva}">
+                <div class="col" id="${numeroReserva}">
                     ${numeroReserva}
                 </div>
                 <div class="col" id="">
@@ -123,7 +166,6 @@ const eliminarReserva = () => {
     console.log(listaReservas);
 }
 */
-
 
 btnReservar.addEventListener("click", (e)=>{
     e.preventDefault();
