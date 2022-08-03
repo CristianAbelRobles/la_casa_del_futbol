@@ -3,8 +3,8 @@ let btnVisualizarReservas = document.querySelector("#visualizarReservas");
 let btnReservar = document.querySelector("#btnReservar");
 let contenedorReservas = document.querySelector("#tablaReservas");
 
-
-let listaReservas = [
+let listaReservas = JSON.parse(localStorage.getItem("listaReservas")) || [ 
+    // PREGUNTO SI EXISTE LA LISTA DE RESERVAS EN LOCAL STORAGE - SI EXISTE USO LA QUE EXISTE - NO EXISTE USO ESTA ->
     {nombre: "Cristian", apellido: "robles", dia: "2022-08-24", horario: 15, telefono: 1130164798, mail: "cristian@gmail.com", parrilla: "si"},
     {nombre: "Laura", apellido: "nacimiento", dia: "2022-08-24", horario: 19, telefono: 1164568798, mail: "laura@gmail.com", parrilla: "no"},
     {nombre: "Joaquin", apellido: "robles", dia: "2022-08-24", horario: 13, telefono: 116567798, mail: "joaquin@gmail.com", parrilla: "si"},
@@ -47,7 +47,7 @@ const agregarReserva = () => {
     let parrilla = document.querySelector("#parrilla").value;
     let reservaNueva = new Reserva (nombre, apellido, dia, horario, telefono, mail, parrilla);
     listaReservas.push(reservaNueva);
-    console.log(listaReservas)
+    localStorage.setItem("listaReservas", JSON.stringify(listaReservas))
 }
 
 function mostrar() {
@@ -63,113 +63,82 @@ function mostrar() {
 }
 
 
-
-function limpiarTabla(){                // FUNCTION PARA LIMPIAR EL CONTENEDOR DE LAS RESERVAS, PARA QUE CADA VEZ QUE SE PRESIONA VISUALIZAR NO CARGUE UNA LISTA NUEVA SUMADA A LA ANTERIOR
-    contenedorReservas.innerHTML = `
-    <div>
-        <h3 class="green">LISTADO DE RESERVAS</h3>
-    </div>
-    <div class="row listaReserva align-items-start white" >
-        <div class="col" id="">
-            N°
-        </div>
-        <div class="col" id="">
-            DÍA
-        </div>
-        <div class="col" id="">
-            NOMBRE
-        </div>
-        <div class="col" id="">
-            APELLIDO
-        </div>
-        <div class="col" id="">
-            HORA
-        </div>
-        <div class="col" id="">
-            TELEFONO
-        </div>
-        <div class="col" id="">
-            MAIL
-        </div>
-        <div class="col" id="">
-            PARRILLA
-        </div>
-        
-        <div class="col">
-            ACCIÓN
-        </div>
-        
-    </div>
-    `
-}
-
-const visulalizarReserva = () => {
-    limpiarTabla()
-    for(let i = 0; i < listaReservas.length; i++){
-        let numeroReserva = i + 1;
-        contenedorReservas.innerHTML += `
-            <div class="row listaReserva align-items-start white" >
-                <div class="col" id="${numeroReserva}">
-                    ${numeroReserva}
-                </div>
-                <div class="col" id="">
-                    ${listaReservas[i].dia}
-                </div>
-                <div class="col" id="">
-                    ${listaReservas[i].nombre}
-                </div>
-                <div class="col" id="">
-                    ${listaReservas[i].apellido}
-                </div>
-                <div class="col" id="">
-                    ${listaReservas[i].horario}
-                </div>
-                <div class="col" id="">
-                    ${listaReservas[i].telefono}
-                </div>
-                <div class="col" id="">
-                    ${listaReservas[i].mail}
-                </div>
-                <div class="col"id="">
-                    ${listaReservas[i].parrilla}
-                </div>
-                <div class="col">
-                    <button type="button" class="btn btn-danger eliminar">Eliminar</button>
-                </div>
-            </div>
-    `
+function resetTablero(){
+    contenedorReservas.innerHTML = '';
+    if (btnVisualizarReservas.classList.contains("ocultar")) {
+        btnVisualizarReservas.classList.remove("ocultar");
+        btnOcultar.classList.add("ocultar");
     }
+}
+
+function visulalizarReserva(){
     mostrar()
+    let numeroReserva = 0;
+    contenedorReservas.innerHTML = ''
+    listaReservas.map(reserva => {
+        numeroReserva++
+        const div = document.createElement('div')
+        div.classList.add('row')
+        div.classList.add('listaReserva')
+        div.classList.add('align-items-start')
+        div.classList.add('white')
+        const Content = `
+    <div class="col removeId" id="${numeroReserva}">
+        ${numeroReserva}
+    </div>
+    <div class="col" id="">
+        ${reserva.dia}
+    </div>
+    <div class="col" id="">
+        ${reserva.nombre}
+    </div>
+    <div class="col" id="">
+        ${reserva.apellido}
+    </div>
+    <div class="col" id="">
+        ${reserva.horario}
+    </div>
+    <div class="col" id="">
+        ${reserva.telefono}
+    </div>
+    <div class="col" id="">
+        ${reserva.mail}
+    </div>
+    <div class="col"id="">
+        ${reserva.parrilla}
+    </div>
+    <div class="col">
+        <button type="button" class="btn btn-danger eliminar">Eliminar</button>
+    </div>
+    
+    `
+    div.innerHTML = Content;
+    contenedorReservas.append(div);
+    
+    div.querySelector(".eliminar").addEventListener('click', eliminarReserva);
+    
+    })
 }
 
-// eliminar reservas del array 
-
-let botonesEliminar = document.querySelectorAll(".eliminar"); //selecciono todos los botones eliminar
-    for (let i=0; i<botonesEliminar.length; i++){
-        let boton = botonesEliminar[i];
-        boton.addEventListener(click, eliminarReserva);
-}
-
-function eliminarReserva (e){
-    let boton = e.target;
-    let padre = boton.parentElement;
-    let idReserva = padre.querySelector("#id");
-    console.log(idReserva)
-}
-/*
-const eliminarReserva = () => {
-    let deleteR = parseInt(prompt("¿Qué Número de reserva le gustaria borrar?"));
-    console.log(deleteR);
-    console.log(listaReservas[deleteR]);
-    listaReservas.splice(deleteR - 1, 1);
-    mostrarReserva ()
+function eliminarReserva(e){
+    const buttonEliminar = e.target;
+    const div = buttonEliminar.closest(".listaReserva");
+    const removeId = parseInt(div.querySelector('.removeId').textContent);
+    listaReservas.splice(removeId-1, 1);
+    div.remove();
     console.log(listaReservas);
+    mostrar()
+    localStorage.setItem("listaReservas", JSON.stringify(listaReservas))
 }
-*/
+
+function msj () { // FUNCION PARA PROBAR FUNCIONAMIENTO EN LA COSOLA
+    console.log("funciona")
+}
 
 btnReservar.addEventListener("click", (e)=>{
     e.preventDefault();
     agregarReserva ();
+    resetTablero()
 });
 
 btnVisualizarReservas.addEventListener("click", visulalizarReserva);
