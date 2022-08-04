@@ -447,14 +447,12 @@ main {
 /*/////////////////// RESERVAS //////////////////*/
 .listaReserva {
   margin: 0.5rem;
-  border-bottom: 2px dashed #ccff33;
+  border-bottom: 1px dashed #ccff33;
   padding: .5rem;
   font-size: 1.1rem; }
 
 .tablaReservas {
-  width: 100%; }
-  .tablaReservas .open {
-    display: block; }
+  width: 100% !important; }
 
 .ocultar {
   display: none; }

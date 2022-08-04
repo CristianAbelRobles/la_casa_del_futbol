@@ -72,43 +72,41 @@ function resetTablero(){
 }
 
 function visulalizarReserva(){
-    mostrar()
+    mostrar();
     let numeroReserva = 0;
-    contenedorReservas.innerHTML = ''
+    contenedorReservas.innerHTML = '';
     listaReservas.map(reserva => {
-        numeroReserva++
-        const div = document.createElement('div')
-        div.classList.add('row')
-        div.classList.add('listaReserva')
-        div.classList.add('align-items-start')
-        div.classList.add('white')
+        numeroReserva++;
+        const div = document.createElement('div');
+        div.classList.add('row');
+        div.classList.add('listaReserva');
+        div.classList.add('align-items-start');
+        div.classList.add('white');
+        div.classList.add('align-items-center')
         const Content = `
-    <div class="col removeId" id="${numeroReserva}">
-        ${numeroReserva}
+    <div class="col-lg-1 col-12 removeId" id="${numeroReserva}">
+        N°${numeroReserva}
     </div>
-    <div class="col" id="">
-        ${reserva.dia}
+    <div class="col-lg-1 col-12">
+        <i class="bi bi-calendar-check"></i> ${reserva.dia}
     </div>
-    <div class="col" id="">
-        ${reserva.nombre}
+    <div class="col-lg-2 col-12">
+        <i class="bi bi-person-square"></i> ${reserva.nombre} ${reserva.apellido}
     </div>
-    <div class="col" id="">
-        ${reserva.apellido}
+    <div class="col-lg-1 col-12">
+        <i class="bi bi-clock"></i> ${reserva.horario}:00 Hs.
     </div>
-    <div class="col" id="">
-        ${reserva.horario}
+    <div class="col-lg-2 col-12">
+        <i class="bi bi-telephone"></i> ${reserva.telefono}
     </div>
-    <div class="col" id="">
-        ${reserva.telefono}
+    <div class="col-lg-2 col-12">
+        <i class="bi bi-envelope"></i> ${reserva.mail}
     </div>
-    <div class="col" id="">
-        ${reserva.mail}
+    <div class="col-lg-1 col-12">
+        Parrilla ${reserva.parrilla}
     </div>
-    <div class="col"id="">
-        ${reserva.parrilla}
-    </div>
-    <div class="col">
-        <button type="button" class="btn btn-danger eliminar">Eliminar</button>
+    <div class="col-lg-2 col-12">
+        <button type="button" class="btn btn-danger eliminar"><i class="bi bi-trash"></i> Eliminar</button>
     </div>
     
     `

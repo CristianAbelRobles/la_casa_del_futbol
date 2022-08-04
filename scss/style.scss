@@ -358,18 +358,13 @@ main {
 
 .listaReserva {
     margin: 0.5rem;
-    border-bottom: 2px dashed $verde-claro;
+    border-bottom: 1px dashed $verde-claro;
     padding: .5rem;
     font-size: 1.1rem;
 }
 
 .tablaReservas {
-    width: 100%;
-
-
-    .open {
-        display: block;
-    }
+    width: 100% !important; 
 }
 
 .ocultar {
