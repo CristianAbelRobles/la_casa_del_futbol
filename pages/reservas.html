@@ -65,23 +65,23 @@
             <form class="row g-3 d-flex justify-content-center" method="post">
                 <div class="col-md-6">
                     <label for="nombre" class="form-label text-white">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" required>
+                    <input type="text" class="form-control" name="nombre" id="nombre" required>
                 </div>
                 <div class="col-md-6">
                     <label for="apellido" class="form-label text-white">Apellido</label>
-                    <input type="text" class="form-control" id="apellido" required>
+                    <input type="text" class="form-control" name="apellido" id="apellido" required>
                 </div>
                 <div class="col-md-6">
                     <label for="telefono" class="form-label text-white">Telefono</label>
-                    <input type="text" class="form-control" id="telefono" required>
+                    <input type="text" class="form-control" name="telefono" id="telefono" required>
                 </div>
                 <div class="col-md-6">
                     <label for="email" class="form-label text-white" required>Email</label>
-                    <input type="email" class="form-control" id="mail">
+                    <input type="email" class="form-control" name="mail" id="mail">
                 </div>
                 <div class="col-md-4">
-                    <label class="white" for="start">Día de Reserva</label>
-                    <input class="col-md-6" type="date" name="trip-start" value="" min="" max="" id="dia" required>
+                    <label class="white" for="dia">Día de Reserva</label>
+                    <input type="date" class="form-control" name="dia" name="trip-start" id="dia" required>
                 </div>
                 <div class="col-md-4">
                 <label class="white" for="hora">Hora de Reserva</label>
@@ -118,38 +118,6 @@
                 <button type="submit" class="btn btn-light ocultar" id="btnOcultar"><i class="bi bi-eye-slash-fill"></i> Ocultar Reservas</button>
             </div>    
             <div class="text-center ocultar" id="tablaReservas">
-                <h3>LISTADO DE RESERVAS</h3>
-                <div class="col">
-                    N°
-                </div>
-                <div class="col">
-                    Día
-                </div>
-                <div class="col">
-                    Nombre
-                </div>
-                <div class="col">
-                    Apellido
-                </div>
-                <div class="col">
-                    hora
-                </div>
-                <div class="col">
-                    telefono
-                </div>
-                <div class="col">
-                    Mail
-                </div>
-                <div class="col">
-                    Parrilla
-                </div>
-                <div class="col">
-                    <!--
-                    <button type="button" class="btn btn-danger eliminar">Eliminar</button>
-                    -->
-                </div>
-
-                
             </div>
         </section>
         
