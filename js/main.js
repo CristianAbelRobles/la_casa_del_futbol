@@ -78,6 +78,7 @@ function visulalizarReserva(){
     listaReservas.map(reserva => {
         numeroReserva++;
         const div = document.createElement('div');
+        reserva.parrilla  === "si" ? msjParrilla = `<i class="bi bi-check-circle green"></i> Parrilla` : msjParrilla = ``;
         div.classList.add('row');
         div.classList.add('listaReserva');
         div.classList.add('align-items-start');
@@ -88,22 +89,22 @@ function visulalizarReserva(){
         N°${numeroReserva}
     </div>
     <div class="col-lg-1 col-12">
-        <i class="bi bi-calendar-check"></i> ${reserva.dia}
+        <i class="bi bi-calendar-check green"></i> ${reserva.dia}
     </div>
     <div class="col-lg-2 col-12">
-        <i class="bi bi-person-square"></i> ${reserva.nombre} ${reserva.apellido}
+        <i class="bi bi-person-square green"></i> ${reserva.nombre} ${reserva.apellido}
     </div>
     <div class="col-lg-1 col-12">
-        <i class="bi bi-clock"></i> ${reserva.horario}:00 Hs.
+        <i class="bi bi-clock green"></i> ${reserva.horario}:00 Hs.
     </div>
     <div class="col-lg-2 col-12">
-        <i class="bi bi-telephone"></i> ${reserva.telefono}
+        <i class="bi bi-telephone green"></i> ${reserva.telefono}
     </div>
     <div class="col-lg-2 col-12">
-        <i class="bi bi-envelope"></i> ${reserva.mail}
+        <i class="bi bi-envelope green"></i> ${reserva.mail}
     </div>
     <div class="col-lg-1 col-12">
-        Parrilla ${reserva.parrilla}
+        ${msjParrilla}
     </div>
     <div class="col-lg-2 col-12">
         <button type="button" class="btn btn-danger eliminar"><i class="bi bi-trash"></i> Eliminar</button>
@@ -112,9 +113,7 @@ function visulalizarReserva(){
     `
     div.innerHTML = Content;
     contenedorReservas.append(div);
-    
     div.querySelector(".eliminar").addEventListener('click', eliminarReserva);
-    
     })
 }
 
@@ -124,9 +123,14 @@ function eliminarReserva(e){
     const removeId = parseInt(div.querySelector('.removeId').textContent);
     listaReservas.splice(removeId-1, 1);
     div.remove();
-    console.log(listaReservas);
     mostrar()
-    localStorage.setItem("listaReservas", JSON.stringify(listaReservas))
+    localStorage.setItem("listaReservas", JSON.stringify(listaReservas));
+    Swal.fire({  // MENSAJE DE ALERTA DE LIBRERIA sweetalert2
+        icon: 'error',
+        title: 'Reserva Eliminada!',
+        showConfirmButton: false,
+        timer: 2000
+      })
 }
 
 function msj () { // FUNCION PARA PROBAR FUNCIONAMIENTO EN LA COSOLA
@@ -136,7 +140,13 @@ function msj () { // FUNCION PARA PROBAR FUNCIONAMIENTO EN LA COSOLA
 btnReservar.addEventListener("click", (e)=>{
     e.preventDefault();
     agregarReserva ();
-    resetTablero()
+    resetTablero();
+    Swal.fire({   // MENSAJE DE ALERTA DE LIBRERIA sweetalert2
+        icon: 'success',
+        title: 'Reserva Creada con Exito!',
+        showConfirmButton: false,
+        timer: 2000
+      })
 });
 
 btnVisualizarReservas.addEventListener("click", visulalizarReserva);
