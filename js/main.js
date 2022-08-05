@@ -85,7 +85,7 @@ function visulalizarReserva(){
         div.classList.add('align-items-center')
         const Content = `
     <div class="col-lg-1 col-12 removeId" id="${numeroReserva}">
-        N°${numeroReserva}
+        ${numeroReserva}
     </div>
     <div class="col-lg-1 col-12">
         <i class="bi bi-calendar-check green"></i> ${reserva.dia}
@@ -120,6 +120,7 @@ function eliminarReserva(e){
     const buttonEliminar = e.target;
     const div = buttonEliminar.closest(".listaReserva");
     const removeId = parseInt(div.querySelector('.removeId').textContent);
+    console.log(div.querySelector('.removeId').textContent);
     listaReservas.splice(removeId-1, 1);
     div.remove();
     mostrar()
