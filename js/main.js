@@ -2,14 +2,54 @@
 
 const formulario = document.getElementById('formulario');
 const inputs = document.querySelectorAll('#formulario input');
-console.log(inputs)
 
 const expresiones = {
-	usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
 	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-	password: /^.{4,12}$/, // 4 a 12 digitos.
+    apellido: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 	telefono: /^\d{7,14}$/ // 7 a 14 numeros.
+}
+
+const campos = {
+	nombre: false,
+	apellido: false,
+	correo: false,
+	telefono: false
+}
+
+const validarCampo = (expresion, input, campo) => {   //funcion dinamica para validar los campos del formulario
+	if(expresion.test(input.value)){
+		document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-incorrecto'); // accedo al div con la class grupo de manera dinamica y le agrego la class -correcto (para que se oculte el msj de error en la etiqueta <p>)
+		document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-correcto');      // accedo al div con la class grupo de manera dinamica y le agrego la class -correcto (para que se oculte el msj de error en la etiqueta <p>)
+		document.querySelector(`#grupo__${campo} i`).classList.add('bi-check-circle-fill');         // seleeciono de manera dimamica los id de cada grupo de elemento de cada input, accedo al icono y la agrego la class check (correcto)
+		document.querySelector(`#grupo__${campo} i`).classList.remove('bi-x-circle-fill');               // seleeciono de manera dimamica los id de cada grupo de elemento de cada input, accedo al icono y la saco la class x (incorrecto)
+		document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.remove('formulario__input-error-activo');  // selecciono de manera dimamica los id de cada grupo de elemento de cada input y accedo al que tiene el class .formulario__input-error y le saco la class formulario__input-error-activo  
+		campos[campo] = true;  // le doy valor true a cada campo para poder validar que todos esten correctos antes de ejecutar el submit
+	} else {
+		document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-incorrecto');
+		document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-correcto');
+		document.querySelector(`#grupo__${campo} i`).classList.add('bi-x-circle-fill');
+		document.querySelector(`#grupo__${campo} i`).classList.remove('bi-check-circle-fill');
+		document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.add('formulario__input-error-activo');
+		campos[campo] = false; // le doy valor false a cada campo para que no pase la validacion y no pueda ejecutar el submit
+	}
+}
+
+const validarFormulario = (e) =>{
+    switch (e.target.name) {
+        case "nombre":
+            validarCampo(expresiones.nombre, e.target, 'nombre');
+        break;
+        case "apellido":
+            validarCampo(expresiones.apellido, e.target, 'apellido');
+        break;
+        case "telefono":
+            validarCampo(expresiones.telefono, e.target, 'telefono');
+        break;
+        case "correo":
+            validarCampo(expresiones.correo, e.target, 'correo');
+        break;
+    }
 }
 
 inputs.forEach((input) => {
@@ -66,7 +106,7 @@ const agregarReserva = () => {
     let dia = document.querySelector("#dia").value;
     let horario = document.querySelector("#hora").value;
     let telefono = document.querySelector("#telefono").value;
-    let mail = document.querySelector("#mail").value;
+    let mail = document.querySelector("#correo").value;
     let parrilla = document.querySelector("#parrilla").value;
     let reservaNueva = new Reserva (nombre, apellido, dia, horario, telefono, mail, parrilla);
     listaReservas.push(reservaNueva);
@@ -153,7 +193,7 @@ function eliminarReserva(e){
         title: 'Reserva Eliminada!',
         showConfirmButton: false,
         timer: 2000
-      })
+    })
 }
 
 function msj () { // FUNCION PARA PROBAR FUNCIONAMIENTO EN LA COSOLA
@@ -161,16 +201,26 @@ function msj () { // FUNCION PARA PROBAR FUNCIONAMIENTO EN LA COSOLA
 }
 
 btnReservar.addEventListener("click", (e)=>{
-
     e.preventDefault();
-    agregarReserva ();
-    resetTablero();
-    Swal.fire({   // MENSAJE DE ALERTA DE LIBRERIA sweetalert2
-        icon: 'success',
-        title: 'Reserva Creada con Exito!',
-        showConfirmButton: false,
-        timer: 2000
-      })
+	if(campos.nombre && campos.apellido && campos.correo && campos.telefono ){  //
+		agregarReserva ();
+        resetTablero();
+        Swal.fire({   // MENSAJE DE ALERTA DE LIBRERIA sweetalert2
+            icon: 'success',
+            title: 'Reserva Creada con Exito!',
+            showConfirmButton: false,
+            timer: 2000
+        })
+		document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
+			icono.classList.remove('formulario__grupo-correcto');
+		});
+        formulario.reset();
+	} else {
+        Swal.fire({// MENSAJE DE ALERTA DE LIBRERIA sweetalert2
+            icon: 'error',
+            title: 'Debe completar correctamente el formulario antes de hacer la Reserva',
+        })
+	}
 });
 
 btnVisualizarReservas.addEventListener("click", visulalizarReserva);

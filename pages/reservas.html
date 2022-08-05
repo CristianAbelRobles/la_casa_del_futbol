@@ -64,36 +64,53 @@
             <h1 class="green">HACE TU RESERVA</h1>
             <form class="row g-3 d-flex justify-content-center" method="post" id="formulario">
 
+
                 <!-- NOMBRE -->
-                <div class="col-md-6">
-                    <label for="nombre" class="form-label text-white">Nombre</label>
-                    <input type="text" class="form-control formulario__input" name="nombre" id="nombre" placeholder="Cristian" required>
-                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                    <p class="formulario__input-error">El Nombre tiene que ser de 4 a 16 dígitos.</p>
+                <div class="col-md-6 formulario__grupo white" id="grupo__nombre">
+                    <label for="nombre" class="formulario__label">Nombre</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Cristian">
+                        <i class="formulario__validacion-estado bi bi-check-circle-fill"></i>
+                    </div>
+                    <p class="formulario__input-error">El Nombre tiene que ser de 4 a 16 caracteres y no se admiten números o simbolos.</p>
                 </div>
+
                 <!-- APELLIDO -->
-                <div class="col-md-6">
-                    <label for="apellido" class="form-label text-white">Apellido</label>
-                    <input type="text" class="form-control formulario__input" name="apellido" id="apellido" placeholder="Robles" required>
-                    <p class="formulario__input-error">El Apellido tiene que ser de 4 a 16 dígitos.</p>
+                <div class="col-md-6 formulario__grupo white" id="grupo__apellido">
+                    <label for="apellido" class="formulario__label">Apellido</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="apellido" id="apellido" placeholder="Robles">
+                        <i class="formulario__validacion-estado bi bi-check-circle-fill"></i>
+                    </div>
+                    <p class="formulario__input-error">El Apellido tiene que ser de 4 a 16 caracteresy no se admiten números o simbolos.</p>
                 </div>
+
                 <!-- TELEFONO -->
-                <div class="col-md-6">
-                    <label for="telefono" class="form-label text-white">Telefono</label>
-                    <input type="text" class="form-control formulario__input" name="telefono" id="telefono" placeholder="11 4546-7000" required>
+                <div class="col-md-6 formulario__grupo white" id="grupo__telefono">
+                    <label for="telefono" class="formulario__label">Telefono</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="11 4546-7000">
+                        <i class="formulario__validacion-estado bi bi-check-circle-fill"></i>
+                    </div>
                     <p class="formulario__input-error">El telefono solo puede contener numeros y un máximo de 14 dígitos.</p>
                 </div>
+
                 <!-- EMAIL -->
-                <div class="col-md-6">
-                    <label for="email" class="form-label text-white">Email</label>
-                    <input type="email" class="form-control formulario__input" name="mail" id="mail" placeholder="usuario@servidor.com" required>
-                    <p class="formulario__input-error">El correo solo puede contener letras, números, puntos, guiones y guiones bajos.</p>
+                <div class="col-md-6 formulario__grupo white" id="grupo__correo">
+                    <label for="correo" class="formulario__label">Correo Electrónico</label>
+                    <div class="formulario__grupo-input">
+                        <input type="email" class="formulario__input" name="correo" id="correo" placeholder="usuario@servidor.com">
+                        <i class="formulario__validacion-estado bi bi-check-circle-fill"></i>
+                    </div>
+                    <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
                 </div>
+
                 <!-- DIA DE RESERVA -->
                 <div class="col-md-4">
                     <label class="white" for="dia">Día de Reserva</label>
                     <input type="date" class="form-control formulario__input" name="dia" name="trip-start" id="dia" required>
                 </div>
+
                 <!-- HORA DE RESERVA -->
                 <div class="col-md-4">
                 <label class="white" for="hora">Hora de Reserva</label>
@@ -114,6 +131,7 @@
                     <option value="23">23</option>
                 </select>
                 </div>
+
                 <!-- RESERVA DE PARRILLA -->
                 <div class="col-md-4">
                     <label class="white" for="parrilla">Reserva Parrilla?</label>
@@ -122,11 +140,13 @@
                         <option value="si">Si</option>
                     </select>
                 </div>
+
                 <!-- BOTON ENVIAR FORMULARIO -->
                 <div class="col-md-3">
                     <button type="submit" class="btn contacto__formulario__enviar" id="btnReservar">Solicitar Reserva</button>
                 </div>
             </form>
+        
             <div class="d-flex justify-content-center">
                 <button type="submit" class="btn btn-info" id="visualizarReservas"><i class="bi bi-eye-fill"></i> Visualizar Reservas</button>
                 <button type="submit" class="btn btn-light ocultar" id="btnOcultar"><i class="bi bi-eye-slash-fill"></i> Ocultar Reservas</button>
