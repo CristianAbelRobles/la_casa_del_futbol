@@ -1,7 +1,30 @@
+//////////////////////////////// VALIDAR FORMULARIOS /////////////////////////////////
+
+const formulario = document.getElementById('formulario');
+const inputs = document.querySelectorAll('#formulario input');
+console.log(inputs)
+
+const expresiones = {
+	usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
+	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+	password: /^.{4,12}$/, // 4 a 12 digitos.
+	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+	telefono: /^\d{7,14}$/ // 7 a 14 numeros.
+}
+
+inputs.forEach((input) => {
+	input.addEventListener('keyup', validarFormulario); // EVENTO QUE SE EJECUTA LUEGO DE PRESIONAR UNA TECLA
+	input.addEventListener('blur', validarFormulario); // EVENTO QUE SE EJECUTA CUANDO HAGO CLICK FUERA DEL INPUT
+});
+
+//////////////////////////////////////////////////////////////////////////////////////
+
 let btnOcultar = document.querySelector("#btnOcultar");
 let btnVisualizarReservas = document.querySelector("#visualizarReservas");
 let btnReservar = document.querySelector("#btnReservar");
 let contenedorReservas = document.querySelector("#tablaReservas");
+
+
 
 let listaReservas = JSON.parse(localStorage.getItem("listaReservas")) || [ 
     // PREGUNTO SI EXISTE LA LISTA DE RESERVAS EN LOCAL STORAGE - SI EXISTE USO LA QUE EXISTE - NO EXISTE USO ESTA ->
@@ -87,11 +110,11 @@ function visulalizarReserva(){
     <div class="col-lg-1 col-12 removeId" id="${numeroReserva}">
         ${numeroReserva}
     </div>
-    <div class="col-lg-1 col-12">
-        <i class="bi bi-calendar-check green"></i> ${reserva.dia}
-    </div>
     <div class="col-lg-2 col-12">
         <i class="bi bi-person-square green"></i> ${reserva.nombre} ${reserva.apellido}
+    </div>
+    <div class="col-lg-1 col-12">
+        <i class="bi bi-calendar-check green"></i> ${reserva.dia}
     </div>
     <div class="col-lg-1 col-12">
         <i class="bi bi-clock green"></i> ${reserva.horario}:00 Hs.
@@ -138,6 +161,7 @@ function msj () { // FUNCION PARA PROBAR FUNCIONAMIENTO EN LA COSOLA
 }
 
 btnReservar.addEventListener("click", (e)=>{
+
     e.preventDefault();
     agregarReserva ();
     resetTablero();
