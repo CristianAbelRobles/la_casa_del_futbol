@@ -63,29 +63,40 @@
         <section>
             <h1 class="green">HACE TU RESERVA</h1>
             <form class="row g-3 d-flex justify-content-center" method="post">
+                <!--  -->
                 <div class="col-md-6">
                     <label for="nombre" class="form-label text-white">Nombre</label>
-                    <input type="text" class="form-control" name="nombre" id="nombre" required>
+                    <input type="text" class="form-control formulario__input" name="nombre" id="nombre" placeholder="Cristian" required>
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    <p class="formulario__input-error">El Nombre tiene que ser de 4 a 16 dígitos.</p>
                 </div>
+                <!--  -->
                 <div class="col-md-6">
                     <label for="apellido" class="form-label text-white">Apellido</label>
-                    <input type="text" class="form-control" name="apellido" id="apellido" required>
+                    <input type="text" class="form-control formulario__input" name="apellido" id="apellido" placeholder="Robles" required>
+                    <p class="formulario__input-error">El Apellido tiene que ser de 4 a 16 dígitos.</p>
                 </div>
+                <!--  -->
                 <div class="col-md-6">
                     <label for="telefono" class="form-label text-white">Telefono</label>
-                    <input type="text" class="form-control" name="telefono" id="telefono" required>
+                    <input type="text" class="form-control formulario__input" name="telefono" id="telefono" placeholder="11 4546-7000" required>
+                    <p class="formulario__input-error">El telefono solo puede contener numeros y un máximo de 14 dígitos.</p>
                 </div>
+                <!--  -->
                 <div class="col-md-6">
-                    <label for="email" class="form-label text-white" required>Email</label>
-                    <input type="email" class="form-control" name="mail" id="mail">
+                    <label for="email" class="form-label text-white">Email</label>
+                    <input type="email" class="form-control formulario__input" name="mail" id="mail" placeholder="usuario@servidor.com" required>
+                    <p class="formulario__input-error">El correo solo puede contener letras, números, puntos, guiones y guiones bajos.</p>
                 </div>
+                <!--  -->
                 <div class="col-md-4">
                     <label class="white" for="dia">Día de Reserva</label>
-                    <input type="date" class="form-control" name="dia" name="trip-start" id="dia" required>
+                    <input type="date" class="form-control formulario__input" name="dia" name="trip-start" id="dia" required>
                 </div>
+                <!--  -->
                 <div class="col-md-4">
                 <label class="white" for="hora">Hora de Reserva</label>
-                <select class="form-select form-control" aria-label="" id="hora" >
+                <select class="form-select form-control formulario__input" aria-label="" id="hora" >
                     <option selected>10</option>
                     <option value="11">11</option>
                     <option value="12">12</option>
@@ -102,16 +113,19 @@
                     <option value="23">23</option>
                 </select>
                 </div>
+                <!--  -->
                 <div class="col-md-4">
                     <label class="white" for="parrilla">Reserva Parrilla?</label>
-                    <select class="form-select form-control" aria-label="" id="parrilla" >
+                    <select class="form-select form-control formulario__input" aria-label="" id="parrilla" >
                         <option selected>No</option>
                         <option value="si">Si</option>
                     </select>
-                    </div>
+                </div>
+                <!--  -->
                 <div class="col-md-3">
                     <button type="submit" class="btn contacto__formulario__enviar" id="btnReservar">Solicitar Reserva</button>
                 </div>
+                <!--  -->
             </form>
             <div class="d-flex justify-content-center">
                 <button type="submit" class="btn btn-info" id="visualizarReservas"><i class="bi bi-eye-fill"></i> Visualizar Reservas</button>

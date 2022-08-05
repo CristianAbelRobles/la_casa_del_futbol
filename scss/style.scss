@@ -356,6 +356,41 @@ main {
 
 /*/////////////////// RESERVAS //////////////////*/
 
+.formulario__input:focus {
+	border: 2px solid $verde-claro;
+	outline: none;
+	box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+}
+
+.formulario__mensaje-exito {
+	font-size: 14px;
+	color: #119200;
+	display: none;
+}
+
+.formulario__mensaje-exito-activo {
+	display: block;
+}
+
+.formulario__input-error {
+	font-size: 12px;
+	margin-bottom: 0;
+	display: none;
+}
+
+.formulario__input-error-activo {
+	display: block;
+}
+
+.formulario__validacion-estado {
+	position: absolute;
+	right: 10px;
+	bottom: 15px;
+	z-index: 100;
+	font-size: 16px;
+	opacity: 0;
+}
+
 .listaReserva {
     margin: 0.5rem;
     border-bottom: 1px dashed $verde-claro;
@@ -364,7 +399,7 @@ main {
 }
 
 .tablaReservas {
-    width: 100% !important; 
+    width: 100% !important;
 }
 
 .ocultar {

@@ -62,7 +62,6 @@ function mostrar() {
     }
 }
 
-
 function resetTablero(){
     contenedorReservas.innerHTML = '';
     if (btnVisualizarReservas.classList.contains("ocultar")) {
