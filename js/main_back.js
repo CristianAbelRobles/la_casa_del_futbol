@@ -67,21 +67,21 @@ let contenedorReservas = document.querySelector("#tablaReservas");
 let listaReservas = JSON.parse(localStorage.getItem("listaReservas")) || [ 
     // PREGUNTO SI EXISTE LA LISTA DE RESERVAS EN LOCAL STORAGE - SI EXISTE USO LA QUE EXISTE - NO EXISTE USO ESTA ->
     {nombre: "Cristian", apellido: "robles", dia: "2022-08-24", horario: 15, telefono: 1130164798, mail: "cristian@gmail.com", parrilla: "si"},
-    {nombre: "Laura", apellido: "nacimiento", dia: "2022-08-23", horario: 19, telefono: 1164568798, mail: "laura@gmail.com", parrilla: "no"},
+    {nombre: "Laura", apellido: "nacimiento", dia: "2022-08-24", horario: 19, telefono: 1164568798, mail: "laura@gmail.com", parrilla: "no"},
     {nombre: "Joaquin", apellido: "robles", dia: "2022-08-24", horario: 13, telefono: 116567798, mail: "joaquin@gmail.com", parrilla: "si"},
-    {nombre: "Abel", apellido: "Lopez", dia: "2022-08-23", horario: 14, telefono: 118768598, mail: "abel@gmail.com", parrilla: "si"},
+    {nombre: "Abel", apellido: "Lopez", dia: "2022-08-25", horario: 14, telefono: 118768598, mail: "abel@gmail.com", parrilla: "si"},
     {nombre: "Ezequiel", apellido: "Gonzalez", dia: "2022-08-25", horario: 16, telefono: 1165684564, mail: "ezeuiel@gmail.com", parrilla: "no"},
-    {nombre: "Ulises", apellido: "Benitez", dia: "2022-08-21", horario: 22, telefono: 1164634538, mail: "ulises@gmail.com", parrilla: "si"},
+    {nombre: "Ulises", apellido: "Benitez", dia: "2022-08-25", horario: 22, telefono: 1164634538, mail: "ulises@gmail.com", parrilla: "si"},
     {nombre: "Alejandro", apellido: "robles", dia: "2022-08-26", horario: 15, telefono: 1130164798, mail: "cristian@gmail.com", parrilla: "si"},
-    {nombre: "Pablo", apellido: "nacimiento", dia: "2022-08-28", horario: 19, telefono: 1164568798, mail: "laura@gmail.com", parrilla: "no"},
+    {nombre: "Pablo", apellido: "nacimiento", dia: "2022-08-26", horario: 19, telefono: 1164568798, mail: "laura@gmail.com", parrilla: "no"},
     {nombre: "Enrique", apellido: "robles", dia: "2022-08-26", horario: 13, telefono: 116567798, mail: "joaquin@gmail.com", parrilla: "si"},
     {nombre: "Nahuel", apellido: "Lopez", dia: "2022-08-27", horario: 14, telefono: 118768598, mail: "abel@gmail.com", parrilla: "si"},
-    {nombre: "Ciro", apellido: "Gonzalez", dia: "2022-08-22", horario: 16, telefono: 1165684564, mail: "ezeuiel@gmail.com", parrilla: "no"},
+    {nombre: "Ciro", apellido: "Gonzalez", dia: "2022-08-27", horario: 16, telefono: 1165684564, mail: "ezeuiel@gmail.com", parrilla: "no"},
     {nombre: "Mateo", apellido: "Benitez", dia: "2022-08-27", horario: 22, telefono: 1164634538, mail: "ulises@gmail.com", parrilla: "si"},
-    {nombre: "Gustavo", apellido: "robles", dia: "2022-08-26", horario: 15, telefono: 1130164798, mail: "cristian@gmail.com", parrilla: "si"},
+    {nombre: "Gustavo", apellido: "robles", dia: "2022-08-27", horario: 15, telefono: 1130164798, mail: "cristian@gmail.com", parrilla: "si"},
     {nombre: "Javier", apellido: "nacimiento", dia: "2022-08-27", horario: 19, telefono: 1164568798, mail: "laura@gmail.com", parrilla: "no"},
     {nombre: "Diego", apellido: "robles", dia: "2022-08-28", horario: 13, telefono: 116567798, mail: "joaquin@gmail.com", parrilla: "si"},
-    {nombre: "Jorge", apellido: "Lopez", dia: "2022-08-29", horario: 14, telefono: 118768598, mail: "abel@gmail.com", parrilla: "si"},
+    {nombre: "Jorge", apellido: "Lopez", dia: "2022-08-28", horario: 14, telefono: 118768598, mail: "abel@gmail.com", parrilla: "si"},
     {nombre: "Nemias", apellido: "Gonzalez", dia: "2022-08-28", horario: 16, telefono: 1165684564, mail: "ezeuiel@gmail.com", parrilla: "no"},
     {nombre: "Emanuel", apellido: "Benitez", dia: "2022-08-29", horario: 22, telefono: 1164634538, mail: "ulises@gmail.com", parrilla: "si"},
 ];
@@ -134,53 +134,56 @@ function resetTablero(){
 function visulalizarReserva(){
     mostrar();
     let numeroReserva = 0;
-    contenedorReservas.innerHTML = `
-        <thead >
-            <tr>
-            <th scope="col text-center">#</th>
-            <th scope="col text-center">Nombre</th>
-            <th scope="col text-center">Fecha</th>
-            <th scope="col text-center">Hora</th>
-            <th scope="col text-center">Telefono</th>
-            <th scope="col ">Correo</th>
-            <th scope="col text-center">Parrilla</th>
-            <th scope="col text-center">Accion</th>
-            </tr>
-        </thead>
-        <tbody id="contenedorReservas2">
-        </tbody>
-    `
-    let contenedorReservas2 = document.querySelector('#contenedorReservas2') // creo el contenedor de las filas donde voy a cargar las reservas
+    contenedorReservas.innerHTML = '';
     listaReservas.map(reserva => {
         numeroReserva++;
-        console.log(reserva.dia)
-        const tr = document.createElement('tr');
-        reserva.parrilla  === "si" ? msjParrilla = `<i class="bi bi-check-circle green"></i>` : msjParrilla = ``;
-        tr.classList.add('white');
-        tr.classList.add('listaReserva')
+        const div = document.createElement('div');
+        reserva.parrilla  === "si" ? msjParrilla = `<i class="bi bi-check-circle green"></i> Parrilla` : msjParrilla = ``;
+        div.classList.add('row');
+        div.classList.add('listaReserva');
+        div.classList.add('align-items-start');
+        div.classList.add('white');
+        div.classList.add('align-items-center')
         const Content = `
-        <th scope="row" class="removeId" id="${numeroReserva}">${numeroReserva}</th>
-        <td><i class="bi bi-person-square green"></i> ${reserva.nombre} ${reserva.apellido}</td>
-        <td><i class="bi bi-calendar-check green"></i> ${reserva.dia}</td>
-        <td><i class="bi bi-clock green"></i> ${reserva.horario}:00 Hs.</td>
-        <td><i class="bi bi-telephone green"></i> ${reserva.telefono}</td>
-        <td><i class="bi bi-envelope green"></i> ${reserva.mail}</td>
-        <td class="text-center">${msjParrilla}</td>
-        <td ><button type="button" class="btn btn-danger eliminar"><i class="bi bi-trash"></i> Eliminar</button></td>
+    <div class="col-lg-1 col-12 removeId" id="${numeroReserva}">
+        ${numeroReserva}
+    </div>
+    <div class="col-lg-2 col-12">
+        <i class="bi bi-person-square green"></i> ${reserva.nombre} ${reserva.apellido}
+    </div>
+    <div class="col-lg-1 col-12">
+        <i class="bi bi-calendar-check green"></i> ${reserva.dia}
+    </div>
+    <div class="col-lg-1 col-12">
+        <i class="bi bi-clock green"></i> ${reserva.horario}:00 Hs.
+    </div>
+    <div class="col-lg-2 col-12">
+        <i class="bi bi-telephone green"></i> ${reserva.telefono}
+    </div>
+    <div class="col-lg-2 col-12">
+        <i class="bi bi-envelope green"></i> ${reserva.mail}
+    </div>
+    <div class="col-lg-1 col-12">
+        ${msjParrilla}
+    </div>
+    <div class="col-lg-2 col-12">
+        <button type="button" class="btn btn-danger eliminar"><i class="bi bi-trash"></i> Eliminar</button>
+    </div>
+    
     `
-    tr.innerHTML = Content;
-    contenedorReservas2.append(tr); // las reservas las voy ingresando en el contenedor que esta asignado en contenedorReservas2
-    tr.querySelector(".eliminar").addEventListener('click', eliminarReserva);
+    div.innerHTML = Content;
+    contenedorReservas.append(div);
+    div.querySelector(".eliminar").addEventListener('click', eliminarReserva);
     })
 }
 
 function eliminarReserva(e){
     const buttonEliminar = e.target;
-    const tr = buttonEliminar.closest(".listaReserva");
-    const removeId = parseInt(tr.querySelector('.removeId').textContent);
-    console.log(tr.querySelector('.removeId').textContent);
+    const div = buttonEliminar.closest(".listaReserva");
+    const removeId = parseInt(div.querySelector('.removeId').textContent);
+    console.log(div.querySelector('.removeId').textContent);
     listaReservas.splice(removeId-1, 1);
-    tr.remove();
+    div.remove();
     mostrar()
     localStorage.setItem("listaReservas", JSON.stringify(listaReservas));
     Swal.fire({  // MENSAJE DE ALERTA DE LIBRERIA sweetalert2
