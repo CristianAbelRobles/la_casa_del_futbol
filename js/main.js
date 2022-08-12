@@ -99,16 +99,42 @@ class Reserva{
 }
 
 const agregarReserva = () => {
+    let reservado = 0;
     let nombre = document.querySelector("#nombre").value;
     let apellido = document.querySelector("#apellido").value;
     let dia = document.querySelector("#dia").value;
-    let horario = document.querySelector("#hora").value;
+    let horario = parseInt(document.querySelector("#hora").value);
     let telefono = document.querySelector("#telefono").value;
     let mail = document.querySelector("#correo").value;
     let parrilla = document.querySelector("#parrilla").value;
-    let reservaNueva = new Reserva (nombre, apellido, dia, horario, telefono, mail, parrilla);
-    listaReservas.push(reservaNueva);
-    localStorage.setItem("listaReservas", JSON.stringify(listaReservas))
+
+    // HAGO UN FOR PARA REVISAR MI ARRAY Y VER SI YA TENGO RESERVA CREADA EL MISMO DIA Y HORARIO QUE QUIERE GENERAR EL CLIENTE.
+    for (let i = 0; i < listaReservas.length ; i++) {
+        if ((listaReservas[i].dia == dia) && (listaReservas[i].horario == horario)) { 
+            reservado = 1; // SI ENCUENTRA UNA RESERVA EL MISMO DIA Y HORARIO CAMBIA EL VALOR DE LA VARIABLE RESERVADO
+            console.log("RESERVADO")
+            console.log(reservado)
+        } 
+    }
+
+    if (reservado === 1) {  
+        //SI LA RESERVA YA EXISTE VISUALIZO MENSAJE DE ERROR
+        Swal.fire({   // MENSAJE DE ALERTA DE LIBRERIA sweetalert2
+            icon: 'error',
+            title: 'Reserva no disponible, intente con un día u horario diferente. Tambien puede revisar nuestra lista de reservas.',
+        })
+    } else {
+        //SI LA RESERVA NO EXISTE SE CREA UNA NUEVA
+        let reservaNueva = new Reserva (nombre, apellido, dia, horario, telefono, mail, parrilla);
+        listaReservas.push(reservaNueva);
+        localStorage.setItem("listaReservas", JSON.stringify(listaReservas))
+        Swal.fire({   // MENSAJE DE ALERTA DE LIBRERIA sweetalert2
+            icon: 'success',
+            title: 'Reserva Creada con Exito!',
+            showConfirmButton: false,
+            timer: 2000
+        })
+    }
 }
 
 function mostrar() {
@@ -153,7 +179,6 @@ function visulalizarReserva(){
     let contenedorReservas2 = document.querySelector('#contenedorReservas2') // creo el contenedor de las filas donde voy a cargar las reservas
     listaReservas.map(reserva => {
         numeroReserva++;
-        console.log(reserva.dia)
         const tr = document.createElement('tr');
         reserva.parrilla  === "si" ? msjParrilla = `<i class="bi bi-check-circle green"></i>` : msjParrilla = ``;
         tr.classList.add('white');
@@ -201,18 +226,12 @@ btnReservar.addEventListener("click", (e)=>{
 	if(campos.nombre && campos.apellido && campos.correo && campos.telefono ){  //
 		agregarReserva ();
         resetTablero();
-        Swal.fire({   // MENSAJE DE ALERTA DE LIBRERIA sweetalert2
-            icon: 'success',
-            title: 'Reserva Creada con Exito!',
-            showConfirmButton: false,
-            timer: 2000
-        })
 		document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
 			icono.classList.remove('formulario__grupo-correcto');
 		});
         formulario.reset();
 	} else {
-        Swal.fire({// MENSAJE DE ALERTA DE LIBRERIA sweetalert2
+        Swal.fire({ // MENSAJE DE ALERTA DE LIBRERIA sweetalert2
             icon: 'error',
             title: 'Debe completar correctamente el formulario antes de hacer la Reserva',
         })
