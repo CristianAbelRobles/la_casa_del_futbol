@@ -147,17 +147,21 @@
                 </div>
             </form>
         
-            <div class="d-flex justify-content-center">
-                <button type="submit" class="btn btn-info" id="visualizarReservas"><i class="bi bi-eye-fill"></i> Visualizar Reservas</button>
-                <button type="submit" class="btn btn-light ocultar" id="btnOcultar"><i class="bi bi-eye-slash-fill"></i> Ocultar Reservas</button>
+            <div class="row g-3 d-flex flex-column align-content-around text-center">
+                <div class="col-md-5">
+                    <button type="submit" class="m-1 btn btn-info" id="visualizarReservas"><i class="bi bi-eye-fill"></i> Visualizar Reservas</button>
+                    <button type="submit" class="m-1 btn btn-light ocultar" id="btnOcultar"><i class="bi bi-eye-slash-fill"></i> Ocultar Reservas</button>
+                    <button type="submit" class="m-1 btn btn-warning" id="btnUsuarios"><i class="bi bi-eye-fill"></i> Visualizar Usuarios (Fetch)</button>
+                    <button type="submit" class="m-1 btn btn-light ocultar" id="btnUsuariosOcultar"><i class="bi bi-eye-slash-fill"></i> Ocultar Usuarios</button>    
+                </div>
             </div>    
-            <div class="text-center ocultar" >
-            </div>
 
             <!---->
 
             <table class="table table-dark table-striped table-hover mt-3 ocultar" id="tablaReservas">
+            </table>
 
+            <table class="table table-dark table-striped table-hover mt-3 " id="contenedorUsuarios">
             </table>
 
             <!---->
@@ -177,7 +181,7 @@
             </div>
             <div class="contenedor__caja">
                 <h4 class="white">SOBRE NOSOTROS</h4>
-                <p>Somos una familia que ama el futbol y le encanta jugarlo, por eso te invitamos a que disfrutes de este hermoso deporte que tanto nos apaciona en nuestra cancha. </p>
+                <p>Somos una familia que ama el futbol y le encanta jugarlo, por eso te invitamos a que disfrutes de este hermoso deporte que tanto nos apasiona en nuestra cancha. </p>
             </div>
             <div class="contenedor__caja">
                 <h4>SIGUENOS</h4>

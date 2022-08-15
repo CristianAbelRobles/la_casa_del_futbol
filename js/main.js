@@ -142,10 +142,15 @@ function mostrar() {
         btnOcultar.classList.remove("ocultar");
         btnVisualizarReservas.classList.add("ocultar");
         contenedorReservas.classList.remove("ocultar");
+        // boton Usuarios
+        botonUsuarios.classList.add("ocultar");
+
     } else {
         btnOcultar.classList.add("ocultar");
         btnVisualizarReservas.classList.remove("ocultar");
         contenedorReservas.classList.add("ocultar");
+        // boton Usuarios
+        botonUsuarios.classList.remove("ocultar");
     }
 }
 
@@ -241,3 +246,81 @@ btnReservar.addEventListener("click", (e)=>{
 btnVisualizarReservas.addEventListener("click", visulalizarReserva);
 
 btnOcultar.addEventListener("click", mostrar);
+
+
+///////////////////////////////////////////// FETCH ///////////////////////////////////////////////////
+
+
+let botonUsuarios = document.querySelector("#btnUsuarios");
+let btnOcultarUsuarios = document.querySelector("#btnUsuariosOcultar")
+
+const mostrarUsuarios = async () => {
+    try{
+        mostrarTablaUsuarios();
+        let response = await fetch("https://jsonplaceholder.typicode.com/users")
+        let result = await response.json();
+        contenedorUsuarios.innerHTML+=`
+            <thead >
+            <tr>
+            <th scope="col text-center">ID</th>
+            <th scope="col text-center">Nombre</th>
+            <th scope="col text-center">Usuario</th>
+            <th scope="col text-center">Dirección</th>
+            <th scope="col text-center">Telefono</th>
+            <th scope="col text-center">Email</th>
+            </tr>
+            </thead>
+            <tbody id="contenedorUsuarios2">
+            </tbody>
+            `
+        let contenedorUsuarios2 = document.querySelector('#contenedorUsuarios2')
+        result.map(persona => {
+            const tr = document.createElement('tr');
+            tr.classList.add('white');
+            tr.classList.add('listaReserva')
+            const contentUsuarios = `
+                <th scope="row">${persona.id}</th>
+                <td><i class="bi bi-person-square green"></i> ${persona.name}</td>
+                <td><i class="bi bi-calendar-check green"></i> ${persona.username}</td>
+                <td><i class="bi bi-geo-alt green"></i> ${persona.address.city}</td>
+                <td><i class="bi bi-telephone green"></i> ${persona.phone}</td>
+                <td><i class="bi bi-envelope green"></i> ${persona.email}</td>
+                `
+            tr.innerHTML = contentUsuarios;
+            contenedorUsuarios2.append(tr);
+        })
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+function mostrarTablaUsuarios() {
+    if(btnOcultarUsuarios.classList.contains("ocultar")) {
+        btnOcultarUsuarios.classList.remove("ocultar");
+        botonUsuarios.classList.add("ocultar");
+        contenedorUsuarios.classList.remove("ocultar");
+        //boton visualizar reservas
+        btnVisualizarReservas.classList.add("ocultar");
+    } else {
+        btnOcultarUsuarios.classList.add("ocultar");
+        botonUsuarios.classList.remove("ocultar");
+        contenedorUsuarios.classList.add("ocultar");
+        //boton visualizar reservas
+        btnVisualizarReservas.classList.remove("ocultar");
+    }
+}
+
+function resetTableroUsuarios(){
+    contenedorUsuarios.innerHTML = '';
+    if (botonUsuarios.classList.contains("ocultar")) {
+        botonUsuarios.classList.remove("ocultar");
+        btnOcultarUsuarios.classList.add("ocultar");
+    }
+}
+
+botonUsuarios.onclick = () => {
+    resetTableroUsuarios()
+    mostrarUsuarios();
+}
+
+btnOcultarUsuarios.addEventListener("click", mostrarTablaUsuarios);
