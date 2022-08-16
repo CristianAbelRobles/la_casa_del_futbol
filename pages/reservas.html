@@ -165,9 +165,32 @@
             </table>
 
             <!---->
-
+            <!---------- MODAL ---------->
         </section>
     </main>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary ocultar" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Modal
+    </button>
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-success white">
+                <h5 class="modal-title text-warning" id="staticBackdropLabel"><i class="bi bi-exclamation-square"></i> RESERVA NO ESTA DISPONIBLE</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Para el día seleccionado podemos ofrecerte los siguientes horarios:
+            </div>
+            <div class="d-flex flex-wrap" id="horariosDisponibles">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Entendido</button>
+            </div>
+            </div>
+        </div>
+    </div>
     <!---------- FOOTER ---------->
     <footer>
         <div class="contenedor">

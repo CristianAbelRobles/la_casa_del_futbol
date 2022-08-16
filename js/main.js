@@ -63,6 +63,9 @@ let btnOcultar = document.querySelector("#btnOcultar");
 let btnVisualizarReservas = document.querySelector("#visualizarReservas");
 let btnReservar = document.querySelector("#btnReservar");
 let contenedorReservas = document.querySelector("#tablaReservas");
+let modal = document.querySelector("#staticBackdrop");
+let contenedorHoariosDisponibles = document.querySelector("#horariosDisponibles")
+let horariosDisponibles = [10, 11, 12, 13, 14, 16, 17, 18, 19, 20, 21, 22, 23];
 
 let listaReservas = JSON.parse(localStorage.getItem("listaReservas")) || [ 
     // PREGUNTO SI EXISTE LA LISTA DE RESERVAS EN LOCAL STORAGE - SI EXISTE USO LA QUE EXISTE - NO EXISTE USO ESTA ->
@@ -75,6 +78,7 @@ let listaReservas = JSON.parse(localStorage.getItem("listaReservas")) || [
     {nombre: "Alejandro", apellido: "robles", dia: "2022-08-26", horario: 15, telefono: 1130164798, mail: "cristian@gmail.com", parrilla: "si"},
     {nombre: "Pablo", apellido: "nacimiento", dia: "2022-08-28", horario: 19, telefono: 1164568798, mail: "laura@gmail.com", parrilla: "no"},
     {nombre: "Enrique", apellido: "robles", dia: "2022-08-26", horario: 13, telefono: 116567798, mail: "joaquin@gmail.com", parrilla: "si"},
+    {nombre: "Marcelo", apellido: "Perez", dia: "2022-08-24", horario: 10, telefono: 1133456798, mail: "Juanperez@gmail.com", parrilla: "si"},
     {nombre: "Nahuel", apellido: "Lopez", dia: "2022-08-27", horario: 14, telefono: 118768598, mail: "abel@gmail.com", parrilla: "si"},
     {nombre: "Ciro", apellido: "Gonzalez", dia: "2022-08-22", horario: 16, telefono: 1165684564, mail: "ezeuiel@gmail.com", parrilla: "no"},
     {nombre: "Mateo", apellido: "Benitez", dia: "2022-08-27", horario: 22, telefono: 1164634538, mail: "ulises@gmail.com", parrilla: "si"},
@@ -107,22 +111,39 @@ const agregarReserva = () => {
     let telefono = document.querySelector("#telefono").value;
     let mail = document.querySelector("#correo").value;
     let parrilla = document.querySelector("#parrilla").value;
-
     // HAGO UN FOR PARA REVISAR MI ARRAY Y VER SI YA TENGO RESERVA CREADA EL MISMO DIA Y HORARIO QUE QUIERE GENERAR EL CLIENTE.
     for (let i = 0; i < listaReservas.length ; i++) {
         if ((listaReservas[i].dia == dia) && (listaReservas[i].horario == horario)) { 
             reservado = 1; // SI ENCUENTRA UNA RESERVA EL MISMO DIA Y HORARIO CAMBIA EL VALOR DE LA VARIABLE RESERVADO
-            console.log("RESERVADO")
-            console.log(reservado)
-        } 
+        } else if (listaReservas[i].dia == dia){
+            //hago la busqueda de la posicion dentro del array de reservas de los horarios que ya estan reservados para ese dia
+            let h = horariosDisponibles.indexOf(listaReservas[i].horario)
+            // h = es la posicion del horario reservado
+            horariosDisponibles.splice(h, 1);
+            //borro los horarios reservados de ese dia para devolver al cliente una lista con los horarios disponibles ese dia
+            console.log(horariosDisponibles)
+        }
     }
+    horariosDisponibles.map(horario => {
+        const div = document.createElement('div');
+        div.classList.add('m-2');
+        const Content = `
+            <i class="bi bi-clock green"></i> ${horario}:00 Hs.
+            `
+        div.innerHTML = Content;
+        contenedorHoariosDisponibles.append(div);
+        
+    })
 
     if (reservado === 1) {  
         //SI LA RESERVA YA EXISTE VISUALIZO MENSAJE DE ERROR
+        modal.classList.add("show");
+        /*
         Swal.fire({   // MENSAJE DE ALERTA DE LIBRERIA sweetalert2
             icon: 'error',
             title: 'Reserva no disponible, intente con un día u horario diferente. Tambien puede revisar nuestra lista de reservas.',
         })
+        */
     } else {
         //SI LA RESERVA NO EXISTE SE CREA UNA NUEVA
         let reservaNueva = new Reserva (nombre, apellido, dia, horario, telefono, mail, parrilla);
@@ -144,7 +165,6 @@ function mostrar() {
         contenedorReservas.classList.remove("ocultar");
         // boton Usuarios
         botonUsuarios.classList.add("ocultar");
-
     } else {
         btnOcultar.classList.add("ocultar");
         btnVisualizarReservas.classList.remove("ocultar");
@@ -319,7 +339,7 @@ function resetTableroUsuarios(){
 }
 
 botonUsuarios.onclick = () => {
-    resetTableroUsuarios()
+    resetTableroUsuarios();
     mostrarUsuarios();
 }
 
