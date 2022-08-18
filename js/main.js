@@ -63,9 +63,9 @@ let btnOcultar = document.querySelector("#btnOcultar");
 let btnVisualizarReservas = document.querySelector("#visualizarReservas");
 let btnReservar = document.querySelector("#btnReservar");
 let contenedorReservas = document.querySelector("#tablaReservas");
-let modal = document.querySelector("#staticBackdrop");
+let cajaMsj = document.querySelector("#cajaMsj");
 let contenedorHoariosDisponibles = document.querySelector("#horariosDisponibles")
-let horariosDisponibles = [10, 11, 12, 13, 14, 16, 17, 18, 19, 20, 21, 22, 23];
+
 
 let listaReservas = JSON.parse(localStorage.getItem("listaReservas")) || [ 
     // PREGUNTO SI EXISTE LA LISTA DE RESERVAS EN LOCAL STORAGE - SI EXISTE USO LA QUE EXISTE - NO EXISTE USO ESTA ->
@@ -103,6 +103,7 @@ class Reserva{
 }
 
 const agregarReserva = () => {
+    let horariosDisponibles = [10, 11, 12, 13, 14, 16, 17, 18, 19, 20, 21, 22, 23]; // array con el listado de todos los horarios posibles a reservar
     let reservado = 0;
     let nombre = document.querySelector("#nombre").value;
     let apellido = document.querySelector("#apellido").value;
@@ -121,29 +122,30 @@ const agregarReserva = () => {
             // h = es la posicion del horario reservado
             horariosDisponibles.splice(h, 1);
             //borro los horarios reservados de ese dia para devolver al cliente una lista con los horarios disponibles ese dia
-            console.log(horariosDisponibles)
         }
     }
-    horariosDisponibles.map(horario => {
-        const div = document.createElement('div');
-        div.classList.add('m-2');
-        const Content = `
-            <i class="bi bi-clock green"></i> ${horario}:00 Hs.
-            `
-        div.innerHTML = Content;
-        contenedorHoariosDisponibles.append(div);
-        
-    })
-
     if (reservado === 1) {  
         //SI LA RESERVA YA EXISTE VISUALIZO MENSAJE DE ERROR
-        modal.classList.add("show");
-        /*
+        cajaMsj.innerHTML = `
+            <span class="bg-warning text-center d-block fs-4"><i class="bi bi-info-square"></i> Horarios disponibles para el día ${dia}</span>
+            <div class="d-flex flex-wrap px-5 cajaMsj bg-dark" id="bodyMsj">
+            </div>
+            `
+            horariosDisponibles.map(horario => {
+                const div = document.createElement('div');
+                div.classList.add('m-2');
+                const Content = `
+                    <i class="bi bi-clock green"></i> <span class="white">${horario}:00 Hs.</span>
+                    `
+                div.innerHTML = Content;
+                bodyMsj.append(div);
+            })
         Swal.fire({   // MENSAJE DE ALERTA DE LIBRERIA sweetalert2
             icon: 'error',
             title: 'Reserva no disponible, intente con un día u horario diferente. Tambien puede revisar nuestra lista de reservas.',
         })
-        */
+        cajaMsj.classList.remove("ocultar")
+        
     } else {
         //SI LA RESERVA NO EXISTE SE CREA UNA NUEVA
         let reservaNueva = new Reserva (nombre, apellido, dia, horario, telefono, mail, parrilla);
@@ -248,7 +250,7 @@ function msj () { // FUNCION PARA PROBAR FUNCIONAMIENTO EN LA COSOLA
 
 btnReservar.addEventListener("click", (e)=>{
     e.preventDefault();
-	if(campos.nombre && campos.apellido && campos.correo && campos.telefono ){  //
+	if(campos.nombre && campos.apellido && campos.correo && campos.telefono){  //
 		agregarReserva ();
         resetTablero();
 		document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
