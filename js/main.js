@@ -1,5 +1,10 @@
 //////////////////////////////// VALIDAR FORMULARIO /////////////////////////////////
 
+let reserva = false; // inicio reserva en false para validar antes de crear una reserva nueva en la function agregarReserva()
+let msjDia = document.querySelector("#msjDia");
+let msjErrorFecha = "";
+const errorFecha = document.querySelector('#errorFecha');
+const fechaReserva = document.querySelector('.fecha');
 const formulario = document.getElementById('formulario');
 const inputs = document.querySelectorAll('#formulario input');
 
@@ -35,6 +40,60 @@ const validarCampo = (expresion, input, campo) => {   //funcion dinamica para va
 	}
 }
 
+const calcularFecha =(fechaReserva)=>{
+    
+    const fechaActual = new Date();
+    const anoActual = parseInt(fechaActual.getFullYear()); // obentengo el año del dia actual
+    const mesActual = parseInt(fechaActual.getMonth())+1; // obentengo el mes del dia actual y le sumo 1 porque inicia el conteo desde el mes 0
+    const diaActual = parseInt(fechaActual.getDate());  // obentengo el dia actual
+
+    // 2022-08-22 voy a obtener los valores de la fecha de reserva por posiciones en su string
+
+    const anoReserva = parseInt(String(fechaReserva).substring(0, 4));  // [2022]-08-22
+    const mesReserva = parseInt(String(fechaReserva).substring(5, 7));  // 2022-[08]-22
+    const diaReserva = parseInt(String(fechaReserva).substring(8, 10));  // 2022-08-[22]
+
+    if (anoReserva < anoActual) {
+        //errorFecha.classList.remove('ocultar');
+        msjDia.classList.add('text-danger')
+        msjDia.classList.remove('white')
+        msjDia.classList.remove('green')
+        msjErrorFecha = "Año de la reserva erroneo";
+        reserva=false;
+    } else if (mesReserva < mesActual){
+        //errorFecha.classList.remove('ocultar');
+        msjDia.classList.add('text-danger')
+        msjDia.classList.remove('white')
+        msjDia.classList.remove('green')
+        msjErrorFecha = "Mes de la reserva erroneo";
+        reserva=false;
+    } else if (diaReserva <= diaActual){
+        //errorFecha.classList.remove('ocultar');
+        msjDia.classList.add('text-danger')
+        msjDia.classList.remove('white')
+        msjDia.classList.remove('green')
+        msjErrorFecha = "Día de reserva invalido, revise el dia ingresado, tenga en cuenta que no se aceptan reservas para el mismo día, solo se aceptan a partir de un día previo al día de reserva.";
+        reserva=false;
+    } else {
+        //errorFecha.classList.add('ocultar');
+        //reserva = true;
+        msjDia.classList.remove('text-danger')
+        msjDia.classList.remove('white')
+        msjDia.classList.add('green')
+        msjErrorFecha = "correcto";
+        reserva=true;
+    }
+    return msjErrorFecha;
+}
+
+window.addEventListener('load', function () {
+
+    fechaReserva.addEventListener('change', function () {
+        errorFecha.innerText = `${calcularFecha(this.value)}`;
+    });
+
+});
+
 const validarFormulario = (e) =>{
     switch (e.target.name) {
         case "nombre":
@@ -59,12 +118,13 @@ inputs.forEach((input) => {
 
 //////////////////////////////////////////////////////////////////////////////////////
 
+
 let btnOcultar = document.querySelector("#btnOcultar");
 let btnVisualizarReservas = document.querySelector("#visualizarReservas");
 let btnReservar = document.querySelector("#btnReservar");
 let contenedorReservas = document.querySelector("#tablaReservas");
 let cajaMsj = document.querySelector("#cajaMsj");
-let contenedorHoariosDisponibles = document.querySelector("#horariosDisponibles")
+let contenedorHoariosDisponibles = document.querySelector("#horariosDisponibles");
 
 
 let listaReservas = JSON.parse(localStorage.getItem("listaReservas")) || [ 
@@ -81,13 +141,13 @@ let listaReservas = JSON.parse(localStorage.getItem("listaReservas")) || [
     {nombre: "Marcelo", apellido: "Perez", dia: "2022-08-24", horario: 10, telefono: 1133456798, mail: "Juanperez@gmail.com", parrilla: "si"},
     {nombre: "Nahuel", apellido: "Lopez", dia: "2022-08-27", horario: 14, telefono: 118768598, mail: "abel@gmail.com", parrilla: "si"},
     {nombre: "Ciro", apellido: "Gonzalez", dia: "2022-08-22", horario: 16, telefono: 1165684564, mail: "ezeuiel@gmail.com", parrilla: "no"},
-    {nombre: "Mateo", apellido: "Benitez", dia: "2022-08-27", horario: 22, telefono: 1164634538, mail: "ulises@gmail.com", parrilla: "si"},
-    {nombre: "Gustavo", apellido: "robles", dia: "2022-08-26", horario: 15, telefono: 1130164798, mail: "cristian@gmail.com", parrilla: "si"},
-    {nombre: "Javier", apellido: "nacimiento", dia: "2022-08-27", horario: 19, telefono: 1164568798, mail: "laura@gmail.com", parrilla: "no"},
-    {nombre: "Diego", apellido: "robles", dia: "2022-08-28", horario: 13, telefono: 116567798, mail: "joaquin@gmail.com", parrilla: "si"},
-    {nombre: "Jorge", apellido: "Lopez", dia: "2022-08-29", horario: 14, telefono: 118768598, mail: "abel@gmail.com", parrilla: "si"},
-    {nombre: "Nemias", apellido: "Gonzalez", dia: "2022-08-28", horario: 16, telefono: 1165684564, mail: "ezeuiel@gmail.com", parrilla: "no"},
-    {nombre: "Emanuel", apellido: "Benitez", dia: "2022-08-29", horario: 22, telefono: 1164634538, mail: "ulises@gmail.com", parrilla: "si"},
+    {nombre: "Mateo", apellido: "Benitez", dia: "2022-09-27", horario: 22, telefono: 1164634538, mail: "ulises@gmail.com", parrilla: "si"},
+    {nombre: "Gustavo", apellido: "robles", dia: "2022-09-26", horario: 15, telefono: 1130164798, mail: "cristian@gmail.com", parrilla: "si"},
+    {nombre: "Javier", apellido: "nacimiento", dia: "2022-09-27", horario: 19, telefono: 1164568798, mail: "laura@gmail.com", parrilla: "no"},
+    {nombre: "Diego", apellido: "robles", dia: "2022-09-28", horario: 13, telefono: 116567798, mail: "joaquin@gmail.com", parrilla: "si"},
+    {nombre: "Jorge", apellido: "Lopez", dia: "2022-09-29", horario: 14, telefono: 118768598, mail: "abel@gmail.com", parrilla: "si"},
+    {nombre: "Nemias", apellido: "Gonzalez", dia: "2022-09-28", horario: 16, telefono: 1165684564, mail: "ezeuiel@gmail.com", parrilla: "no"},
+    {nombre: "Emanuel", apellido: "Benitez", dia: "2022-09-29", horario: 22, telefono: 1164634538, mail: "ulises@gmail.com", parrilla: "si"},
 ];
 
 class Reserva{
@@ -148,6 +208,7 @@ const agregarReserva = () => {
         
     } else {
         //SI LA RESERVA NO EXISTE SE CREA UNA NUEVA
+        cajaMsj.innerHTML = ``; // vacio la caja de msj si existe un mensaje con reservas disponibles por alguna consulta previa a la reserva exitosa.
         let reservaNueva = new Reserva (nombre, apellido, dia, horario, telefono, mail, parrilla);
         listaReservas.push(reservaNueva);
         localStorage.setItem("listaReservas", JSON.stringify(listaReservas))
@@ -192,10 +253,10 @@ function visulalizarReserva(){
             <tr>
             <th scope="col text-center">#</th>
             <th scope="col text-center">Nombre</th>
-            <th scope="col text-center">Fecha</th>
+            <th scope="col text-center">Fecha <select name="filtradoFechas" id="filtradoFechas"><option value="">Filtrar por día</option></select></th>
             <th scope="col text-center">Hora</th>
             <th scope="col text-center">Telefono</th>
-            <th scope="col ">Correo</th>
+            <th scope="col">Correo</th>
             <th scope="col text-center">Parrilla</th>
             <th scope="col text-center">Accion</th>
             </tr>
@@ -203,9 +264,14 @@ function visulalizarReserva(){
         <tbody id="contenedorReservas2">
         </tbody>
     `
-    let contenedorReservas2 = document.querySelector('#contenedorReservas2') // creo el contenedor de las filas donde voy a cargar las reservas
+    let filtradoFechas = document.querySelector('#filtradoFechas');
+    let contenedorReservas2 = document.querySelector('#contenedorReservas2'); // creo el contenedor de las filas donde voy a cargar las reservas
     listaReservas.map(reserva => {
         numeroReserva++;
+        // creo un filtro dinamico de dia para visualizar las fechas de las reservas
+        filtradoFechas.innerHTML += `
+            <option value="${reserva.dia}">${reserva.dia}</option>
+        `
         const tr = document.createElement('tr');
         reserva.parrilla  === "si" ? msjParrilla = `<i class="bi bi-check-circle green"></i>` : msjParrilla = ``;
         tr.classList.add('white');
@@ -250,7 +316,7 @@ function msj () { // FUNCION PARA PROBAR FUNCIONAMIENTO EN LA COSOLA
 
 btnReservar.addEventListener("click", (e)=>{
     e.preventDefault();
-	if(campos.nombre && campos.apellido && campos.correo && campos.telefono){  //
+	if((campos.nombre && campos.apellido && campos.correo && campos.telefono && reserva)&&(reserva == true)){  //
 		agregarReserva ();
         resetTablero();
 		document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {

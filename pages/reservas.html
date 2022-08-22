@@ -107,8 +107,13 @@
 
                 <!-- DIA DE RESERVA -->
                 <div class="col-md-4">
-                    <label class="white" for="dia">Día de Reserva</label>
-                    <input type="date" class="form-control formulario__input" name="dia" name="trip-start" id="dia" required>
+                    <div class="formulario__grupo-input">
+                        <label class="white" for="dia" id="msjDia">Fecha de Reserva</label>
+                        <input type="date" class="form-control fecha" name="dia" name="trip-start" id="dia" required>
+                    </div>
+                    <p class="white" id="errorFecha"></p>
+                    <span class="formulario__input-error formulario__input-error-activo white fs-6"><i class="bi bi-info-square"></i> No se aceptan reservas para el día de hoy, debe seleccionar una fecha a partir de mañana.</span>
+                    
                 </div>
 
                 <!-- HORA DE RESERVA -->
@@ -167,6 +172,8 @@
             </table>
         </section>
     </main>
+
+    
     <!---------- FOOTER ---------->
     <footer>
         <div class="contenedor">
