@@ -58,13 +58,13 @@ const calcularFecha =(fechaReserva)=>{
         msjDia.classList.remove('green')
         msjErrorFecha = "Año de la reserva erroneo";
         reserva=false;
-    } else if (mesReserva < mesActual){
+    } else if ((mesReserva < mesActual) && (anoReserva <= anoActual)){
         msjDia.classList.add('text-danger')
         msjDia.classList.remove('white')
         msjDia.classList.remove('green')
         msjErrorFecha = "Mes de la reserva erroneo";
         reserva=false;
-    } else if (diaReserva <= diaActual){
+    } else if ((diaReserva <= diaActual) && (mesReserva <= mesActual) && (anoReserva <= anoActual)){
         //errorFecha.classList.remove('ocultar');
         msjDia.classList.add('text-danger')
         msjDia.classList.remove('white')
@@ -75,7 +75,7 @@ const calcularFecha =(fechaReserva)=>{
         msjDia.classList.remove('text-danger')
         msjDia.classList.remove('white')
         msjDia.classList.add('green')
-        msjErrorFecha = "correcto";
+        let icono = document.querySelector("#icono");
         reserva=true;
     }
     return msjErrorFecha;
@@ -84,7 +84,7 @@ const calcularFecha =(fechaReserva)=>{
 window.addEventListener('load', function () {
 
     fechaReserva.addEventListener('change', function () {
-        errorFecha.innerText = `${calcularFecha(this.value)}`;
+        errorFecha.innerText += `${calcularFecha(this.value)}`;
     });
 
 });
@@ -242,6 +242,15 @@ function resetTablero(){
 }
 
 function visulalizarReserva(){
+    // APLICO EL METODO SORT PARA ORDENAR POR DIA LAS RESERVAS
+    let reservasOrdenadas = listaReservas.sort(function (a, b) {
+        if (a.dia > b.dia){
+            return 1
+        } else {
+            return -1
+        }
+    })
+    console.log(reservasOrdenadas);
     mostrar();
     let numeroReserva = 0;
     contenedorReservas.innerHTML = `
@@ -408,3 +417,7 @@ botonUsuarios.onclick = () => {
 }
 
 btnOcultarUsuarios.addEventListener("click", mostrarTablaUsuarios);
+
+let arrayFiltroFechas = [... new Set (listaReservas.dia)];
+
+console.log (arrayFiltroFechas)
