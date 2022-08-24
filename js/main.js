@@ -41,7 +41,6 @@ const validarCampo = (expresion, input, campo) => {   //funcion dinamica para va
 }
 
 const calcularFecha =(fechaReserva)=>{
-    
     const fechaActual = new Date();
     const anoActual = parseInt(fechaActual.getFullYear()); // obentengo el año del dia actual
     const mesActual = parseInt(fechaActual.getMonth())+1; // obentengo el mes del dia actual y le sumo 1 porque inicia el conteo desde el mes 0
@@ -54,14 +53,12 @@ const calcularFecha =(fechaReserva)=>{
     const diaReserva = parseInt(String(fechaReserva).substring(8, 10));  // 2022-08-[22]
 
     if (anoReserva < anoActual) {
-        //errorFecha.classList.remove('ocultar');
         msjDia.classList.add('text-danger')
         msjDia.classList.remove('white')
         msjDia.classList.remove('green')
         msjErrorFecha = "Año de la reserva erroneo";
         reserva=false;
     } else if (mesReserva < mesActual){
-        //errorFecha.classList.remove('ocultar');
         msjDia.classList.add('text-danger')
         msjDia.classList.remove('white')
         msjDia.classList.remove('green')
@@ -75,8 +72,6 @@ const calcularFecha =(fechaReserva)=>{
         msjErrorFecha = "Día de reserva invalido, revise el dia ingresado, tenga en cuenta que no se aceptan reservas para el mismo día, solo se aceptan a partir de un día previo al día de reserva.";
         reserva=false;
     } else {
-        //errorFecha.classList.add('ocultar');
-        //reserva = true;
         msjDia.classList.remove('text-danger')
         msjDia.classList.remove('white')
         msjDia.classList.add('green')
@@ -185,7 +180,7 @@ const agregarReserva = () => {
         }
     }
     if (reservado === 1) {  
-        //SI LA RESERVA YA EXISTE VISUALIZO MENSAJE DE ERROR
+        //SI LA RESERVA YA EXISTE VISUALIZO MENSAJE DE ERROR Y OFREZCO LOS HORARIOS DISPONIBLES PARA ESE DIA
         cajaMsj.innerHTML = `
             <span class="bg-warning text-center d-block fs-4"><i class="bi bi-info-square"></i> Horarios disponibles para el día ${dia}</span>
             <div class="d-flex flex-wrap px-5 cajaMsj bg-dark" id="bodyMsj">
@@ -218,6 +213,7 @@ const agregarReserva = () => {
             showConfirmButton: false,
             timer: 2000
         })
+        formulario.reset(); // SI LA RESERVA SE CREA CON EXITO SE RESETEAN LOS INPUTS CON INFORMACION DEL CLIENTE, SI SE SOLICITA UNA RESERVA QUE YA EXISTE NO SE BORRAN ASI EL USUARIO NO TIENE QUE VOLVER A COMPLETAR LOS CAMPOS PARA INTRODUCIR OTRA FECHA TENTATIVA.
     }
 }
 
@@ -316,13 +312,13 @@ function msj () { // FUNCION PARA PROBAR FUNCIONAMIENTO EN LA COSOLA
 
 btnReservar.addEventListener("click", (e)=>{
     e.preventDefault();
-	if((campos.nombre && campos.apellido && campos.correo && campos.telefono && reserva)&&(reserva == true)){  //
+	if(campos.nombre && campos.apellido && campos.correo && campos.telefono && reserva){  //
 		agregarReserva ();
         resetTablero();
 		document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
 			icono.classList.remove('formulario__grupo-correcto');
 		});
-        formulario.reset();
+        
 	} else {
         Swal.fire({ // MENSAJE DE ALERTA DE LIBRERIA sweetalert2
             icon: 'error',

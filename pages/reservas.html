@@ -72,7 +72,7 @@
                         <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Cristian">
                         <i class="formulario__validacion-estado bi bi-check-circle-fill"></i>
                     </div>
-                    <p class="formulario__input-error">El Nombre no puede quedar vacio y tiene que ser de 4 a 16 caracteres, no se admiten números o simbolos.</p>
+                    <p class="p-2 formulario__input-error">El Nombre no puede quedar vacio y tiene que ser de 4 a 16 caracteres, no se admiten números o simbolos.</p>
                 </div>
 
                 <!-- APELLIDO -->
@@ -82,7 +82,7 @@
                         <input type="text" class="formulario__input" name="apellido" id="apellido" placeholder="Robles">
                         <i class="formulario__validacion-estado bi bi-check-circle-fill"></i>
                     </div>
-                    <p class="formulario__input-error">El Apellido no puede quedar vacio y tiene que ser de 4 a 16 caracteres, no se admiten números o simbolos.</p>
+                    <p class="p-2 formulario__input-error">El Apellido no puede quedar vacio y tiene que ser de 4 a 16 caracteres, no se admiten números o simbolos.</p>
                 </div>
 
                 <!-- TELEFONO -->
@@ -90,7 +90,7 @@
                     <label for="telefono" class="formulario__label">Telefono</label>
                     <div class="formulario__grupo-input">
                         <input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="11 6580-4413">
-                        <i class="formulario__validacion-estado bi bi-check-circle-fill"></i>
+                        <i class="p-2 formulario__validacion-estado bi bi-check-circle-fill"></i>
                     </div>
                     <p class="formulario__input-error">El Telefono no puede quedar vacio, solo puede contener numeros y un máximo de 14 dígitos.</p>
                 </div>
@@ -102,44 +102,43 @@
                         <input type="email" class="formulario__input" name="correo" id="correo" placeholder="usuario@servidor.com">
                         <i class="formulario__validacion-estado bi bi-check-circle-fill"></i>
                     </div>
-                    <p class="formulario__input-error">El Correo no puede quedar vacio, solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+                    <p class="p-2 formulario__input-error">El Correo no puede quedar vacio, solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
                 </div>
 
                 <!-- DIA DE RESERVA -->
                 <div class="col-md-4">
+                    <label class="formulario__label white" for="dia" id="msjDia">Fecha de Reserva</label>
                     <div class="formulario__grupo-input">
-                        <label class="white" for="dia" id="msjDia">Fecha de Reserva</label>
-                        <input type="date" class="form-control fecha" name="dia" name="trip-start" id="dia" required>
+                        <input type="date" class="formFecha form-control fecha" name="dia" name="trip-start" id="dia" required>
                     </div>
-                    <p class="white" id="errorFecha"></p>
-                    <span class="formulario__input-error formulario__input-error-activo white fs-6"><i class="bi bi-info-square"></i> No se aceptan reservas para el día de hoy, debe seleccionar una fecha a partir de mañana.</span>
-                    
+                    <p class="px-2 white" id="errorFecha"></p>
+                    <span class="px-2 formulario__input-error formulario__input-error-activo white fs-6"><i class="bi bi-info-square"></i> No se aceptan reservas para el día de hoy, debe seleccionar una fecha a partir de mañana.</span>
                 </div>
 
                 <!-- HORA DE RESERVA -->
                 <div class="col-md-4">
-                <label class="white" for="hora">Hora de Reserva</label>
-                <select class="form-select form-control formulario__input" aria-label="" id="hora" >
-                    <option selected>10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                    <option value="13">13</option>
-                    <option value="14">14</option>
-                    <option value="15">15</option>
-                    <option value="16">16</option>
-                    <option value="17">17</option>
-                    <option value="18">18</option>
-                    <option value="19">19</option>
-                    <option value="20">20</option>
-                    <option value="21">21</option>
-                    <option value="22">22</option>
-                    <option value="23">23</option>
-                </select>
+                    <label class="formulario__label white" for="hora">Hora de Reserva</label>
+                    <select class="form-select form-control formulario__input" aria-label="" id="hora" >
+                        <option selected>10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                    </select>
                 </div>
 
                 <!-- RESERVA DE PARRILLA -->
                 <div class="col-md-4">
-                    <label class="white" for="parrilla">Reserva Parrilla?</label>
+                    <label class="formulario__label white" for="parrilla">Reserva Parrilla?</label>
                     <select class="form-select form-control formulario__input" aria-label="" id="parrilla" >
                         <option selected>No</option>
                         <option value="si">Si</option>
@@ -150,7 +149,7 @@
                 </div>
                 <!-- BOTON ENVIAR FORMULARIO -->
                 <div class="col-md-3">
-                    <button type="submit" class="btn contacto__formulario__enviar" id="btnReservar">Solicitar Reserva</button>
+                    <button type="submit" class="btn btn-success" id="btnReservar"><i class="bi bi-journal-check"></i> Solicitar Reserva</button>
                 </div>
             </form>
         
