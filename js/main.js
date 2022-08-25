@@ -75,7 +75,7 @@ const calcularFecha =(fechaReserva)=>{
         msjDia.classList.remove('text-danger')
         msjDia.classList.remove('white')
         msjDia.classList.add('green')
-        let icono = document.querySelector("#icono");
+        msjErrorFecha = "";
         reserva=true;
     }
     return msjErrorFecha;
@@ -84,7 +84,7 @@ const calcularFecha =(fechaReserva)=>{
 window.addEventListener('load', function () {
 
     fechaReserva.addEventListener('change', function () {
-        errorFecha.innerText += `${calcularFecha(this.value)}`;
+        errorFecha.innerText = `${calcularFecha(this.value)}`;
     });
 
 });
@@ -121,7 +121,6 @@ let contenedorReservas = document.querySelector("#tablaReservas");
 let cajaMsj = document.querySelector("#cajaMsj");
 let contenedorHoariosDisponibles = document.querySelector("#horariosDisponibles");
 
-
 let listaReservas = JSON.parse(localStorage.getItem("listaReservas")) || [ 
     // PREGUNTO SI EXISTE LA LISTA DE RESERVAS EN LOCAL STORAGE - SI EXISTE USO LA QUE EXISTE - NO EXISTE USO ESTA ->
     {nombre: "Cristian", apellido: "robles", dia: "2022-08-24", horario: 15, telefono: 1130164798, mail: "cristian@gmail.com", parrilla: "si"},
@@ -144,6 +143,21 @@ let listaReservas = JSON.parse(localStorage.getItem("listaReservas")) || [
     {nombre: "Nemias", apellido: "Gonzalez", dia: "2022-09-28", horario: 16, telefono: 1165684564, mail: "ezeuiel@gmail.com", parrilla: "no"},
     {nombre: "Emanuel", apellido: "Benitez", dia: "2022-09-29", horario: 22, telefono: 1164634538, mail: "ulises@gmail.com", parrilla: "si"},
 ];
+
+const fechaReservas = listaReservas.map(function (reserva){
+    return reserva.dia;
+});
+
+let filtroFechaReservas = [... new Set (fechaReservas)].sort();
+
+// APLICO SORT PARA ORDENAR POR DIA LAS RESERVAS
+listaReservas.sort(function (a, b) {
+    if (a.dia > b.dia){
+        return 1
+    } else {
+        return -1
+    }
+});
 
 class Reserva{
     constructor(nombre, apellido, dia, horario, telefono, mail, parrilla){
@@ -242,15 +256,6 @@ function resetTablero(){
 }
 
 function visulalizarReserva(){
-    // APLICO EL METODO SORT PARA ORDENAR POR DIA LAS RESERVAS
-    let reservasOrdenadas = listaReservas.sort(function (a, b) {
-        if (a.dia > b.dia){
-            return 1
-        } else {
-            return -1
-        }
-    })
-    console.log(reservasOrdenadas);
     mostrar();
     let numeroReserva = 0;
     contenedorReservas.innerHTML = `
@@ -258,7 +263,7 @@ function visulalizarReserva(){
             <tr>
             <th scope="col text-center">#</th>
             <th scope="col text-center">Nombre</th>
-            <th scope="col text-center">Fecha <select name="filtradoFechas" id="filtradoFechas"><option value="">Filtrar por día</option></select></th>
+            <th scope="col text-center">Fecha <select name="filtradoFechas" id="filtradoFechas"><option value="Todas">Todas</option></select><button type="submit" class="m-1 btn btn-info" id="btnFiltrarDia"><i class="bi bi-eye-fill"></i> Filtrar</button></th>
             <th scope="col text-center">Hora</th>
             <th scope="col text-center">Telefono</th>
             <th scope="col">Correo</th>
@@ -269,8 +274,40 @@ function visulalizarReserva(){
         <tbody id="contenedorReservas2">
         </tbody>
     `
+    let btnFiltrarDia = document.querySelector('#btnFiltrarDia');
     let filtradoFechas = document.querySelector('#filtradoFechas');
     let contenedorReservas2 = document.querySelector('#contenedorReservas2'); // creo el contenedor de las filas donde voy a cargar las reservas
+
+    btnFiltrarDia.addEventListener("click", (e)=>{
+        e.preventDefault();
+        contenedorReservas2.innerHTML=``;
+        let diaFiltrado = document.querySelector("#filtradoFechas").value;
+        let arrayPrueba = listaReservas.filter((fecha)=>{
+            if (fecha.dia == diaFiltrado){
+                return true;
+            } else {
+                return false;
+            }
+        });
+        let x = 0;
+        arrayPrueba.map(array => {
+            x++
+            const tr = document.createElement('tr');
+            array.parrilla  === "si" ? Parrilla = `<i class="bi bi-check-circle green"></i>` : msjParrilla = ``;
+            contenedorReservas2.innerHTML+=`
+                <th scope="row" class="removeId" id="${x}">${x}</th>
+                <td><i class="bi bi-person-square green"></i> ${array.nombre} ${array.apellido}</td>
+                <td><i class="bi bi-calendar-check green"></i> ${array.dia}</td>
+                <td><i class="bi bi-clock green"></i> ${array.horario}:00 Hs.</td>
+                <td><i class="bi bi-telephone green"></i> ${array.telefono}</td>
+                <td><i class="bi bi-envelope green"></i> ${array.mail}</td>
+                <td class="text-center">${Parrilla}</td>
+                <td ><button type="button" class="btn btn-danger eliminar"><i class="bi bi-trash"></i> Eliminar</button></td>
+            `
+        });
+        tr.querySelector(".eliminar").addEventListener('click', eliminarReserva);
+    });
+
     listaReservas.map(reserva => {
         numeroReserva++;
         // creo un filtro dinamico de dia para visualizar las fechas de las reservas
@@ -282,18 +319,18 @@ function visulalizarReserva(){
         tr.classList.add('white');
         tr.classList.add('listaReserva')
         const Content = `
-        <th scope="row" class="removeId" id="${numeroReserva}">${numeroReserva}</th>
-        <td><i class="bi bi-person-square green"></i> ${reserva.nombre} ${reserva.apellido}</td>
-        <td><i class="bi bi-calendar-check green"></i> ${reserva.dia}</td>
-        <td><i class="bi bi-clock green"></i> ${reserva.horario}:00 Hs.</td>
-        <td><i class="bi bi-telephone green"></i> ${reserva.telefono}</td>
-        <td><i class="bi bi-envelope green"></i> ${reserva.mail}</td>
-        <td class="text-center">${msjParrilla}</td>
-        <td ><button type="button" class="btn btn-danger eliminar"><i class="bi bi-trash"></i> Eliminar</button></td>
-    `
-    tr.innerHTML = Content;
-    contenedorReservas2.append(tr); // las reservas las voy ingresando en el contenedor que esta asignado en contenedorReservas2
-    tr.querySelector(".eliminar").addEventListener('click', eliminarReserva);
+            <th scope="row" class="removeId" id="${numeroReserva}">${numeroReserva}</th>
+            <td><i class="bi bi-person-square green"></i> ${reserva.nombre} ${reserva.apellido}</td>
+            <td><i class="bi bi-calendar-check green"></i> ${reserva.dia}</td>
+            <td><i class="bi bi-clock green"></i> ${reserva.horario}:00 Hs.</td>
+            <td><i class="bi bi-telephone green"></i> ${reserva.telefono}</td>
+            <td><i class="bi bi-envelope green"></i> ${reserva.mail}</td>
+            <td class="text-center">${msjParrilla}</td>
+            <td ><button type="button" class="btn btn-danger eliminar"><i class="bi bi-trash"></i> Eliminar</button></td>
+        `
+        tr.innerHTML = Content;
+        contenedorReservas2.append(tr); // las reservas las voy ingresando en el contenedor que esta asignado en contenedorReservas2
+        tr.querySelector(".eliminar").addEventListener('click', eliminarReserva);
     })
 }
 
@@ -339,7 +376,6 @@ btnReservar.addEventListener("click", (e)=>{
 btnVisualizarReservas.addEventListener("click", visulalizarReserva);
 
 btnOcultar.addEventListener("click", mostrar);
-
 
 ///////////////////////////////////////////// FETCH ///////////////////////////////////////////////////
 
@@ -418,6 +454,3 @@ botonUsuarios.onclick = () => {
 
 btnOcultarUsuarios.addEventListener("click", mostrarTablaUsuarios);
 
-let arrayFiltroFechas = [... new Set (listaReservas.dia)];
-
-console.log (arrayFiltroFechas)
