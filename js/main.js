@@ -293,8 +293,6 @@ function visulalizarReserva(){
     });
 
     idReservas.map(reserva => {
-        // numeroReserva++;
-        
         const tr = document.createElement('tr');
         reserva.parrilla  === "si" ? msjParrilla = `<i class="bi bi-check-circle green"></i>` : msjParrilla = ``;
         tr.classList.add('white');
@@ -320,7 +318,6 @@ function visulalizarReserva(){
     
     btnFiltrarDia.addEventListener("click", (e)=>{
         e.preventDefault();
-        
         //const diasTr = document.querySelectorAll('.listaReserva');
         //document.querySelector(`#contenedorReservas2 tr`).classList.add('ocultar');
         //console.log(diasTr)
