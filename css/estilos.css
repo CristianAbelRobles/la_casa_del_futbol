@@ -445,6 +445,9 @@ main {
     background-color: #ccff33; }
 
 /*/////////////////// RESERVAS //////////////////*/
+.btnSecReservas {
+  width: 15rem; }
+
 .tablaReservas {
   width: 100% !important; }
 

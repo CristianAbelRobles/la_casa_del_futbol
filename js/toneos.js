@@ -1,6 +1,4 @@
 ///////////////////////////////////////////// FETCH ///////////////////////////////////////////////////
-let btnMostrarTabla = document.querySelector("#btnTorneo");
-let btnOcultarTabla = document.querySelector("#btnTorneoOcultar");
 let contenedorTabla = document.querySelector("#tablaTorneo");
 let tablaTitulo = document.querySelector("#tablaTitulo");
 
@@ -81,14 +79,3 @@ window.addEventListener('load', function () {
     mostrarTabla();
 });
 
-/*
-btnMostrarTabla.onclick = () => {
-    resetTabla();
-    mostrarTabla();
-}
-
-btnOcultarTabla.addEventListener("click", mostrarTabla);
-
-
-
-*/

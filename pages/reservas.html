@@ -112,7 +112,6 @@
                         <input type="date" class="formFecha form-control fecha" name="dia" name="trip-start" id="dia" required>
                     </div>
                     <p class="px-2 pt-2 white" id="errorFecha"></p>
-                    <span class="px-2 formulario__input-error formulario__input-error-activo white fs-6"><i class="bi bi-info-square"></i> No se aceptan reservas para el día de hoy, debe seleccionar una fecha a partir de mañana.</span>
                 </div>
 
                 <!-- HORA DE RESERVA -->
@@ -148,17 +147,16 @@
                 <div class="col-12 rounded-2 ocultar" id="cajaMsj">
                 </div>
                 <!-- BOTON ENVIAR FORMULARIO -->
-                <div class="col-md-3">
-                    <button type="submit" class="btn btn-success" id="btnReservar"><i class="bi bi-journal-check"></i> Solicitar Reserva</button>
+                <div class="col-md-6 text-center">
+                    <button type="submit" class="m-1 btn btn-success btnSecReservas" id="btnReservar"><i class="bi bi-journal-check"></i> Solicitar Reserva</button>
+                    
                 </div>
             </form>
         
             <div class="row g-3 d-flex flex-column align-content-around text-center">
                 <div class="col-md-5">
-                    <button type="submit" class="m-1 btn btn-info" id="visualizarReservas"><i class="bi bi-eye-fill"></i> Visualizar Reservas</button>
-                    <button type="submit" class="m-1 btn btn-light ocultar" id="btnOcultar"><i class="bi bi-eye-slash-fill"></i> Ocultar Reservas</button>
-                    <button type="submit" class="m-1 btn btn-warning" id="btnUsuarios"><i class="bi bi-eye-fill"></i> Visualizar Usuarios (Fetch)</button>
-                    <button type="submit" class="m-1 btn btn-light ocultar" id="btnUsuariosOcultar"><i class="bi bi-eye-slash-fill"></i> Ocultar Usuarios</button>    
+                    <button type="submit" class="m-1 btn btn-info btnSecReservas" id="visualizarReservas"><i class="bi bi-eye-fill"></i> Visualizar Reservas</button>
+                    <button type="submit" class="m-1 btn btn-light ocultar btnSecReservas" id="btnOcultar"><i class="bi bi-eye-slash-fill"></i> Ocultar Reservas</button>
                 </div>
             </div>    
 

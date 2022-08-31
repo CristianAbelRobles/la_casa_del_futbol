@@ -120,25 +120,25 @@ let contenedorHoariosDisponibles = document.querySelector("#horariosDisponibles"
 
 let listaReservas = JSON.parse(localStorage.getItem("listaReservas")) || [ 
     // PREGUNTO SI EXISTE LA LISTA DE RESERVAS EN LOCAL STORAGE - SI EXISTE USO LA QUE EXISTE / NO EXISTE USO ESTA ->
-    {nombre: "Cristian", apellido: "robles", dia: "2022-09-24", horario: 15, telefono: 1130164798, mail: "cristian@gmail.com", parrilla: "si"},
-    {nombre: "Laura", apellido: "nacimiento", dia: "2022-09-23", horario: 19, telefono: 1164568798, mail: "laura@gmail.com", parrilla: "no"},
-    {nombre: "Joaquin", apellido: "robles", dia: "2022-09-24", horario: 13, telefono: 116567798, mail: "joaquin@gmail.com", parrilla: "si"},
-    {nombre: "Abel", apellido: "Lopez", dia: "2022-09-23", horario: 14, telefono: 118768598, mail: "abel@gmail.com", parrilla: "si"},
-    {nombre: "Ezequiel", apellido: "Gonzalez", dia: "2022-09-25", horario: 16, telefono: 1165684564, mail: "ezeuiel@gmail.com", parrilla: "no"},
-    {nombre: "Ulises", apellido: "Benitez", dia: "2022-09-21", horario: 22, telefono: 1164634538, mail: "ulises@gmail.com", parrilla: "si"},
-    {nombre: "Alejandro", apellido: "robles", dia: "2022-09-26", horario: 15, telefono: 1130164798, mail: "cristian@gmail.com", parrilla: "si"},
-    {nombre: "Pablo", apellido: "nacimiento", dia: "2022-09-28", horario: 19, telefono: 1164568798, mail: "laura@gmail.com", parrilla: "no"},
-    {nombre: "Enrique", apellido: "robles", dia: "2022-09-26", horario: 13, telefono: 116567798, mail: "joaquin@gmail.com", parrilla: "si"},
-    {nombre: "Marcelo", apellido: "Perez", dia: "2022-09-24", horario: 10, telefono: 1133456798, mail: "Juanperez@gmail.com", parrilla: "si"},
-    {nombre: "Nahuel", apellido: "Lopez", dia: "2022-09-27", horario: 14, telefono: 118768598, mail: "abel@gmail.com", parrilla: "si"},
-    {nombre: "Ciro", apellido: "Gonzalez", dia: "2022-09-22", horario: 16, telefono: 1165684564, mail: "ezeuiel@gmail.com", parrilla: "no"},
-    {nombre: "Mateo", apellido: "Benitez", dia: "2022-10-27", horario: 22, telefono: 1164634538, mail: "ulises@gmail.com", parrilla: "si"},
-    {nombre: "Gustavo", apellido: "robles", dia: "2022-10-26", horario: 15, telefono: 1130164798, mail: "cristian@gmail.com", parrilla: "si"},
-    {nombre: "Javier", apellido: "nacimiento", dia: "2022-10-27", horario: 19, telefono: 1164568798, mail: "laura@gmail.com", parrilla: "no"},
-    {nombre: "Diego", apellido: "robles", dia: "2022-10-28", horario: 13, telefono: 116567798, mail: "joaquin@gmail.com", parrilla: "si"},
-    {nombre: "Jorge", apellido: "Lopez", dia: "2022-10-29", horario: 14, telefono: 118768598, mail: "abel@gmail.com", parrilla: "si"},
-    {nombre: "Nemias", apellido: "Gonzalez", dia: "2022-10-28", horario: 16, telefono: 1165684564, mail: "ezeuiel@gmail.com", parrilla: "no"},
-    {nombre: "Emanuel", apellido: "Benitez", dia: "2022-10-29", horario: 22, telefono: 1164634538, mail: "ulises@gmail.com", parrilla: "si"},
+    {nombre: "Cristian", apellido: "robles", dia: "2022-08-24", horario: 15, telefono: 1130164798, mail: "cristian@gmail.com", parrilla: "si"},
+    {nombre: "Laura", apellido: "nacimiento", dia: "2022-08-23", horario: 19, telefono: 1164568798, mail: "laura@gmail.com", parrilla: "no"},
+    {nombre: "Joaquin", apellido: "robles", dia: "2022-08-24", horario: 13, telefono: 116567798, mail: "joaquin@gmail.com", parrilla: "si"},
+    {nombre: "Abel", apellido: "Lopez", dia: "2022-08-23", horario: 14, telefono: 118768598, mail: "abel@gmail.com", parrilla: "si"},
+    {nombre: "Ezequiel", apellido: "Gonzalez", dia: "2022-08-25", horario: 16, telefono: 1165684564, mail: "ezeuiel@gmail.com", parrilla: "no"},
+    {nombre: "Ulises", apellido: "Benitez", dia: "2022-08-21", horario: 22, telefono: 1164634538, mail: "ulises@gmail.com", parrilla: "si"},
+    {nombre: "Alejandro", apellido: "robles", dia: "2022-08-26", horario: 15, telefono: 1130164798, mail: "cristian@gmail.com", parrilla: "si"},
+    {nombre: "Pablo", apellido: "nacimiento", dia: "2022-08-28", horario: 19, telefono: 1164568798, mail: "laura@gmail.com", parrilla: "no"},
+    {nombre: "Enrique", apellido: "robles", dia: "2022-08-26", horario: 13, telefono: 116567798, mail: "joaquin@gmail.com", parrilla: "si"},
+    {nombre: "Marcelo", apellido: "Perez", dia: "2022-08-24", horario: 10, telefono: 1133456798, mail: "Juanperez@gmail.com", parrilla: "si"},
+    {nombre: "Nahuel", apellido: "Lopez", dia: "2022-08-27", horario: 14, telefono: 118768598, mail: "abel@gmail.com", parrilla: "si"},
+    {nombre: "Ciro", apellido: "Gonzalez", dia: "2022-08-22", horario: 16, telefono: 1165684564, mail: "ezeuiel@gmail.com", parrilla: "no"},
+    {nombre: "Mateo", apellido: "Benitez", dia: "2022-09-27", horario: 22, telefono: 1164634538, mail: "ulises@gmail.com", parrilla: "si"},
+    {nombre: "Gustavo", apellido: "robles", dia: "2022-09-26", horario: 15, telefono: 1130164798, mail: "cristian@gmail.com", parrilla: "si"},
+    {nombre: "Javier", apellido: "nacimiento", dia: "2022-09-27", horario: 19, telefono: 1164568798, mail: "laura@gmail.com", parrilla: "no"},
+    {nombre: "Diego", apellido: "robles", dia: "2022-09-28", horario: 13, telefono: 116567798, mail: "joaquin@gmail.com", parrilla: "si"},
+    {nombre: "Jorge", apellido: "Lopez", dia: "2022-09-29", horario: 14, telefono: 118768598, mail: "abel@gmail.com", parrilla: "si"},
+    {nombre: "Nemias", apellido: "Gonzalez", dia: "2022-09-28", horario: 16, telefono: 1165684564, mail: "ezeuiel@gmail.com", parrilla: "no"},
+    {nombre: "Emanuel", apellido: "Benitez", dia: "2022-09-29", horario: 22, telefono: 1164634538, mail: "ulises@gmail.com", parrilla: "si"},
 ];
 
 // FUNCION DONDE APLICO SORT PARA ORDENAR POR DIA LAS RESERVAS
@@ -177,14 +177,13 @@ const agregarReserva = () => {
     // HAGO UN FOR PARA REVISAR MI ARRAY Y VER SI HAY UNA RESERVA CREADA EL MISMO DIA Y HORARIO QUE QUIERE GENERAR EL USUARIO.
     for (let i = 0; i < listaReservas.length ; i++) {
         if ((listaReservas[i].dia == dia) && (listaReservas[i].horario == horario)) { 
-            horariosDisponibles.splice((listaReservas[i].horario).indexOf, 1) // QUITO DEL ARRAY DE FECHAS DISPONIBLES EL HORARIO QUE SELECCIONO EL USUARIO
             reservado = 1; // SI ENCUENTRA UNA RESERVA EL MISMO DIA Y HORARIO CAMBIA EL VALOR DE LA VARIABLE RESERVADO
         } else if (listaReservas[i].dia == dia){
             //hago la busqueda de la posicion dentro del array de reservas de los horarios que ya estan reservados para ese dia
             let h = horariosDisponibles.indexOf(listaReservas[i].horario)
             // h = es la posicion del horario reservado
             horariosDisponibles.splice(h, 1);
-            // borro los horarios reservados de ese dia para devolver al usuario una lista con los horarios disponibles ese dia
+            //borro los horarios reservados de ese dia para devolver al cliente una lista con los horarios disponibles ese dia
         }
     }
     if (reservado === 1) {  
@@ -274,7 +273,7 @@ function visulalizarReserva(){
             <tr>
             <th scope="col text-center">#</th>
             <th scope="col text-center">Nombre</th>
-            <th scope="col text-center">Fecha <select name="filtradoFechas" id="filtradoFechas"><option value="Todas">Todas</option></select></th>
+            <th scope="col text-center">Fecha <select name="filtradoFechas" id="filtradoFechas"><option value="Todas">Todas</option></select><button type="submit" class="m-1 btn btn-info" id="btnFiltrarDia"><i class="bi bi-eye-fill"></i> Filtrar</button></th>
             <th scope="col text-center">Hora</th>
             <th scope="col text-center">Telefono</th>
             <th scope="col">Correo</th>
@@ -316,8 +315,11 @@ function visulalizarReserva(){
     })
 
     //////////////////////////////////////////// FILTRO POR DIA ////////////////////////////////////////////
+
+    let btnFiltrarDia = document.querySelector('#btnFiltrarDia');
     
-    filtradoFechas.addEventListener('change', function () {
+    btnFiltrarDia.addEventListener("click", (e)=>{
+        e.preventDefault();
         contenedorReservas2.innerHTML=``;      
         let diaFiltrado = document.querySelector("#filtradoFechas").value;
         console.log(diaFiltrado)
@@ -357,7 +359,6 @@ function visulalizarReserva(){
             });
         }
     });
-
 }
 
 function eliminarReserva(e){
