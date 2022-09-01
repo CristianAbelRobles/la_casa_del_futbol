@@ -1,6 +1,4 @@
 ///////////////////////////////////////////// FETCH ///////////////////////////////////////////////////
-const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
 let contenedorTabla = document.querySelector("#tablaTorneo");
 let tablaTitulo = document.querySelector("#tablaTitulo");
@@ -52,10 +50,6 @@ const mostrarTabla = async () => {
     } catch (error) {
         console.log(error);
     }
-}
-
-function resetTabla(){
-    contenedorTabla.innerHTML = '';
 }
 
 window.addEventListener('load', function () {
