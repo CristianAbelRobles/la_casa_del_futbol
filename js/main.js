@@ -53,25 +53,29 @@ const calcularFecha =(fechaReserva)=>{
     const diaReserva = parseInt(String(fechaReserva).substring(8, 10));  // 2022-08-[22]
 
     if (anoReserva < anoActual) {
-        msjDia.classList.add('text-danger')
+        msjDia.classList.add('text-danger');
+        dia.classList.add('is-invalid');
         msjErrorFecha = "Año de reserva erroneo.";
         reserva=false;
     } else if ((mesReserva < mesActual) && (anoReserva <= anoActual)){
-        msjDia.classList.add('text-danger')
+        msjDia.classList.add('text-danger');
+        dia.classList.add('is-invalid');
         msjErrorFecha = "Mes de reserva erroneo.";
         reserva=false;
     } else if ((diaReserva <= diaActual) && (mesReserva <= mesActual) && (anoReserva <= anoActual)){
-        //errorFecha.classList.remove('ocultar');
-        msjDia.classList.add('text-danger')
+        msjDia.classList.add('text-danger');
+        dia.classList.add('is-invalid');
         msjErrorFecha = "Día de reserva invalido, revise el dia ingresado, tenga en cuenta que no se aceptan reservas para el mismo día, solo se aceptan reservas a partir de mañana.";
         reserva=false;
     } else {
-        msjDia.classList.remove('text-danger')
+        msjDia.classList.remove('text-danger');
+        dia.classList.remove('is-invalid');
         msjErrorFecha = "";
         reserva=true;
     }
     return msjErrorFecha;
 }
+
 // VALIDAR QUE LA FECHA CUMPLA LOS REQUERIMIENTOS PARA GENERAR UNA RESERVA Y DEVOLVER UN MSJ
 window.addEventListener('load', function () {
     fechaReserva.addEventListener('change', function () {
@@ -111,35 +115,13 @@ const resetCampos = () => {
 
 //////////////////////////////////////////////////////////////////////////////////////
 
+import {reservas} from "./reservas.js"
 let btnOcultar = document.querySelector("#btnOcultar");
 let btnVisualizarReservas = document.querySelector("#visualizarReservas");
 let btnReservar = document.querySelector("#btnReservar");
 let contenedorReservas = document.querySelector("#tablaReservas");
 let cajaMsj = document.querySelector("#cajaMsj");
-let contenedorHoariosDisponibles = document.querySelector("#horariosDisponibles");
-
-let listaReservas = JSON.parse(localStorage.getItem("listaReservas")) || [ 
-    // PREGUNTO SI EXISTE LA LISTA DE RESERVAS EN LOCAL STORAGE - SI EXISTE USO LA QUE EXISTE / NO EXISTE USO ESTA ->
-    {nombre: "Cristian", apellido: "robles", dia: "2022-09-24", horario: 15, telefono: 1130164798, mail: "cristian@gmail.com", parrilla: "si"},
-    {nombre: "Laura", apellido: "nacimiento", dia: "2022-09-23", horario: 19, telefono: 1164568798, mail: "laura@gmail.com", parrilla: "no"},
-    {nombre: "Joaquin", apellido: "robles", dia: "2022-09-24", horario: 13, telefono: 116567798, mail: "joaquin@gmail.com", parrilla: "si"},
-    {nombre: "Abel", apellido: "Lopez", dia: "2022-09-23", horario: 14, telefono: 118768598, mail: "abel@gmail.com", parrilla: "si"},
-    {nombre: "Ezequiel", apellido: "Gonzalez", dia: "2022-09-25", horario: 16, telefono: 1165684564, mail: "ezeuiel@gmail.com", parrilla: "no"},
-    {nombre: "Ulises", apellido: "Benitez", dia: "2022-09-21", horario: 22, telefono: 1164634538, mail: "ulises@gmail.com", parrilla: "si"},
-    {nombre: "Alejandro", apellido: "robles", dia: "2022-09-26", horario: 15, telefono: 1130164798, mail: "cristian@gmail.com", parrilla: "si"},
-    {nombre: "Pablo", apellido: "nacimiento", dia: "2022-09-28", horario: 19, telefono: 1164568798, mail: "laura@gmail.com", parrilla: "no"},
-    {nombre: "Enrique", apellido: "robles", dia: "2022-09-26", horario: 13, telefono: 116567798, mail: "joaquin@gmail.com", parrilla: "si"},
-    {nombre: "Marcelo", apellido: "Perez", dia: "2022-09-24", horario: 10, telefono: 1133456798, mail: "Juanperez@gmail.com", parrilla: "si"},
-    {nombre: "Nahuel", apellido: "Lopez", dia: "2022-09-27", horario: 14, telefono: 118768598, mail: "abel@gmail.com", parrilla: "si"},
-    {nombre: "Ciro", apellido: "Gonzalez", dia: "2022-09-22", horario: 16, telefono: 1165684564, mail: "ezeuiel@gmail.com", parrilla: "no"},
-    {nombre: "Mateo", apellido: "Benitez", dia: "2022-10-27", horario: 22, telefono: 1164634538, mail: "ulises@gmail.com", parrilla: "si"},
-    {nombre: "Gustavo", apellido: "robles", dia: "2022-10-26", horario: 15, telefono: 1130164798, mail: "cristian@gmail.com", parrilla: "si"},
-    {nombre: "Javier", apellido: "nacimiento", dia: "2022-10-27", horario: 19, telefono: 1164568798, mail: "laura@gmail.com", parrilla: "no"},
-    {nombre: "Diego", apellido: "robles", dia: "2022-10-28", horario: 13, telefono: 116567798, mail: "joaquin@gmail.com", parrilla: "si"},
-    {nombre: "Jorge", apellido: "Lopez", dia: "2022-10-29", horario: 14, telefono: 118768598, mail: "abel@gmail.com", parrilla: "si"},
-    {nombre: "Nemias", apellido: "Gonzalez", dia: "2022-10-28", horario: 16, telefono: 1165684564, mail: "ezeuiel@gmail.com", parrilla: "no"},
-    {nombre: "Emanuel", apellido: "Benitez", dia: "2022-10-29", horario: 22, telefono: 1164634538, mail: "ulises@gmail.com", parrilla: "si"},
-];
+let listaReservas = JSON.parse(localStorage.getItem("listaReservas")) || reservas; // VERIFICO SI EXISTE UNA LISTA DE RESERVAS EN EL LOCALSTORAGE, SI NO EXISTE UTILIZO UNA IMPORTADA DESDE "./RESERVAS.JS"
 
 // FUNCION DONDE APLICO SORT PARA ORDENAR POR DIA LAS RESERVAS
 function ordenarReservas(){
@@ -177,14 +159,13 @@ const agregarReserva = () => {
     // HAGO UN FOR PARA REVISAR MI ARRAY Y VER SI HAY UNA RESERVA CREADA EL MISMO DIA Y HORARIO QUE QUIERE GENERAR EL USUARIO.
     for (let i = 0; i < listaReservas.length ; i++) {
         if ((listaReservas[i].dia == dia) && (listaReservas[i].horario == horario)) { 
-            horariosDisponibles.splice((listaReservas[i].horario).indexOf, 1) // QUITO DEL ARRAY DE FECHAS DISPONIBLES EL HORARIO QUE SELECCIONO EL USUARIO
+            horariosDisponibles.splice(horariosDisponibles.indexOf(horario), 1); // QUITO DEL ARRAY DE HORARIOS DISPONIBLES EL HORARIO QUE SELECCIONO EL USUARIO
             reservado = 1; // SI ENCUENTRA UNA RESERVA EL MISMO DIA Y HORARIO CAMBIA EL VALOR DE LA VARIABLE RESERVADO
         } else if (listaReservas[i].dia == dia){
-            //hago la busqueda de la posicion dentro del array de reservas de los horarios que ya estan reservados para ese dia
-            let h = horariosDisponibles.indexOf(listaReservas[i].horario)
-            // h = es la posicion del horario reservado
-            horariosDisponibles.splice(h, 1);
-            // borro los horarios reservados de ese dia para devolver al usuario una lista con los horarios disponibles ese dia
+            // hago la busqueda de la posicion dentro del array de reservas de los horarios que ya estan reservados para ese dia
+            let h = horariosDisponibles.indexOf(listaReservas[i].horario); // h = es la posicion del horario reservado
+            horariosDisponibles.splice(h, 1); // borro los horarios reservados de ese dia para devolver al usuario una lista con los horarios disponibles ese dia
+            
         }
     }
     if (reservado === 1) {  
@@ -194,7 +175,7 @@ const agregarReserva = () => {
             <div class="d-flex flex-wrap px-5 cajaMsj bg-dark" id="bodyMsj">
             </div>
             `
-            horariosDisponibles.map(horario => {
+            horariosDisponibles.forEach(horario => {
                 const div = document.createElement('div');
                 div.classList.add('m-2');
                 const Content = `
@@ -207,21 +188,20 @@ const agregarReserva = () => {
             icon: 'error',
             title: 'Reserva no disponible, intente con un día u horario diferente. Tambien puede revisar nuestra lista de reservas.',
         })
-        cajaMsj.classList.remove("ocultar")
+        cajaMsj.classList.remove("ocultar");
         
     } else {
         //  SI LA RESERVA NO EXISTE SE CREA UNA NUEVA
         cajaMsj.innerHTML = ``; // vacio la caja de msj si existe un mensaje con reservas disponibles por alguna consulta previa a la reserva exitosa.
         let reservaNueva = new Reserva (nombre, apellido, dia, horario, telefono, mail, parrilla);
         listaReservas.push(reservaNueva);
-        localStorage.setItem("listaReservas", JSON.stringify(listaReservas))
+        localStorage.setItem("listaReservas", JSON.stringify(listaReservas));
         Swal.fire({   // MENSAJE DE ALERTA DE LIBRERIA sweetalert2
             icon: 'success',
             title: 'Reserva Creada con Exito!',
             showConfirmButton: false,
             timer: 2000
-        })
-
+        });
         formulario.reset(); // SI LA RESERVA SE CREA CON EXITO SE RESETEAN LOS INPUTS CON INFORMACION DEL CLIENTE, SI SE SOLICITA UNA RESERVA QUE YA EXISTE NO SE BORRAN ASI EL USUARIO NO TIENE QUE VOLVER A COMPLETAR LOS CAMPOS PARA INTRODUCIR OTRA FECHA TENTATIVA.
         resetCampos(); // RESETEO EL VALOR DE LOS IMPUTS A FALSE PARA QUE NO SE PUEDAN CREAR NUEVAS RESERVAS CON CAMPOS VACIOS
     }
@@ -248,7 +228,6 @@ function resetTablero(){
 }
 
 function visulalizarReserva(){
-
     // CREO UN ARRAY DE LAS FECHAS DE LAS RESERVAS PARA USARLAS EN MI FITRO DINAMICO DE FECHAS
     const fechaReservas = listaReservas.map(function (reserva){
         return reserva.dia;
@@ -256,30 +235,29 @@ function visulalizarReserva(){
 
     // APLICO SET PARA QUE NO SE REPITAN LAS FECHAS DEL FILTRO
     let filtroFechaReservas = [... new Set (fechaReservas)].sort();
-
-    ordenarReservas()
+    ordenarReservas();
     mostrar();
+
     // LE AGREGO ID AL ARRAY DE RESERVAS
     let acumuladorId = 0;
     const idReservas = listaReservas.map(res =>{
-        acumuladorId++
+        acumuladorId++;
         return {
             id: parseInt(`${acumuladorId}`),
             ...res
         }
     });
-
     contenedorReservas.innerHTML = `
         <thead >
             <tr>
-            <th scope="col text-center">#</th>
-            <th scope="col text-center">Nombre</th>
-            <th scope="col text-center">Fecha <select name="filtradoFechas" id="filtradoFechas"><option value="Todas">Todas</option></select></th>
-            <th scope="col text-center">Hora</th>
-            <th scope="col text-center">Telefono</th>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Fecha <select name="filtradoFechas" id="filtradoFechas"><option value="Todas">Todas</option></select></th>
+            <th scope="col">Hora</th>
+            <th scope="col">Telefono</th>
             <th scope="col">Correo</th>
-            <th scope="col text-center">Parrilla</th>
-            <th scope="col text-center">Accion</th>
+            <th scope="col">Parrilla</th>
+            <th scope="col">Accion</th>
             </tr>
         </thead>
         <tbody id="contenedorReservas2">
@@ -294,12 +272,11 @@ function visulalizarReserva(){
             <option value="${filtro}">${filtro}</option>
         `
     });
-
-    idReservas.map(reserva => {
+    idReservas.forEach(reserva => {
         const tr = document.createElement('tr');
-        reserva.parrilla  === "si" ? msjParrilla = `<i class="bi bi-check-circle green"></i>` : msjParrilla = ``;
+        let msjParrilla = reserva.parrilla === "si" ? `<i class="bi bi-check-circle green"></i>` : ``;
         tr.classList.add('white');
-        tr.classList.add('listaReserva')
+        tr.classList.add('listaReserva');
         const Content = `
             <th scope="row" class="removeId" id="${reserva.id}">${reserva.id}</th>
             <td><i class="bi bi-person-square green"></i> ${reserva.nombre} ${reserva.apellido}</td>
@@ -307,8 +284,8 @@ function visulalizarReserva(){
             <td><i class="bi bi-clock green"></i> ${reserva.horario}:00 Hs.</td>
             <td><i class="bi bi-telephone green"></i> ${reserva.telefono}</td>
             <td><i class="bi bi-envelope green"></i> ${reserva.mail}</td>
-            <td class="text-center">${msjParrilla}</td>
-            <td ><button type="button" class="btn btn-danger eliminar"><i class="bi bi-trash"></i> Eliminar</button></td>
+            <td>${msjParrilla}</td>
+            <td><button type="button" class="btn btn-danger eliminar"><i class="bi bi-trash"></i> Eliminar</button></td>
         `
         tr.innerHTML = Content;
         contenedorReservas2.append(tr); // las reservas las voy ingresando en el contenedor que esta asignado en contenedorReservas2
@@ -320,26 +297,22 @@ function visulalizarReserva(){
     filtradoFechas.addEventListener('change', function () {
         contenedorReservas2.innerHTML=``;      
         let diaFiltrado = document.querySelector("#filtradoFechas").value;
-        console.log(diaFiltrado)
         if (diaFiltrado == "Todas"){
-
             btnOcultar.classList.add("ocultar");
             btnVisualizarReservas.classList.remove("ocultar");
-            contenedorReservas.classList.add("ocultar")
-
-            visulalizarReserva()
+            contenedorReservas.classList.add("ocultar");
+            visulalizarReserva();
         } else {
-            let arrayPrueba = idReservas.filter((fecha)=>{
+            let idReservasFiltrado = idReservas.filter((fecha)=>{
                 if (fecha.dia != diaFiltrado){
                     return false;
                 } else {
                     return true;
                 }
             });
-
-            arrayPrueba.map(array => {
+            idReservasFiltrado.forEach(array => {
                 const tr = document.createElement('tr');
-                array.parrilla  === "si" ? parrilla = `<i class="bi bi-check-circle green"></i>` : parrilla = ``;
+                let parrilla = array.parrilla  === "si" ? `<i class="bi bi-check-circle green"></i>` : ``;
                 tr.classList.add('listaReserva')
                 const ContentFiltrado =`
                     <th scope="row" class="removeId" id="${array.id}">${array.id}</th>
@@ -357,30 +330,28 @@ function visulalizarReserva(){
             });
         }
     });
-
 }
 
 function eliminarReserva(e){
     const buttonEliminar = e.target;
     const tr = buttonEliminar.closest(".listaReserva");
     const removeId = parseInt(tr.querySelector('.removeId').textContent);
-    console.log(tr.querySelector('.removeId').textContent);
     listaReservas.splice(removeId-1, 1);
     tr.remove();
-    mostrar()
+    mostrar();
     localStorage.setItem("listaReservas", JSON.stringify(listaReservas));
     Swal.fire({  // MENSAJE DE ALERTA DE LIBRERIA sweetalert2
         icon: 'error',
         title: 'Reserva Eliminada!',
         showConfirmButton: false,
         timer: 2000
-    })
-    visulalizarReserva()
+    });
+    visulalizarReserva();
 }
 
 btnReservar.addEventListener("click", (e)=>{
     e.preventDefault();
-	if(campos.nombre && campos.apellido && campos.correo && campos.telefono && reserva){  //
+	if(campos.nombre && campos.apellido && campos.correo && campos.telefono && reserva){ 
 		agregarReserva ();
         resetTablero();
 		document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
@@ -391,7 +362,7 @@ btnReservar.addEventListener("click", (e)=>{
         Swal.fire({ // MENSAJE DE ALERTA DE LIBRERIA sweetalert2
             icon: 'error',
             title: 'Debe completar correctamente el formulario antes de hacer la Reserva',
-        })
+        });
 	}
 });
 

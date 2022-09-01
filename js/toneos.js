@@ -1,4 +1,7 @@
 ///////////////////////////////////////////// FETCH ///////////////////////////////////////////////////
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
 let contenedorTabla = document.querySelector("#tablaTorneo");
 let tablaTitulo = document.querySelector("#tablaTitulo");
 
@@ -26,12 +29,11 @@ const mostrarTabla = async () => {
             </tbody>
             `
         let equiposTabla = document.querySelector('#equiposTabla')
-        clubes.map(club => {
+        clubes.forEach(club => {
             const tr = document.createElement('tr');
             tr.classList.add('white');
             tr.classList.add('listaReserva')
             const contentClubes = `
-
                     <th scope="row">${club.posicion}</th>
                     <td><img src="${club.escudo}" alt=""></td>
                     <td style="text-align: left;">${club.nombre}</td>
@@ -43,7 +45,6 @@ const mostrarTabla = async () => {
                     <td>${club.golesContra}</td>
                     <td>${club.diferenciaGoles}</td>
                     <td>${club.totalPuntos}</td>
-
                 `
             tr.innerHTML = contentClubes;
             equiposTabla.append(tr);
@@ -53,26 +54,8 @@ const mostrarTabla = async () => {
     }
 }
 
-function mostrarBtnTabla() {
-    if(btnOcultarTabla.classList.contains("ocultar")) {
-        btnOcultarTabla.classList.remove("ocultar");
-        btnMostrarTabla.classList.add("ocultar");
-        contenedorTabla.classList.remove("ocultar");
-        tablaTitulo.classList.remove("ocultar");
-    } else {
-        btnOcultarTabla.classList.add("ocultar");
-        btnMostrarTabla.classList.remove("ocultar");
-        contenedorTabla.classList.add("ocultar");
-        tablaTitulo.classList.add("ocultar");
-    }
-}
-
 function resetTabla(){
     contenedorTabla.innerHTML = '';
-    if (btnMostrarTabla.classList.contains("ocultar")) {
-        btnMostrarTabla.classList.remove("ocultar");
-        btnOcultarTabla.classList.add("ocultar");
-    }
 }
 
 window.addEventListener('load', function () {
